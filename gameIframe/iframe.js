@@ -13,5 +13,5 @@ document.body.appendChild(iframe);
 
 var back = document.getElementById('return')
 back.addEventListener('click', ()=>{
-    window.location.href = "https://reading-labs.github.io"
+    window.location.href = "https://200mister.github.io"
 })
