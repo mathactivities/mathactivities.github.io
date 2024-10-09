@@ -11,6 +11,8 @@ iframe.style.margin = '0';
 
 document.body.appendChild(iframe);
 
+iframe.focus()
+
 var back = document.getElementById('return')
 back.addEventListener('click', ()=>{
     window.location.href = "https://200mister.github.io"
