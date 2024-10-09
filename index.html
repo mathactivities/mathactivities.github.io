@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel=stylesheet>
+    <link rel="shortcut icon" href= "https://ssl.gstatic.com/classroom/ic_product_classroom_96.png">
+    <script>
+      window.addEventListener("contextmenu", (e) => {
+        e.preventDefault()
+      })
+    </script>
+</head>
+<body>
+    <header>
+        <div class = "welcome-text"> 
+          <div class="logo">
+                <img src="images/gorrilamonk.png" draggable="false">
+            </div>
+            <h1><span>Become a</span> Gorrrilla Monk</h1>
+			   <input type="text" id="searchInput" placeholder="Search Games...">
+        
+		<ul id="itemList">
+		  <li onclick="window.location.href='gameIframe/#slope'">Slope</li>
+		  <li onclick="window.location.href='gameIframe/#clusterrush'">Cluster Rush</li>
+		  <li onclick="window.location.href='gameIframe/#1v1.lol'">1v1.lol</li>
+		  <li onclick="window.location.href='gameIframe/#timeshooter3'">Timeshooter 3</li>
+		  <li onclick="window.location.href='gameIframe/#yohoho'">Yohoho</li>
+		  <li onclick="window.location.href='gameIframe/#cookieclicker'">Cookie Clicker</li>
+		  <li onclick="window.location.href='gameIframe/#x-trench-run'">X Trench Run</li>
+		  <li onclick="window.location.href='gameIframe/#vex7'">Vex 7</li>
+		  <li onclick="window.location.href='gameIframe/#1.8.8'">Eaglercraft 1.8.8 with single player</li>
+		  <li onclick="window.location.href='gameIframe/#stickman-hook'">Stickman Hook</li>
+		  <li onclick="window.location.href='gameIframe/#retro-bowl'">Retro Bowl</li>
+		  <li onclick="window.location.href='gameIframe/#monkey-mart'">Monkey Mart</li>
+		  <li onclick="window.location.href='gameIframe/#precision-client'">Eaglercraft with mods (1.5.2)</li>
+		  <li onclick="window.location.href='gameIframe/#getaway-shootout'">Getaway Shootout</li>
+		  <li onclick="window.location.href='gameIframe/#dune'">Dune</li>
+		  <li onclick="window.location.href='gameIframe/#drift-boss'">Drift Boss</li>
+		  <li onclick="window.location.href='gameIframe/#doodle-jump'">Doodle Jump</li>
+		  <li onclick="window.location.href='gameIframe/#drive-mad'">Drive Mad</li>
+		  <li onclick="window.location.href='gameIframe/#bit-life'">Bit Life</li>
+		  <li onclick="window.location.href='gameIframe/#2048'">2048</li>
+		  <li onclick="window.location.href='gameIframe/#chrome-dino'">Chrome Dino</li>
+		  <li onclick="window.location.href='gameIframe/#drive-mad'">Drive Mad</li>
+		  <li onclick="window.location.href='gameIframe/#SPACEINVADERS'">Space Invaders</li>
+		  <li onclick="window.location.href='gameIframe/#ovo/1.4.4'">OvO</li>
+          <li onclick="window.location.href='gameIframe/#ovo/2.0.2alpha'">OvO 2</li>
+		</ul>
+        
+            </div>
+        </div>
+		
+    </header>
+	<script>
+        const searchInput = document.getElementById('searchInput');
+        const itemList = document.getElementById('itemList');
+        const items = Array.from(itemList.getElementsByTagName('li'));
+
+        searchInput.addEventListener('input', function() {
+        const searchTerm = searchInput.value.toLowerCase();
+            items.forEach(function(item) {
+                const itemName = item.textContent.toLowerCase();
+                if (itemName.includes(searchTerm)) {
+                    item.classList.remove('hide');
+                } else {
+                    item.classList.add('hide');
+                }
+            });
+        });
+	</script>  
+</body>
+</html>
