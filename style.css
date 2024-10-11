@@ -15,7 +15,7 @@ header {
     background-color: #141414;
     background-position: center center;
     position: relative;
-    overflow-x: hidden;
+    overflow-x: auto;
     height: 100vh;
     width: 100vw;
 }
@@ -97,17 +97,30 @@ header {
 
 
 #itemList {
-    list-style-type: none;
-    padding: 0;
-    overflow-y:auto;
-    overflow-x:hidden;
-    height:74vh;
-    border:5px solid white;
-    margin-top: 20px;
-    position: relative;
-    left:100%;
-    bottom: 125%;
-    border-radius: 50px;
+  list-style-type: none;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 74vh;
+  margin-top: 20px;
+  position: relative;
+  left: 100%;
+  bottom: 125%;
+  border-radius: 50px;
+  animation: glowing-border 1.5s infinite alternate; /* Animation for glowing effect */
+}
+
+@keyframes glowing-border {
+  0% {
+      border-image: linear-gradient(to bottom right, #008ce4, #cc0077) 1; /* Start gradient */
+      box-shadow: 0 0 10px rgba(0, 140, 228, 0.7), 0 0 20px rgba(204, 0, 119, 0.7); /* Initial glow */
+      border-radius: 50px;
+  }
+  100% {
+      border-image: linear-gradient(to bottom right, #cc0077, #008ce4) 1; /* End gradient */
+      box-shadow: 0 0 20px rgba(0, 140, 228, 1), 0 0 30px rgba(204, 0, 119, 1); /* Enhanced glow */
+      border-radius: 50px;
+  }
 }
 
 #itemList::-webkit-scrollbar{
