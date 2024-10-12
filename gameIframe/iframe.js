@@ -1,8 +1,13 @@
 var fragmentIdentifier = window.location.hash.slice(1)
-
+var games = ['rocket-league', 'subway-surfers', 'snow-rider']
 var iframe = document.createElement('iframe');
 
 iframe.src = "https://200mister.github.io/games/" + fragmentIdentifier
+for (var i = 0; i < games.length; i++){
+    if (fragmentIdentifier == games[i]){
+        iframe.src = "https://200mister.github.io/" + fragmentIdentifier
+    }
+}
 
 iframe.style.border='none';
 iframe.style.width = '100%' ;
