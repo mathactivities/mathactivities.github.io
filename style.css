@@ -5,6 +5,10 @@
     
 }
 
+body {
+    overflow-x: hidden;
+}
+
 ::-webkit-scrollbar{
     width:10px;
 }
@@ -149,4 +153,15 @@ header {
 
 #itemList li.hide {
     display: none;
+}
+
+#info {
+    background-color: #484848;
+    position: absolute;
+    top: 0;
+    left: 105%;
+    width: 15%;
+    height: 15vh;
+    display: block;
+    border-radius: 5px;
 }
