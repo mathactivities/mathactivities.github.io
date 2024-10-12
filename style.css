@@ -162,6 +162,6 @@ header {
     left: 105%;
     width: 15%;
     height: 15vh;
-    display: block;
+    display: none;
     border-radius: 5px;
 }
