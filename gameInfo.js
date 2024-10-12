@@ -8,7 +8,7 @@ const images = {
     '2048': 'images/games/2048.png',
     'cluster-rush': 'images/games/cluster-rush.png',
     'cookie-clicker': 'images/games/cookie-clicker.png',
-    'crossy-road': 'images/games/crossy-road.png'
+    'crossy-road': 'images/games/crossy-road.png',
     'bitlife': 'images/games/bitlife.jpg',
     'chrome-dino': 'images/games/chrome-dino.png',
     'doge-miner': 'images/games/doge-miner.png',
