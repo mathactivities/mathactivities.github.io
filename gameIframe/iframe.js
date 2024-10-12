@@ -1,5 +1,5 @@
 var fragmentIdentifier = window.location.hash.slice(1)
-var games = ['rocket-league', 'subway-surfers', 'snow-rider']
+var games = ['rocket-league', 'subway-surfers', 'snow-rider', 'gun-spin']
 var iframe = document.createElement('iframe');
 
 iframe.src = "https://" + window.location.hostname + '/games/' + fragmentIdentifier
