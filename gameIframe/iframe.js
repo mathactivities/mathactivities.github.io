@@ -2,10 +2,10 @@ var fragmentIdentifier = window.location.hash.slice(1)
 var games = ['rocket-league', 'subway-surfers', 'snow-rider']
 var iframe = document.createElement('iframe');
 
-iframe.src = "https://200mister.github.io/games/" + fragmentIdentifier
+iframe.src = "https://" + window.location.hostname + '/games/' + fragmentIdentifier
 for (var i = 0; i < games.length; i++){
     if (fragmentIdentifier == games[i]){
-        iframe.src = "https://200mister.github.io/" + fragmentIdentifier
+        iframe.src = 'https://' + window.location.hostname + '/' + fragmentIdentifier
     }
 }
 
@@ -20,5 +20,5 @@ iframe.focus()
 
 var back = document.getElementById('return')
 back.addEventListener('click', ()=>{
-    window.location.href = "https://200mister.github.io"
+    window.location.href = "https://" + window.location.hostname
 })
