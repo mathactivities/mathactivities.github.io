@@ -22,6 +22,10 @@ header {
     overflow-x: auto;
     height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -30,7 +34,7 @@ header {
     height: auto;
     border-radius: 50%;
     margin-top:20%;
-    margin-left: 85%;
+    margin-right: 20px;
 }
 
 .welcome-text{
@@ -39,6 +43,7 @@ header {
     height:300px;
     margin-left: 5%;
     text-align: center;
+    top: 0;
     font-family: 'Courier New', Courier, monospace;
     user-select: none;
 }
@@ -57,8 +62,6 @@ header {
     display: flex;
     flex-direction: column;
     position: relative;
-    right:20px;
-    left: 45%;
     /*animation:animate 10s linear infinite;*/
 }
 
@@ -70,7 +73,7 @@ header {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     position: relative;
-    left:20px;
+    left:0px;
     font-weight: bold;
 }
 
@@ -93,14 +96,10 @@ header {
     padding-left: 10px;
     padding-right: 10px;
     height: 30px;
-    translate: 150% -50%;
 }
 
 #searchInput::placeholder {
     color:#d7d7d7;
-}
-#e {
-    margin-top: 50px;
 }
 
 
@@ -112,9 +111,7 @@ header {
   height: 70vh;
   margin-top: 20px;
   position: relative;
-  left: 50%;
   border-radius: 50px;
-  margin-bottom: 40px;
   animation: glowing-border 1s infinite alternate; /* Animation for glowing effect */
 }
 
@@ -163,7 +160,6 @@ header {
     background-color: #484848;
     position: absolute;
     top: 0;
-    left: 105%;
     width: 15%;
     height: 15vh;
     display: none;
@@ -172,21 +168,54 @@ header {
 }
 
 #links span{
-    color: #6d6d6d;
+    color: #bdbdbd;
     padding: 0.3em;
-    margin-left: 30px;
+    margin-left: 10px;
     margin-top: 30px;
 }
 
 #links {
-    cursor: pointer;
     font-size: 19px;
-    height: 30px;
-    width: max-content;
+    height: 80px;
+    width: 100%;
     transition: 0.3s all;
-    translate: -30% -1350%;
     display: flex;
-    margin-left: calc(89% - 60px);
+    z-index: 1000;
+    position: fixed;
+    background-color: #343434;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    top: 90%;
+    width: 0;
+    left: 73.5%;
+    background: linear-gradient(to right, #ff6fe2, rgb(0, 52, 143));
+    transition: width .2s;
+}
+
+#about:hover::after {
+    width: 7%;
+}
+
+#home::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    top: 90%;
+    width: 0;
+    left: 65.5%;
+    background: linear-gradient(to right, #37ff98, rgb(0, 52, 143));
+    transition: width .2s;
+}
+
+#home:hover::after {
+    width: 7%;
 }
 
 
@@ -194,52 +223,51 @@ header {
     content: '';
     position: absolute;
     height: 5px;
-    left: 91%;
-    top: 225%;
+    top: 90%;
     width: 0;
-    background: linear-gradient(to right, #06a7e7, rgb(0, 52, 143));
+    left: 73.5%;
+    background: linear-gradient(to right, #ff6fe2, rgb(0, 52, 143));
     transition: width .2s;
 }
 
 #about:hover::after {
-    width: 8%;
+    width: 7%;
 }
 
-
-#links span:hover {
-    color: #ffffff;
+#name::after, #logo::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    top: 90%;
+    width: 0;
+    left: 19.5%;
+    background: linear-gradient(to right, #ff3737, rgb(0, 52, 143));
+    transition: width .2s;
 }
 
-#hamburger {
-    translate: 50% 50%;
+#name:hover::after, #logo:hover::after {
+    width: 15%;
 }
+
+#about:hover, #name:hover, #logo:hover, #home:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
 
 #logo {
-    translate:-550% 50%;
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    margin-top: 20px;
 }
 
 #name {
     width: 500px;
-    translate: -90% 0;
-}
-
-#navBg {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 5rem;
-    background-color: #3e3e3e4f;
-}
-
-#name:hover {
-    color: #ffffff;
+    color: #ffff;
 }
 
 #about-info {
-    margin-left: 47.5%;
     width: 100%;
     height: 16rem;
     background-color: rgb(50, 50, 50);
