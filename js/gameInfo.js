@@ -55,7 +55,7 @@ function updateItems() {
       info.src = imagePath
       info.style.top = e.clientY + 250 + 'px'
       console.log(info.style.top)
-      info.style.left = e.clientX - 175 + 'px'
+      info.style.left = e.clientX - 470 + 'px'
       info.style.display = 'block'
       console.log(info.style.height)
     });
