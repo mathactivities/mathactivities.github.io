@@ -15,19 +15,19 @@
     </script>
 </head>
 <body>
+    <div id="links">
+        <img onclick = "index.html" id = "logo"src="images/gorrilamonk.png" alt="logo">
+        <span onclick = "index.html" id = "name">Gorrrila Monk</span>
+        <span onclick="window.location.href = 'index.html'" id = "home"> <i class="fa-solid fa-house"></i>  Home</span>
+        <span onclick="window.location.href = 'about.html'" id = "about"> <i class="fa-solid fa-address-card"></i>   About</span>
+        </div>
     <header>
-        <div id = "navBg"></div>
         <div class = "welcome-text"> 
             <div id="right">
           <div class="logo">
                 <img src="images/gorrilamonk.png" draggable="false">
           </div>
           <h1><span>Become a</span> Gorrrilla Monk</h1>
-                <div id="links">
-                <img onclick = "window.location.href = 'https://' + window.location.hostname" id = "logo"src="images/gorrilamonk.png" alt="logo">
-                <span onclick = "window.location.href = 'https://' + window.location.hostname" id = "name">Gorrrila Monk</span>
-                <span onclick="about()" id = "about">About</span>
-                </div>
                     <input type="text" id="searchInput" placeholder="Search Games...">
 			</div>   
         
@@ -92,6 +92,5 @@
 	</script>  
 
     <script src="js/gameInfo.js"></script>
-    <script src="js/about.js"></script>
 </body>
 </html>
