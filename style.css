@@ -30,6 +30,7 @@ header {
     height: auto;
     border-radius: 50%;
     margin-top:20%;
+    margin-left: 85%;
 }
 
 .welcome-text{
@@ -56,19 +57,21 @@ header {
     display: flex;
     flex-direction: column;
     position: relative;
-    right:30px;
+    right:20px;
+    left: 45%;
     /*animation:animate 10s linear infinite;*/
 }
 
 .welcome-text h1 span{
     font-size: 20px;
     font-weight: normal;
-    background: rgb(223, 223, 223);
+    background: rgb(255, 255, 255);
     background-size: 100%;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     position: relative;
     left:20px;
+    font-weight: bold;
 }
 
 @keyframes animate{
@@ -83,13 +86,14 @@ header {
   
 #searchInput {
     background: none;
-    border:#ababab 3px solid;
+    border:#e0e0e0 3px solid;
     border-radius: 10px;
     outline:none;
     color:#fff;
     padding-left: 10px;
     padding-right: 10px;
     height: 30px;
+    translate: 150% -50%;
 }
 
 #searchInput::placeholder {
@@ -105,19 +109,19 @@ header {
   padding: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  height: 74vh;
+  height: 70vh;
   margin-top: 20px;
   position: relative;
-  left: 100%;
-  bottom: 125%;
+  left: 50%;
   border-radius: 50px;
-  animation: glowing-border 1.5s infinite alternate; /* Animation for glowing effect */
+  margin-bottom: 40px;
+  animation: glowing-border 1s infinite alternate; /* Animation for glowing effect */
 }
 
 @keyframes glowing-border {
   0% {
       border-image: linear-gradient(to bottom right, #008ce4, #cc0077) 1; /* Start gradient */
-      box-shadow: 0 0 10px rgba(0, 140, 228, 0.7), 0 0 20px rgba(204, 0, 119, 0.7); /* Initial glow */
+      box-shadow: 0 0 10px rgba(0, 140, 228, 0.8), 0 0 20px rgba(204, 0, 119, 0.7); /* Initial glow */
       border-radius: 50px;
   }
   100% {
@@ -164,4 +168,86 @@ header {
     height: 15vh;
     display: none;
     border-radius: 5px;
+    transition: 0.05s all;
+}
+
+#links span{
+    color: #6d6d6d;
+    padding: 0.3em;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+#links {
+    cursor: pointer;
+    font-size: 19px;
+    height: 30px;
+    width: max-content;
+    transition: 0.3s all;
+    translate: -30% -1350%;
+    display: flex;
+    margin-left: calc(89% - 60px);
+}
+
+
+#about::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    left: 91%;
+    top: 225%;
+    width: 0;
+    background: linear-gradient(to right, #06a7e7, rgb(0, 52, 143));
+    transition: width .2s;
+}
+
+#about:hover::after {
+    width: 8%;
+}
+
+
+#links span:hover {
+    color: #ffffff;
+}
+
+#hamburger {
+    translate: 50% 50%;
+}
+
+#logo {
+    translate:-550% 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#name {
+    width: 500px;
+    translate: -90% 0;
+}
+
+#navBg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: #3e3e3e4f;
+}
+
+#name:hover {
+    color: #ffffff;
+}
+
+#about-info {
+    margin-left: 47.5%;
+    width: 100%;
+    height: 16rem;
+    background-color: rgb(50, 50, 50);
+    text-align: left;
+    color: #f5f5f5;
+    border-radius: 50px;
+    align-content: center;
+    line-height: 1.5rem;
+    font-size: larger;
+    padding: 30px;
 }
