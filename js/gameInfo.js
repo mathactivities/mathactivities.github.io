@@ -38,7 +38,7 @@ const images = {
     'x-trench-run': 'images/games/x-trench-run.png',
     'yohoho': 'images/games/yohoho.png',
     'gun-spin': 'images/games/gun-spin.png',
-    'gun-spin': 'images/games/launcha-libre.png',
+    'launcha-libre': 'images/games/launcha-libre.png',
 }
 
 
