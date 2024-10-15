@@ -145,6 +145,7 @@ header {
     cursor:pointer;
     color:white;  
     overflow-y: hidden;
+    text-transform: capitalize;
     background:none;
     margin: auto;
     border: 3px solid black;
