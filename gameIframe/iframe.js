@@ -11,7 +11,7 @@ for (var i = 0; i < games.length; i++){
 
 iframe.style.border='none';
 iframe.style.width = '100%' ;
-iframe.style.height = "100vw"
+iframe.style.height = "100vh"
 iframe.style.margin = '0';
 
 document.body.appendChild(iframe);
