@@ -3,169 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Gorrrila Monk</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel=stylesheet>
+    <title>Math Activities</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="images/mathlogo.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/c0e040fd40.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href= "images/gorrilamonk.png">
-    <script>
-      window.addEventListener("contextmenu", (e) => {
-        e.preventDefault()
-      })
-    </script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel=stylesheet>
 </head>
 <body>
-    <div id="links">
-        <img onclick = "index.html" id = "logo"src="images/gorrilamonk.png" alt="logo">
-        <span onclick = "index.html" id = "name">Gorrrila Monk</span>
-        <span onclick="window.location.href = 'index.html'" id = "home"> <i class="fa-solid fa-house"></i>  Home</span>
-        <span onclick="window.location.href = 'about.html'" id = "about"> <i class="fa-solid fa-address-card"></i>   About</span>
+    <div id  = "nav">
+        <div onclick="window.location.href = 'index.html'">
+            <img src="images/mathlogo.png" alt="math logo">
+            <div id = "name">
+            <span>mathactivities.github.io</span>
+            </div>
         </div>
+        <ul>
+            <li onclick = "setURLParameter('place', 'about')">About</li>
+            <li onclick = "setURLParameter('place', 'contact')">Contact</li>
+        </ul>
+    </div>
     <header>
-        <div class = "welcome-text"> 
-            <div id="right">
-          <div class="logo">
-                <img src="images/gorrilamonk.png" draggable="false">
-          </div>
-          <h1><span>Become a</span> Gorrrilla Monk</h1>
-          <span style="color: #1aff00; font-weight: bold; font-family: 'Courier New', Courier, monospace; font-size: 40px;">106 GAMES</span> <br>
-                    <input type="text" id="searchInput" placeholder="Search Games...">
-			</div>   
-        
-		<ul id="itemList">
-		  <li id = "slope"onclick="window.location.href='gameIframe/#slope'">Slope</li>
-		  <li id = "cluster-rush"onclick="window.location.href='gameIframe/#clusterrush'">Cluster Rush</li>
-		  <li id = "1v1.lol"onclick="window.location.href='gameIframe/#1v1.lol'">1v1.lol</li>
-		  <li id = "time-shooter-3"onclick="window.location.href='gameIframe/#timeshooter3'">Timeshooter 3</li>
-		  <li id = "yohoho"onclick="window.location.href='gameIframe/#yohoho'">Yohoho</li>
-		  <li id = "cookie-clicker" onclick="window.location.href='gameIframe/#cookieclicker'">Cookie Clicker</li>
-		  <li id = "x-trench-run"onclick="window.location.href='gameIframe/#x-trench-run'">X Trench Run</li>
-		  <li id = "vex-7"onclick="window.location.href='gameIframe/#vex7'">Vex 7</li>
-		  <li id= "1.8.8"onclick="window.location.href='gameIframe/#1.8.8'">Eaglercraft 1.8.8 with single player</li>
-		  <li id = "stickman-hook"onclick="window.location.href='gameIframe/#stickman-hook'">Stickman Hook</li>
-		  <li id = "retro-bowl" onclick="window.location.href='gameIframe/#retro-bowl'">Retro Bowl</li>
-		  <li id = "monkey-mart"onclick="window.location.href='gameIframe/#monkey-mart'">Monkey Mart</li>
-		  <li id = "1.5.2"onclick="window.location.href='gameIframe/#precision-client'">Eaglercraft with mods (1.5.2)</li>
-		  <li id = "getaway-shootout"onclick="window.location.href='gameIframe/#getaway-shootout'">Getaway Shootout</li>
-		  <li id = "dune"onclick="window.location.href='gameIframe/#dune'">Dune</li>
-		  <li id = "drift-boss"onclick="window.location.href='gameIframe/#drift-boss'">Drift Boss</li>
-		  <li id = "doodle-jump"onclick="window.location.href='gameIframe/#doodle-jump'">Doodle Jump</li>
-		  <li id = "bitlife"onclick="window.location.href='gameIframe/#bit-life'">Bit Life</li>
-		  <li id = "2048"onclick="window.location.href='gameIframe/#2048'">2048</li>
-		  <li id = "chrome-dino"onclick="window.location.href='gameIframe/#chrome-dino'">Chrome Dino</li>
-		  <li id = "drive-mad"onclick="window.location.href='gameIframe/#drive-mad'">Drive Mad</li>
-		  <li id = "space-invaders"onclick="window.location.href='gameIframe/#SPACEINVADERS'">Space Invaders</li>
-		  <li id = "ovo"onclick="window.location.href='gameIframe/#ovo/1.4.4'">OvO</li>
-          <li id = "ovo-2"onclick="window.location.href='gameIframe/#ovo/2.0.2alpha'">OvO 2</li>
-		  <li id='tunnel-rush'onclick="window.location.href='gameIframe/#tunnel-rush'">Tunnel Rush</li>
-		  <li id = "tiny-fishing" onclick="window.location.href='gameIframe/#tiny-fishing'">Tiny Fishing</li>
-		  <li id = "mario-game"onclick="window.location.href='gameIframe/#mario-game'">Mario Game</li>
-		  <li id='flappy-bird'onclick="window.location.href='gameIframe/#flappy-bird'">Flappy Bird</li>
-		  <li id='doge-miner'onclick="window.location.href='gameIframe/#doge-miner'">Doge Miner</li>
-          <li id='crossy-road'onclick="window.location.href='gameIframe/#crossy-road'">Crossy Road</li>
-          <li id = "rocket-league" onclick="window.location.href='gameIframe/#rocket-league'">Rocket League</li>
-          <li id = 'subway-surfers' onclick="window.location.href='gameIframe/#subway-surfers'">Subway Surfers</li>
-          <li id = "snow-rider" onclick="window.location.href='gameIframe/#snow-rider'">Snow Rider 3d</li>
-          <li id = "gun-spin" onclick="window.location.href='gameIframe/#gun-spin'">Gun Spin</li>
-		<li id = "launcha-libre" onclick="window.location.href='gameIframe/#launcha-libre'">Launcha Libre</li>
-        <li id="escape-the-closet" onclick="window.location.href = 'gameIframe/#escape-the-closet'"> escape the closet </li>
-<li id="riddle-transfer" onclick="window.location.href = 'gameIframe/#riddle-transfer'"> riddle transfer </li>
-<li id="escape-the-freezer" onclick="window.location.href = 'gameIframe/#escape-the-freezer'"> escape the freezer </li>
-<li id="rogue-soul-2" onclick="window.location.href = 'gameIframe/#rogue-soul-2'"> rogue soul 2 </li>
-<li id="achievement-unlocked-2" onclick="window.location.href = 'gameIframe/#achievement-unlocked-2'"> achievement unlocked 2 </li>
-<li id="escape-the-phonebooth" onclick="window.location.href = 'gameIframe/#escape-the-phonebooth'"> escape the phonebooth </li>
-<li id="rogue-soul" onclick="window.location.href = 'gameIframe/#rogue-soul'"> rogue soul </li>
-<li id="achievement-unlocked-3" onclick="window.location.href = 'gameIframe/#achievement-unlocked-3'"> achievement unlocked 3 </li>
-<li id="escape-the-shack" onclick="window.location.href = 'gameIframe/#escape-the-shack'"> escape the shack </li>
-<li id="stealing-the-diamond" onclick="window.location.href = 'gameIframe/#stealing-the-diamond'"> stealing the diamond </li>
-<li id="achievement-unlocked" onclick="window.location.href = 'gameIframe/#achievement-unlocked'"> achievement unlocked </li>
-<li id="escaping-the-prison" onclick="window.location.href = 'gameIframe/#escaping-the-prison'"> escaping the prison </li>
-<li id="stick-war" onclick="window.location.href = 'gameIframe/#stick-war'"> stick war </li>
-<li id="age-of-war-hacked" onclick="window.location.href = 'gameIframe/#age-of-war-hacked'"> age of war hacked </li>
-<li id="factory-balls" onclick="window.location.href = 'gameIframe/#factory-balls'"> factory balls </li>
-<li id="submachine-0" onclick="window.location.href = 'gameIframe/#submachine-0'"> submachine 0 </li>
-<li id="age-of-war" onclick="window.location.href = 'gameIframe/#age-of-war'"> age of war </li>
-<li id="flash-chess" onclick="window.location.href = 'gameIframe/#flash-chess'"> flash chess </li>
-<li id="submachine-10" onclick="window.location.href = 'gameIframe/#submachine-10'"> submachine 10 </li>
-<li id="bloons-td-1" onclick="window.location.href = 'gameIframe/#bloons-td-1'"> bloons td 1 </li>
-<li id="fleeing-the-complex" onclick="window.location.href = 'gameIframe/#fleeing-the-complex'"> fleeing the complex </li>
-<li id="submachine-2" onclick="window.location.href = 'gameIframe/#submachine-2'"> submachine 2 </li>
-<li id="bloons-td-2" onclick="window.location.href = 'gameIframe/#bloons-td-2'"> bloons td 2 </li>
-<li id="gun-mayhem-2" onclick="window.location.href = 'gameIframe/#gun-mayhem-2'"> gun mayhem 2 </li>
-<li id="submachine-3" onclick="window.location.href = 'gameIframe/#submachine-3'"> submachine 3 </li>
-<li id="bloons-td-3" onclick="window.location.href = 'gameIframe/#bloons-td-3'"> bloons td 3 </li>
-<li id="gun-mayhem" onclick="window.location.href = 'gameIframe/#gun-mayhem'"> gun mayhem </li>
-<li id="submachine-32-chambers" onclick="window.location.href = 'gameIframe/#submachine-32-chambers'"> submachine 32 chambers </li>
-<li id="bloons-td-4" onclick="window.location.href = 'gameIframe/#bloons-td-4'"> bloons td 4 </li>
-<li id="infiltrating-the-airship" onclick="window.location.href = 'gameIframe/#infiltrating-the-airship'"> infiltrating the airship </li>   
-<li id="submachine-4" onclick="window.location.href = 'gameIframe/#submachine-4'"> submachine 4 </li>
-<li id="bloons" onclick="window.location.href = 'gameIframe/#bloons'"> bloons </li>
-<li id="learn-to-fly-2" onclick="window.location.href = 'gameIframe/#learn-to-fly-2'"> learn to fly 2 </li>
-<li id="submachine-5" onclick="window.location.href = 'gameIframe/#submachine-5'"> submachine 5 </li>
-<li id="bloxorz" onclick="window.location.href = 'gameIframe/#bloxorz'"> bloxorz </li>
-<li id="learn-to-fly-3" onclick="window.location.href = 'gameIframe/#learn-to-fly-3'"> learn to fly 3 </li>
-<li id="submachine-6" onclick="window.location.href = 'gameIframe/#submachine-6'"> submachine 6 </li>
-<li id="breaking-the-bank" onclick="window.location.href = 'gameIframe/#breaking-the-bank'"> breaking the bank </li>
-<li id="learn-to-fly-idle" onclick="window.location.href = 'gameIframe/#learn-to-fly-idle'"> learn to fly idle </li>
-<li id="submachine-7" onclick="window.location.href = 'gameIframe/#submachine-7'"> submachine 7 </li>
-<li id="cat-ninja" onclick="window.location.href = 'gameIframe/#cat-ninja'"> cat ninja </li>
-<li id="learn-to-fly" onclick="window.location.href = 'gameIframe/#learn-to-fly'"> learn to fly </li>
-<li id="submachine-8" onclick="window.location.href = 'gameIframe/#submachine-8'"> submachine 8 </li>
-<li id="creative-kill-chamber" onclick="window.location.href = 'gameIframe/#creative-kill-chamber'"> creative kill chamber </li>
-<li id="papas-freezeria" onclick="window.location.href = 'gameIframe/#papas-freezeria'"> papas freezeria </li>
-<li id="submachine-9" onclick="window.location.href = 'gameIframe/#submachine-9'"> submachine 9 </li>
-<li id="curveball" onclick="window.location.href = 'gameIframe/#curveball'"> curveball </li>
-<li id="papas-pizzaria" onclick="window.location.href = 'gameIframe/#papas-pizzaria'"> papas pizzaria </li>
-<li id="submachine-flf" onclick="window.location.href = 'gameIframe/#submachine-flf'"> submachine flf </li>
-<li id="dont-escape-2 " onclick="window.location.href = 'gameIframe/#dont-escape-2 '"> dont escape 2  </li>
-<li id="raft-wars-2" onclick="window.location.href = 'gameIframe/#raft-wars-2'"> raft wars 2 </li>
-<li id="submachine" onclick="window.location.href = 'gameIframe/#submachine'"> submachine </li>
-<li id="dont-escape-3" onclick="window.location.href = 'gameIframe/#dont-escape-3'"> dont escape 3 </li>
-<li id="raft-wars" onclick="window.location.href = 'gameIframe/#raft-wars'"> raft wars </li>
-<li id="sugar-sugar" onclick="window.location.href = 'gameIframe/#sugar-sugar'"> sugar sugar </li>
-<li id="dont-escape" onclick="window.location.href = 'gameIframe/#dont-escape'"> dont escape </li>
-<li id="riddle-school-2" onclick="window.location.href = 'gameIframe/#riddle-school-2'"> riddle school 2 </li>
-<li id="the-impossible-quiz" onclick="window.location.href = 'gameIframe/#the-impossible-quiz'"> the impossible quiz </li>
-<li id="duck-life-2" onclick="window.location.href = 'gameIframe/#duck-life-2'"> duck life 2 </li>
-<li id="riddle-school-3" onclick="window.location.href = 'gameIframe/#riddle-school-3'"> riddle school 3 </li>
-<li id="this-is-the-only-level-2" onclick="window.location.href = 'gameIframe/#this-is-the-only-level-2'"> this is the only level 2 </li>   
-<li id="duck-life-3" onclick="window.location.href = 'gameIframe/#duck-life-3'"> duck life 3 </li>
-<li id="riddle-school-4" onclick="window.location.href = 'gameIframe/#riddle-school-4'"> riddle school 4 </li>
-<li id="this-is-the-only-level" onclick="window.location.href = 'gameIframe/#this-is-the-only-level'"> this is the only level </li>
-<li id="duck-life" onclick="window.location.href = 'gameIframe/#duck-life'"> duck life </li>
-<li id="riddle-school-5" onclick="window.location.href = 'gameIframe/#riddle-school-5'"> riddle school 5 </li>
-<li id="ultimate-chess" onclick="window.location.href = 'gameIframe/#ultimate-chess'"> ultimate chess </li>
-<li id="escape-the-bathroom" onclick="window.location.href = 'gameIframe/#escape-the-bathroom'"> escape the bathroom </li>
-<li id="riddle-school" onclick="window.location.href = 'gameIframe/#riddle-school'"> riddle school </li>
-<li id="escape-the-car" onclick="window.location.href = 'gameIframe/#escape-the-car'"> escape the car </li>
-<li id="riddle-transfer-2" onclick="window.location.href = 'gameIframe/#riddle-transfer-2'"> riddle transfer 2 </li>
-		</ul>
-        <img id= "info" src = "images/games/1v1.lol.png">
+        <div id="e">
+            <div id = "Activities">
+                <input type="text" style="display: none;" id = "answer">
+                <div id="enter"><i id = "enter"class="fa-solid fa-right-to-bracket" style="color: #ffffff; cursor:pointer; display:none;"></i> </div>
+                <div class = 'item'>
+                    <div class="container" onclick="setURLParameter('place', 'types-of-triangles')">
+                        <img src="data:image/png;base64,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" alt="" class = "actimg">
+                        <div class = 'context'>
+                            Types of Triangles
+                        </div>
+                    </div>
+                </div>
+                <div class = 'item'>
+                    <div class="container" onclick="setURLParameter('place', 'multiplication')">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZOMjGid2IlMDdTBZT2OqPysiguDLjlxk1ZQ&s" alt="" class = "actimg">
+                        <div class = 'context'>
+                            Multiplication Practice
+                        </div>
+                    </div>
+                </div>
+                <div class = 'item'>
+                    <div class="container" onclick="setURLParameter('place', 'ofo')">
+                        <img src="https://mathpapers.org/assets/images/order_of.jpg" alt="" class = "actimg">
+                        <div class = 'context'>
+                            Order of Operations
+                        </div>
+                    </div>
+                </div>
+                <div class = 'item'>
+                    <div class="container" onclick="setURLParameter('place', 'subtraction')">
+                        <img style = "translate: -4.5% 0;"src="https://mathpapers.org/assets/images/linear-equation.webp" alt="" class = "actimg">
+                        <div class = 'context'>
+                            Subtraction Practice
+                        </div>
+                    </div>
+                </div>
 
+            </div>
         </div>
-		
     </header>
-
-	<script>
-		alert("New games every Friday!")
-        const searchInput = document.getElementById('searchInput');
-        const itemList = document.getElementById('itemList');
-        const items = Array.from(itemList.getElementsByTagName('li'));
-        console.log(items)
-        console.log(items.length)
-        searchInput.addEventListener('input', function() {
-        const searchTerm = searchInput.value.toLowerCase();
-            items.forEach(function(item) {
-                const itemName = item.textContent.toLowerCase();
-                if (itemName.includes(searchTerm)) {
-                    item.classList.remove('hide');
-                } else {
-                    item.classList.add('hide');
-                }
-            });
-        });
-	</script>  
-
-    <script src="js/gameInfo.js"></script>
+    <footer>
+        <div class="container">
+            <h3>
+                mathactivities.github.io
+            </h3>
+            <h4>©2024 Math Activites</h4>
+            <ul>
+                <li onclick = "setURLParameter('place', 'about')">About</li>
+                <li onclick = "setURLParameter('place', 'contact')">Contact</li>
+                <li onclick="window.location.href = 'main.html'">Khan Academy</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>
