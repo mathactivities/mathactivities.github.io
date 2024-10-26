@@ -1,7 +1,7 @@
 * {
     margin: 0;
     font-family: poppins;
-    transition: 0.3s all;
+    transition: 0.5s all;
 }
 
 body {
@@ -91,7 +91,7 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border: aliceblue 5px solid;
+    
     background-color: #121212;
     width: 90%;
     margin-left: 40px;
@@ -113,7 +113,7 @@ header .container {
     padding: 30px;
     align-items: center;
     text-align: center;
-    width: 500px;
+    width: 75%;
     height: 50vh;
     margin-left: 30px;
     margin-right: 20px;
@@ -124,13 +124,13 @@ header .container {
 }
 
 header .container:hover {
-    height: 51vh;
-    width: 530px;
+    height: 50.5vh;
+    width: 77%;
     border: aqua 3px solid;
 }
 
 header .actimg {
-    width: calc(100/3 - 100);
+    width: 70%;
     height: 40vh;
     border-radius: 20px;
 }
@@ -168,4 +168,26 @@ footer li {
 footer li:hover {
     color: rgb(7, 86, 139);
     text-decoration: underline;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    width: 100%;
+}
+
+#info img {
+    width: 30%;
+}
+
+#info ul {
+    list-style: none;
+    line-height: 3rem;
+}
+
+sub {
+    font-size: small;
 }
