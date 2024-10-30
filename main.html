@@ -146,7 +146,7 @@
         const items = Array.from(itemList.getElementsByTagName('li'));
         console.log(items)
         console.log(items.length)
-	document.getElementById("no-of-games").textContent = items.length
+	document.getElementById("no-of-games").textContent = items.length + " GAMES"
         searchInput.addEventListener('input', function() {
         const searchTerm = searchInput.value.toLowerCase();
             items.forEach(function(item) {
