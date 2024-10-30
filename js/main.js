@@ -128,7 +128,7 @@ const links = {
     <h3>Review</h3>
     Absolute value is the distance from 0. Absolute values can also never be negative because distance can never be negative. Absolute value is shown by this symbol: |x| <br><br>
     <h3>Lesson</h3>
-    Absolute value graphs are two rays starting from the origin (0, 0) with same slopes. The default slope is 1. The default equation to graph this is: <h4>y = |x|</h4> <br>
+    Absolute value graphs are two rays starting from the origin (0, 0) with opposite slopes. The default slope is 1. The default equation to graph this is: <h4>y = |x|</h4> <br>
     An image of a default absolute value graph is this: <img src = "https://d138zd1ktt9iqe.cloudfront.net/media/seo_landing_files/mahima-absolute-value-graph-02-1604926581.png"> <br>
     <h4>Absolute value graphs can be moved by using transformations. </h4> <br>
     If a number is outside the absolute value, that is either adding or subtracting, tells us the y point of the vertex. <br>
@@ -151,7 +151,7 @@ const links = {
     Since in the original absolute value equation there was a -9 outside of the absolute value, the graph's vertex would be at (-1, -9) <br>
     <h4>Review: </h4>
     <span style = "color:rgb(0, 150, 255); cursor:pointer;" onclick = "setURLParameter('place', 'slope')"> Slope </span>
-    Now to figure out the slope of the rays in the absolute value, we just take the number in front of the x: 3. 
+    Now to figure out the slope of the right side of the graph, in the absolute value, we just take the number in front of the x: 3. On the left side will be -3.
     The final graph is this: <br>
     <img src = "images/lessons/absolute-value-graphs/absolute3.png">
 
@@ -172,6 +172,45 @@ const links = {
     Note: The variable for slope is "m". <br>
     So for the above equation, m = 1.
   `,
+
+  "exponents":
+
+    `
+    <h1>Exponents</h1>
+    Exponents are confusing and are powers of numbers. A power means that the base (the lower number) is muliplied by the power. You can say a number as an exponent by saying "[Base] to the power of [exponent]".<br><br>
+    
+    <img src = "data:image/png;base64,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">
+    
+    For example, take this expression: <br>
+    <div>
+    x<sup>10</sup>
+    </div>
+    This shows that x is being multiplied 10 times by itself. <br>
+    The expanded form is x * x * x * x * x * x * x * x * x * x <br> <br>
+    <div>That is <i><bold>preeeeety</bold></i> tedious to write for big numbers.</div>
+    That's why they created exponents. <br>
+    The thing is, people get very confused when adding, subtracting, multiplying, or even dividing exponents. <br>
+    That's why there is a rule for exponents: <br>
+    <br>
+    <ul id = "exponents">
+      <li>a<sup>x</sup> * a<sup>y</sup> = a<sup>x+y</sup></li>
+      <li>a<sup>1</sup> = a</li>
+      <li>a<sup>0</sup> = 1 </li>
+      <li>a<sup>x</sup> / a<sup>y</sup> = a<sup>x-y</sup></li>
+      <li>a<sup>-x</sup> = 1/ a<sup>x</sup></li>
+      <li>(a<sup>x</sup>)<sup>y</sup> = a<sup>xy</sup></li>
+      <li>(ab)<sup>x</sup> = a<sup>x</sup>b<sup>x</sup></li>
+      <li>(a/b)<sup>x</sup> = a<sup>x</sup>/b<sup>x</sup></li>
+    </ul>
+    
+    You might be wondering: <br>
+    <i>Why is a<sup>0</sup> = 1???</i>
+    That is because as a exponent goes higher, the base is multiplied by itself that many times. So to go down, you would have to divide by that number that many times. <br>
+    When you reach 1 as the power, as the second rule says: <br><div> a<sup>1</sup> = a </div><br>
+    So, <br >a/a = 1. <br>
+    `
+
+  ,
 }
 const linksValues = Object.values(links)
 const linksKeys = Object.keys(links)
@@ -268,3 +307,5 @@ userAnswer.addEventListener('keyup', (e) => {
 function revertColors() {
   document.getElementById('Activities').style.backgroundColor = "#121212"
 }
+
+
