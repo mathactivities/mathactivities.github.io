@@ -294,6 +294,7 @@ banner {
     position: absolute;
     z-index: 99;
     top: 15%;
+    transition: 0.3s all;
 }
 
 banner div {
@@ -305,4 +306,44 @@ banner div {
     cursor: pointer;
     margin-right: 10px;
     margin-bottom: 30px;
+}
+
+#learn-more {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 3000;
+    text-align: center;
+    background-color: #4b4b4bd9;
+    backdrop-filter: blur(10px);
+    color: white;
+    align-items: center;
+    display: none;
+}
+
+#learn-more div{
+    margin-top: 20vh;
+    width: 50vw;
+    background-color: #de1717;
+    border-radius: 50px;
+    margin-left: 25vw;
+    height: fit-content;
+    padding: 30px;
+}
+
+#learn-more div ol{
+    margin: 0;
+    padding: 0;
+}
+
+#learn-more div ol li{
+    padding:0;
+    list-style-type: none;
+}
+
+.dismiss {
+    float: right;
+    position: relative;
+    color: rgb(206, 206, 206);
+    cursor: pointer;
 }
