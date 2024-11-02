@@ -123,14 +123,22 @@ function updateItems() {
     const imagePath = 'images/games/' + itemId + '.png';
     document.getElementById(itemId).addEventListener('mousemove', (e) => {
       console.log(`Item with ID: ${itemId}, Image Path: ${imagePath}`);
+      console.log(`height ${e.clientY}, Image Path: ${window.innerHeight}`);
       info.src = imagePath
-      info.style.top = e.clientY + 250 + 'px'
-      console.log(info.style.top)
-      info.style.left = e.clientX - 470 + 'px'
+      info.style.top = e.clientY - 50 + 'px'
+      console.log(window.scrollY)
+      info.style.left = e.clientX + 50 + 'px'
       info.style.display = 'block'
-      console.log(info.style.height)
+
+      //border checkers
+      if (parseFloat(info.style.left) > window.innerWidth - 100){
+        info.style.left = e.clientX - 50 + 'px'
+      }
+      if (parseFloat(info.style.top) > window.innerHeight - 100){
+        info.style.top = e.clientY - 100 + 'px'
+      }
     });
-    document.getElementById(itemId).addEventListener('mouseleave', () => {
+    document.getElementById(itemId).addEventListener('mouseout', () => {
         info.style.display = 'none'
     });
   }
