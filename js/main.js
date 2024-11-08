@@ -211,6 +211,53 @@ const links = {
     `
 
   ,
+  'graphing-straight-lines': 
+  `
+  <h1>Graphing Straight Lines</h1>
+  The way to identify an equation of a line is by seeing if it has these three things:
+  <ul style = "list-style:disc;">
+  <li><span style = "color:rgb(0, 150, 255); cursor:pointer; text-decoration: underline;" onclick = "setURLParameter('place', 'slope')"> Slope </span></li>
+  <li>The constant</li>
+  <li>Variables x and y</li>
+  </ul>
+  <h2>First equation for Graphing: Slope Intercept Form.</h2>
+  <h3>What is Slope Intercept Form?</h3>
+  This is one of two ways to show equation of a line. 
+  <b>General Equation:</b>
+  y = mx + c <br>
+  Step by step breakdown: <br>
+  As review, the "m" in the equation is the slope. So the x value given would be multiplied by the slope of the line. The c is the constant, which is the y-intercept of the line. All of this equals the value of y. <br> 
+  <h4>Example<h4>
+  Given this graph of a line, find the slope intercept form of it. <br>
+  <img src = "images/lessons/graphing-straight-lines/img_1.png"><br>
+  The slope of this is 3, and the y-intercept is -2. The equation would be <br>
+  y = 3x - 2
+  <br><br> <br>
+  <h2>Second Equation for Graphing: Point Slope Form</h2>
+  <h3>What is Point Slope Form?</h3>
+  This is the second of two ways to show equation of a line. <br>
+  Given two points of a line, or one point with the slope of a line, you can make an equation out of it.
+  <b>General Equation:</b>
+  <div>y - y<sub>1</sub> = m(x - x<sub>1</sub>)</div> <br>
+  Step by step breakdown: <br>
+  <div>
+  The y<sub>1</sub> is the y coordinate of a point given. The m is the slope of the line. The x<sub>1</sub> is the x coordinate of the graph.
+  </div>
+  <b>Note: By simplifying an equation in point slope form, you can make it into slope intercept form.</b> <br> 
+  <h4>Example 1</h4>
+  Using these two coordinates, find the point slope form: (2, 5) and (4, 9) <br>
+  Answer: <br>
+  <ul>
+  
+  <li>Find slope: slope is 2</li>
+  <li>Choose one point to use for equation. (We will be using (2, 5), but you can use anyone)</li>
+  <li>Plug in numbers: <br> y - 5 = 2(x - 2) </li>
+  <li>(Dependent on what the question is asking, so we would end right here) Simplify: <br> y - 5 = 2x - 4 <br>y - 5 <span style = "color:red;">+ 5</span> = 2x - 4 <span style = "color:red;">+ 5</span> <br> Equation in slope intercept form: y = 2x + 1</li>
+  
+  </ul>
+  `
+  ,
+
 }
 const linksValues = Object.values(links)
 const linksKeys = Object.keys(links)
@@ -237,6 +284,7 @@ for (var i = 0; i < linksKeys.length; i++){
 for (var i = 0; i < linksKeys.length; i++){
   if (params.get('place') == linksKeys[i]){
     console.log('there')
+    document.getElementById('searchInput').classList.add('hide')
     document.getElementById('Activities').innerHTML = ` <div id = "info">${linksValues[i]} </div>`
   
   }
@@ -309,3 +357,17 @@ function revertColors() {
 }
 
 
+const searchInput = document.getElementById('searchInput');
+const itemList = document.getElementById('Activities');
+const items = Array.from(itemList.getElementsByClassName('item'));
+searchInput.addEventListener("input", () => {
+  const searchTerm = searchInput.value.toLowerCase()
+  items.forEach(function(item) {
+    const itemName = item.textContent.toLowerCase();
+    if (itemName.includes(searchTerm)) {
+        item.classList.remove('hide');
+    } else {
+        item.classList.add('hide');
+    }
+});
+})
