@@ -89,6 +89,7 @@ for (var i = 0; i < flash.length; i++){
 iframe.style.border='none';
 iframe.style.width = '100%' ;
 iframe.style.height = "100vh"
+iframe.allowFullscreen = true
 iframe.style.margin = '0';
 
 document.body.appendChild(iframe);
@@ -97,5 +98,12 @@ iframe.focus()
 
 var back = document.getElementById('return')
 back.addEventListener('click', ()=>{
-    window.location.href = '../index.html'
+    window.location.href = '../main.html'
+})
+
+var fullscreen = document.getElementById('fullscreen')
+fullscreen.addEventListener('click', ()=>{
+    if (fullscreen.requestFullscreen) {
+        iframe.requestFullscreen();
+      }
 })
