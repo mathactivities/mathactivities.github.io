@@ -2,6 +2,8 @@
     margin:0;
     padding: 0;
     font-family: poppins;
+    color: #ffffff;
+    transition: 0.3s all;
     
 }
 
@@ -33,7 +35,7 @@ header {
     width: 160px;
     height: auto;
     border-radius: 50%;
-    margin-top:30%;
+    margin-top:40%;
     margin-right: 20px;
 }
 
@@ -117,13 +119,13 @@ header {
 
 @keyframes glowing-border {
   0% {
-      border-image: linear-gradient(to bottom right, #008ce4, #cc0077) 1; /* Start gradient */
-      box-shadow: 0 0 10px rgba(0, 140, 228, 0.8), 0 0 20px rgba(204, 0, 119, 0.7); /* Initial glow */
+      border-image: linear-gradient(to bottom right, #009dff, #ff0095) 1; /* Start gradient */
+      box-shadow: 0 0 50px rgba(0, 140, 228, 0.8), 0 0 20px rgba(204, 0, 119, 0.7); /* Initial glow */
       border-radius: 50px;
   }
   100% {
       border-image: linear-gradient(to bottom right, #cc0077, #008ce4) 1; /* End gradient */
-      box-shadow: 0 0 20px rgba(0, 140, 228, 1), 0 0 30px rgba(204, 0, 119, 1); /* Enhanced glow */
+      box-shadow: 0 0 100px rgba(0, 140, 228, 1), 0 0 30px rgba(204, 0, 119, 1); /* Enhanced glow */
       border-radius: 50px;
   }
 }
@@ -188,67 +190,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-#about::after {
-    content: '';
-    position: absolute;
-    height: 5px;
-    top: 90%;
-    width: 0;
-    left: 73.5%;
-    background: linear-gradient(to right, #ff6fe2, rgb(0, 52, 143));
-    transition: width .2s;
-}
-
-#about:hover::after {
-    width: 7%;
-}
-
-#home::after {
-    content: '';
-    position: absolute;
-    height: 5px;
-    top: 90%;
-    width: 0;
-    left: 65.5%;
-    background: linear-gradient(to right, #37ff98, rgb(0, 52, 143));
-    transition: width .2s;
-}
-
-#home:hover::after {
-    width: 7%;
-}
-
-
-#about::after {
-    content: '';
-    position: absolute;
-    height: 5px;
-    top: 90%;
-    width: 0;
-    left: 73.5%;
-    background: linear-gradient(to right, #ff6fe2, rgb(0, 52, 143));
-    transition: width .2s;
-}
-
-#about:hover::after {
-    width: 7%;
-}
-
-#name::after, #logo::after {
-    content: '';
-    position: absolute;
-    height: 5px;
-    top: 90%;
-    width: 0;
-    left: 19.5%;
-    background: linear-gradient(to right, #ff3737, rgb(0, 52, 143));
-    transition: width .2s;
-}
-
-#name:hover::after, #logo:hover::after {
-    width: 15%;
 }
 
 #about:hover, #name:hover, #logo:hover, #home:hover {
@@ -346,4 +287,34 @@ banner div {
     position: relative;
     color: rgb(206, 206, 206);
     cursor: pointer;
+}
+
+#upload-section {
+    margin-top:10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+#upload-section div{
+    display: flex;
+    flex-direction: row;
+}
+
+#uploadBtn {
+    background-color: #0a7cbe;
+    border-radius: 30px;
+    height: 10vh;
+    width: 20vw;
+    cursor: pointer;
+    outline: none;
+}
+
+#uploadBtn:hover {
+    background-color: #072332;
+    font-size: 20px;
 }
