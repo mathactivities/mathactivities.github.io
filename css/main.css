@@ -85,6 +85,9 @@ header {
     background-color: #121212;
     height: fit-content;
     margin-top: 10%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #Activities {
@@ -113,7 +116,7 @@ header .container {
     padding: 30px;
     align-items: center;
     text-align: center;
-    width: 75%;
+    width: 20vw;
     height: 50vh;
     margin-left: 30px;
     margin-right: 20px;
@@ -125,8 +128,8 @@ header .container {
 
 header .container:hover {
     height: 50.5vh;
-    width: 77%;
-    border: aqua 3px solid;
+    width: 21vw;
+    background-color: rgb(0, 171, 171);
 }
 
 header .actimg {
@@ -184,10 +187,42 @@ footer li:hover {
 }
 
 #info ul {
-    list-style: none;
+    list-style: decimal;
     line-height: 3rem;
+}
+
+#info ul li {
+    padding-left: 30px;
 }
 
 sub {
     font-size: small;
+}
+
+sup {
+    font-size: smaller;
+}
+
+#searchInput {
+    background-color: #272727;
+    border-radius: 50px;
+    margin-top: 50px;
+    color: white;
+    width: 30vw;
+    height: 10vh;
+    border: 3px solid #777777;
+    outline: none;
+    font-size: medium;
+    overflow-x: visible;
+    padding:5px;
+}
+
+#searchInput:focus {
+    border: #dcdcdc 5px solid;
+    padding: 10px;
+    font-size: larger;
+}
+
+.hide {
+    display: none;
 }
