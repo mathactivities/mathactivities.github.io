@@ -12,6 +12,12 @@
       window.addEventListener("contextmenu", (e) => {
         e.preventDefault()
       })
+      window.addEventListener('keydown', (e) => {
+        if (e.key=='`'){
+            window.location.replace('https://classroom.google.com')
+        }
+      })
+      alert('Press the ` key to quickly be transported to google classroom')
     </script>
 </head>
 <body>
@@ -29,7 +35,7 @@
             List of genres:
             <ol>
                 <li>Hot</li>
-                <li>Sports</li>
+                <li>sport</li>
                 <li>Cars</li>
                 <li>Parkour</li>
                 <li>Retro</li>
@@ -44,7 +50,7 @@
     <header>
         <banner>
             <div style = "font-size: smaller;" onclick="document.getElementsByTagName('banner')[0].style.display = 'none'; document.getElementsByClassName('logo')[0].style.marginTop = '-15%'">Dismiss</div>
-            Version 3: Categonicer! You are now able to find games based on the category you search in the search bar! <br> <a href = "#" style="color: rgb(0, 250, 0);" onclick = "document.getElementById('learn-more').style.display='block'">Learn More</a>
+            <h1>Version 3.5: Categonicer! (w/ updates)</h1> You are now able to find games based on the category you search in the search bar! <br> <a href = "#" style="color: rgb(0, 250, 0);" onclick = "document.getElementById('learn-more').style.display='block'">Learn More</a>
         </banner>
         <div class = "welcome-text"> 
             <div id="right">
@@ -82,12 +88,12 @@
             <li class = "hot parkour"id = "ovo"onclick="window.location.href='gameIframe/#ovo/1.4.4'"><i class="fa-solid fa-fire" style="color: #74C0FC;"></i>OvO</li>
             <li class = "hot parkour"id = "ovo-2"onclick="window.location.href='gameIframe/#ovo/2.0.2alpha'"><i class="fa-solid fa-fire" style="color: #74C0FC;"></i>OvO 2</li>
             <li class = "hot parkour"id='tunnel-rush'onclick="window.location.href='gameIframe/#tunnel-rush'"><i class="fa-solid fa-fire" style="color: #74C0FC;"></i>Tunnel Rush</li>
-            <li class = "hot sports"id = "tiny-fishing" onclick="window.location.href='gameIframe/#tiny-fishing'"><i class="fa-solid fa-fire" style="color: #74C0FC;"></i>Tiny Fishing</li>
+            <li class = "hot sport"id = "tiny-fishing" onclick="window.location.href='gameIframe/#tiny-fishing'"><i class="fa-solid fa-fire" style="color: #74C0FC;"></i>Tiny Fishing</li>
             <li id = "mario-game retro"onclick="window.location.href='gameIframe/#mario-game'">Mario Game</li>
             <li class = "hot"id='flappy-bird'onclick="window.location.href='gameIframe/#flappy-bird'"><i class="fa-solid fa-fire" style="color: #74C0FC;"></i>Flappy Bird</li>
             <li id='doge-miner'onclick="window.location.href='gameIframe/#doge-miner'"><i class="fa-solid fa-fire" style="color: #74C0FC;"></i>Doge Miner</li>
             <li id='crossy-road'onclick="window.location.href='gameIframe/#crossy-road'"><i class="fa-solid fa-fire" style="color: #74C0FC;"></i>Crossy Road</li>
-            <li class = "hot car sports parkour"id = "rocket-league" onclick="window.location.href='gameIframe/#rocket-league'"><i class="fa-solid fa-fire" style="color: #74C0FC;"></i>Rocket League</li>
+            <li class = "hot car sport parkour"id = "rocket-league" onclick="window.location.href='gameIframe/#rocket-league'"><i class="fa-solid fa-fire" style="color: #74C0FC;"></i>Rocket League</li>
             <li class = "hot parkour"id = 'subway-surfers' onclick="window.location.href='gameIframe/#subway-surfers'"><i class="fa-solid fa-fire" style="color: #74C0FC;"></i>Subway Surfers</li>
             <li class = "hot parkour"class = "hot"id = "snow-rider" onclick="window.location.href='gameIframe/#snow-rider'"><i class="fa-solid fa-fire" style="color: #74C0FC;"></i>Snow Rider 3d</li>
             <li class = "hot"id = "gun-spin" onclick="window.location.href='gameIframe/#gun-spin'"><i class="fa-solid fa-fire" style="color: #74C0FC;"></i>Gun Spin</li>
