@@ -1,5 +1,5 @@
 var fragmentIdentifier = window.location.hash.slice(1)
-var games = ['rocket-league', 'subway-surfers', 'snow-rider', 'gun-spin']
+var games = ['rocket-league', 'subway-surfers', 'snow-rider', 'gun-spin', 'n-gon', 'soccer-random', 'basket-random', 'super-liquid-soccer']
 var flash = ['escape-the-closet'    ,      
     'riddle-transfer'              ,          
     'escape-the-freezer'         ,
