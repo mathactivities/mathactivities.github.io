@@ -161,6 +161,9 @@ header {
 
 #info {
     background-color: #484848;
+    background-image: url('');
+    background-position: center;
+    background-size: cover;
     position: fixed;
     top: 0;
     width: 7%;

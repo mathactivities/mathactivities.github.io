@@ -9,7 +9,7 @@ const listItems = document.querySelectorAll('li');
 listItems.forEach(item => {
   item.addEventListener('mousemove', (e) => {
     console.log(`Item with ID: ${item.id}, Image Path: ${'images/games/' + item.id + '.png'}`);
-      info.src = 'images/games/' + item.id + '.png'
+      info.style.backgroundImage = 'url(images/games/' + item.id + '.png)'
       info.style.top = e.clientY - 50 + 'px'
       console.log(window.scrollY)
       info.style.left = e.clientX + 30+ 'px'
