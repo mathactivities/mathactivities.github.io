@@ -321,3 +321,24 @@ banner div {
     background-color: #072332;
     font-size: 20px;
 }
+
+#settings input, button{
+    color: white;
+    background-color: #00385b;
+    border-radius: 50px;
+    outline: none;
+    border: 5px white solid;
+    width: 20%;
+    padding:10px;
+}
+
+
+#settings input:hover, button:hover{
+    background-color: #141414;
+}
+
+
+#settings button{
+    cursor: pointer;
+}
+

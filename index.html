@@ -8,8 +8,10 @@
     <link rel="shortcut icon" href="images/mathlogo.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/c0e040fd40.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel=stylesheet>
+    <script src="js/loading.js" defer></script>
 </head>
 <body>
+    <div id = "load" style="display: block; color: rgb(255, 255, 255); background-color: rgb(18, 18, 18); position: absolute; z-index: 2147483647;">Loading...</div>
     <div id  = "nav">
         <div onclick="window.location.href = 'index.html'">
             <img src="images/mathlogo.png" alt="math logo">
@@ -107,10 +109,12 @@
             <ul>
                 <li onclick = "setURLParameter('place', 'about')">About</li>
                 <li onclick = "setURLParameter('place', 'contact')">Contact</li>
-                <li style = "height: 30px; width: 100px;"onclick="window.location.href = 'main.html'">             </li>
+                <li style = "height: 30px; width: 100px;"onclick="createIframe()"></li>
             </ul>
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <script src="js/setup.js"></script>
+    <script src="js/setting.js"></script>
 </body>
 </html>

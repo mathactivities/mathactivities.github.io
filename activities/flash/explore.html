@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Math Activities</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel=stylesheet>
+    <script src="https://kit.fontawesome.com/c0e040fd40.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href= "../../images/mathlogo.png">
+    <script src="../../js/loading.js"></script>
+    <script>
+      window.addEventListener("contextmenu", (e) => {
+        e.preventDefault()
+      })
+      window.addEventListener('keydown', (e) => {
+        if (e.key=='`'){
+            window.location.replace('https://classroom.google.com')
+        }
+      })
+    </script>
+</head>
+<body>
+    <div id="links">
+        <img onclick = "index.html" id = "logo"src="../../images/gorrilamonk.png" alt="logo">
+        <span onclick = "window.location.href='main.html'" id = "name">Gorrrila Monk</span>
+        <span onclick="window.location.href = 'main.html'" id = "home"> <i class="fa-solid fa-house"></i>  Home</span>
+        <span onclick="window.location.href = 'about.html'" id = "about"> <i class="fa-solid fa-address-card"></i>   About</span>
+        <span onclick="window.location.href = 'explore.html'" id = "about"> <i class="fa-brands fa-space-awesome" style="color: #ffffff;"></i>   Explore</span>
+        <span onclick="window.location.href = 'settings.html'" id = "about"> <i class="fa-solid fa-gear" style="color: #ffffff;"></i>   Settings</span>
+    </div>
+    <header>
+        <div class = "welcome-text" style = "translate: 0 -50%; align-items: center;"> 
+            <div id="right" >
+          <div class="logo" >
+                <img src="../../images/gorrilamonk.png" draggable="false">
+          </div>
+          <h1><span>Explore</span> Gorrrilla Monk</h1>
+        </div>
+        <div id = "categonicer" style="height: fit-content; width: 100%;">
+            <div style = 'float:right; margin-top: 10%; width: 30vw; height: 30vh; align-items: center; text-align: center; padding: 30px; position: absolute; right: -30%;'>
+                <div style = "font-family: poppins; font-size: 50px; background-color: rgb(212, 18, 18); width: 100%; height: 100%;">Version 3: Categonicer</div>
+            </div>
+            <div id = "cloaker"style = 'float:right; margin-top: 10%; width: 30vw; height: 30vh; align-items: center; text-align: center; padding: 30px; position: absolute; top:150vh; right: -30%;'>
+                <div style = "font-family: poppins; font-size: 50px; background-color: rgb(212, 18, 18); width: 100%; height: 100%;">Version 4: Cloaker</div>
+            </div>
+            <div style = 'float:left; margin-top: 10%; position:absolute; right: 50%; width: 30vw; height: fit-content; align-items: center; text-align: center; padding: 30px;'>
+                <div style = "font-family: poppins; font-size: 15px; background-color: rgba(23, 155, 142, 0.21); width: 100%; height: 100%;">This is used for finding and quickly searching by genres, by putting /cat [genre]. 
+                    <br>List of genres:
+                    <ol style = "list-style: none;">
+                        <li>Hot</li>
+                        <li>sport</li>
+                        <li>Cars</li>
+                        <li>Parkour</li>
+                        <li>Retro</li>
+                        <li>Shooting</li>
+                        <li>Flash</li>
+                        <li>Singleplayer</li>
+                        <li>Multiplayer</li>
+                </ol>
+                </div> <br> <br> <br>
+                <div style = "font-family: poppins; font-size: 15px; background-color: rgba(23, 155, 142, 0.21); width: 100%; height: 100%;">You can now cloak your website. Go to the Settings section. 
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+</body>
+</html>

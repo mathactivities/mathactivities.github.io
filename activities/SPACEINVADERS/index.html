@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script src="https://kit.fontawesome.com/74303f1a52.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/space_invaders_logo.png">
+
+
+
+  <title>SPACE INVADERS</title>
+</head>
+<body>
+  <div id="gameArea">
+    <div id = "lost">You Lost <br>Score:<span></span><button id = "restart" onclick="resetGame()">Restart</button></div>
+    <span id = "score">Score: 0</span><br>
+    <button id="restart1"><i class="fa-solid fa-rotate-right"></i></button>
+    <div id = "spaceShip" alt="spaceship"></div>
+    <div id = "bullet" class="bullets"></div>
+    <div id = "bullet1" class="bullets"></div>
+    <img src="" id="enemyShips" class = "enemies">
+  </div>
+  <div id="navbar">
+    
+    <button id="signwithgle"><img src="images/google.png" alt="google image" width="50px"> <span> Sign in</span></button><br>
+    <span id = "user-name">Player1</span><br>
+    <span id = "user-highscore">Your All-Time Highscore: <br> <span id = "actual-user-score">0</span> </span>
+    <span id = "highscore"><br><span id = "tikey">World Wide Highscore: </span> <br><span id = "windowgo">0</span></span><br>
+  </div>
+  
+  <script src="preventive.js"></script>
+  <script src="shipMovementShoot.js"></script>
+  <script src="enemyResize.js"></script>
+  <script src="enemyDup.js"></script>
+  <script src="enemymovement.js"></script>
+  <script src="shipLevelUp.js"></script>
+  <script src="server.js" type = "module"></script>
+  <script>
+    var escapeCount = 1
+    window.addEventListener("keydown", (e) => {
+      if (e.key == "Escape" && escapeCount % 2 !== 0) {
+        document.getElementById("navbar").style.display = "block"
+        window.cancelAnimationFrame(window.enemyFrameId)
+        window.cancelAnimationFrame(window.playerFrameId)
+        window.removeEventListener("mousemove", mousemove)
+        document.getElementById("bullet").style.display = "none"
+        escapeCount++
+      } else if (e.key == "Escape" && escapeCount % 2 == 0){
+        document.getElementById("navbar").style.display = "none"
+        document.getElementById("bullet").style.display = "block"
+        move()
+        updatemovement()
+        escapeCount++
+      }
+    })
+  </script>
+</body>
+</html>
