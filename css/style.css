@@ -327,8 +327,9 @@ banner div {
     border-radius: 50px;
     outline: none;
     border: 5px white solid;
-    width: 20%;
+    width: 50%;
     padding:10px;
+    margin-top: 10px;
 }
 
 
@@ -341,3 +342,12 @@ banner div {
     cursor: pointer;
 }
 
+#settings select{
+    background-color: #680000;
+    width: 50%;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 5px white solid;
+    outline: none;
+}
