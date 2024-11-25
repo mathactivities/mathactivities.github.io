@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link rel="shortcut icon" href="../images/gorrilamonk.png">
-    <script src="../js/loading.js"></script>
+    <style>
+      * {
+        user-select: none;
+        margin: 0;
+      }
+      #img {
+        animation-name: spin;
+        transition: 0.3s all;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+
+      #report {
+        display: block;
+        color: aqua;
+        font-size: 25px;
+        text-decoration: underline;
+        cursor: pointer;
+        margin-top: 50px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform:rotate(0deg);
+        }
+        50% {
+          animation-duration: 0.2s;
+        }
+        100% {
+          transform:rotate(360deg);
+        }
+      }
+
+    </style>
+    <script>
+      window.addEventListener("contextmenu", (e) => {
+        e.preventDefault()
+      })
+      window.addEventListener('keydown', (e) => {
+        if (e.key=='`'){
+            window.location.replace('https://classroom.google.com')
+        }
+      })
+    </script>
   </head>
-  <body style="margin: 0; height: 100%; overflow: hidden; background-color: black;">
+  <body style="background-color: black; font-size: 60px;">
+    <div id = "load"style="color: white; font-family: Arial, Helvetica, sans-serif; font-weight: bold; position: relative;z-index: -1000; text-align: center; align-items: center; justify-content: center; display: flex; flex-direction: column; width:fit-content;"><img src = "../images/gorrilamonk.png" id = "img"style="border-radius: 50%; width: 20%; translate: 0 0;"><span id = "error"style="translate: 10% 50%;">Loading . . .</span></div>
     <img id="return" style="position: absolute; z-index: 1000; width: 50px; cursor: pointer; top:30%;" src="../images/redirect.jpg">
     <img id = "fullscreen" src="../images/fullscreen.jpg" style="position: absolute; z-index: 1000; width: 50px; height:50px; cursor: pointer; top:10%;" alt="fullscreen">
     <script src="iframe.js"></script>

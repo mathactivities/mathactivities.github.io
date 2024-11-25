@@ -1,5 +1,5 @@
 var fragmentIdentifier = window.location.hash.slice(1)
-var games = ['rocket-league', 'subway-surfers', 'snow-rider', 'gun-spin', 'n-gon', 'soccer-random', 'basket-random', 'super-liquid-soccer']
+let totalError;
 var flash = ['escape-the-closet'    ,      
     'riddle-transfer'              ,          
     'escape-the-freezer'         ,
@@ -74,11 +74,6 @@ var flash = ['escape-the-closet'    ,
 var iframe = document.createElement('iframe');
 
 iframe.src = "../activities/"+ fragmentIdentifier
-for (var i = 0; i < games.length; i++){
-    if (fragmentIdentifier == games[i]){
-        iframe.src = '../' + fragmentIdentifier
-    }
-}
 
 for (var i = 0; i < flash.length; i++){
     if (fragmentIdentifier == flash[i]){
@@ -86,13 +81,32 @@ for (var i = 0; i < flash.length; i++){
     }
 }
 
-iframe.style.border='none';
-iframe.style.width = '100%' ;
-iframe.style.height = "100vh"
-iframe.allowFullscreen = true
-iframe.style.margin = '0';
-
-document.body.appendChild(iframe);
+try {
+    iframe.style.border='none';
+    iframe.id = "iframe"
+    iframe.style.width = '100%' ;
+    iframe.style.height = "100vh"
+    iframe.allowFullscreen = true
+    iframe.style.margin = '0';
+    iframe.style.position = "absolute"
+    iframe.style.zIndex = "500"
+    iframe.style.top = "0"
+    document.body.append(iframe)
+} catch (error) {
+    document.body.remove(iframe)
+    document.getElementById("error").style.translate = "0% 0"
+    document.getElementById("error").style.fontFamily = "monospace"
+    document.getElementById("error").style.width = "70%"
+    document.getElementById("error").style.height = "fit-content"
+    document.getElementById("error").style.fontSize = "15px"
+    document.getElementById("error").style.color = "rgb(200, 0, 0)"
+    document.getElementById("error").style.fontWeight = "none"
+    document.getElementById("error").style.marginTop = "30px"
+    document.getElementById("error").style.textAlign = "left"
+    document.getElementById("error").style.backgroundColor = "rgb(200, 200, 200)"
+    totalError = error + error.stack
+    document.getElementById("error").textContent = totalError
+}
 
 iframe.focus()
 
@@ -107,3 +121,7 @@ fullscreen.addEventListener('click', ()=>{
         iframe.requestFullscreen();
       }
 })
+
+iframe.onload = function(){
+    document.getElementById("load").remove()
+}
