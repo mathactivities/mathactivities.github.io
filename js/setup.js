@@ -1,7 +1,6 @@
 function createIframe(){
-    console.log(navigator.userAgent.toLowerCase())
-    const thing = navigator.userAgent.toLowerCase()
-    if (thing.includes('cros')){
+    const thing = navigator.userAgent
+    if (thing.includes('CrOS')){
         const iframe = document.createElement("iframe")
         iframe.src = "activities/flash/main.html"
         iframe.style.width = "100%"
