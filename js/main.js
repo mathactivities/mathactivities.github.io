@@ -257,6 +257,40 @@ const links = {
   </ul>
   `
   ,
+  "absolute-values":
+  
+  `
+  
+  <h1>Absolute Values</h1>
+  Absolute values are numbers that cannot be negative. It is the transformation of one number to another, if negative. Absolute value is the distance from 0. It is represented with a "|" as the start of absolute value expression and "|" at the end. (Can be shown by pressing the key above the enter key with shift)
+  <h2>Parameters of Absolute Values</h2>
+  <div>If x > 0:    |x| = x</div>
+  <div>If x < 0:    |x| = -x</div>
+  <div>If x = 0:    |x| = 0</div>
+  <h2>Rules of Absolute Values</h2>
+  <ol>
+  Absolute values can never be negative <br> Explanation: This is because absolute value means the distance from 0. Since distance can never be negative, absolute value is therefore, always positive
+  </ol>
+  <h2>Examples with Equations</h2>
+  <b>First example:</b>
+  Equation: |x| = 5 <br>
+  When you are solving absolute values, you have to create two equations that have two answers— one is negative, and the other is positive:<br>
+  |x| = 5 --> x = 5, x = -5 <br>
+  In this case, this was a simple equation with only one step. Let's try a more complex equation: <br>
+  |x| + 3 = 5 <br>
+  <b>Step 1: Create two equations:</b>
+   <br>
+  1. x + 3 = 5 <br>2. x + 3 = -5 <br>
+  <b>Step 2: Solve both equations:</b>
+  For more info on how to solve equations, visit this page: <span style = "color:rgb(0, 150, 255); cursor:pointer;" onclick = "setURLParameter('place', 'subtraction')"> Solving Linear Equations </span>
+  If you solve the equations, the first equation's answer is x = 2, and for the second one: x = -8. <br>
+  <br><br>
+  <h2>Recap and additional notes:</h2>
+  You might sometimes get an equation like this: <br>
+  |x| = -3 <br>
+  it has no solutions (∅) because an absolute value cannot be negative. <br>
+  An absolute value is always positive.
+  `,
 
 }
 const linksValues = Object.values(links)
