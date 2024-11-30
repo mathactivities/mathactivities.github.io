@@ -40,14 +40,20 @@
 
     </style>
     <script>
-      window.addEventListener("contextmenu", (e) => {
-        e.preventDefault()
-      })
-      window.addEventListener('keydown', (e) => {
-        if (e.key=='`'){
-            window.location.replace('https://classroom.google.com')
-        }
-      })
+      window.addEventListener("keydown", (e) => {
+            if (e.ctrlKey || e.keyCode == 132){
+                e.stopPropagation();
+                e.preventDefault()
+            }
+            if (window.location.href.includes("view-source:")){
+                window.replace("//classroom.google.com")
+            }
+        })
+        window.addEventListener("click", () => {
+            if (window.location.href.includes("view-source:")){
+                window.location.replace("//classroom.google.com")
+            }
+        })
     </script>
   </head>
   <body style="background-color: black; font-size: 60px;">
