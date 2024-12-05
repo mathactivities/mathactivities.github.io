@@ -8,14 +8,13 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel=stylesheet>
     <script src="https://kit.fontawesome.com/c0e040fd40.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href= "../../images/mathlogo.png">
-    <script src="../../js/loading.js"></script>
     <script>
       window.addEventListener("contextmenu", (e) => {
         e.preventDefault()
       })
       window.addEventListener('keydown', (e) => {
         if (e.key=='`'){
-            window.location.replace('https://classroom.google.com')
+            window.top.location.replace('https://classroom.google.com')
         }
       })
     </script>
@@ -38,6 +37,15 @@
           <h1><span>Explore</span> Gorrrilla Monk</h1>
         </div>
 
+        
+        <div id="save-data" style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
+            
+            <div id = "cloaker"style = 'background-color:red; font-size:50px;'>
+            Version 7: SAVE DATA!!!!
+            </div>
+            <div style = "margin-right: 10%; background-color: #1367c77e;">This saves your data so that you can play wherever you left off! Notice: This only saves data saved in the localstorage, so there might be some games where it doesn't store.
+            </div>
+        </div>
         <div id="second-only" style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
             
             <div id = "cloaker"style = 'background-color:red; font-size:50px;'>

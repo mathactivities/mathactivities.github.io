@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const localStorageData = {};
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            console.log(key)
+            localStorageData.key = localStorage.getItem(key);
+        }
+        console.log(localStorageData)
+        console.log(JSON.stringify(localStorageData))
+    </script>
+</body>
+</html>

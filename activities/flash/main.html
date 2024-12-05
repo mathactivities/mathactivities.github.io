@@ -8,14 +8,13 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel=stylesheet>
     <script src="https://kit.fontawesome.com/c0e040fd40.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href= "../../images/mathlogo.png">
-    <script src="../../js/loading.js"></script>
     <script>
       window.addEventListener("contextmenu", (e) => {
         e.preventDefault()
       })
       window.addEventListener('keydown', (e) => {
         if (e.key=='`'){
-            window.location.replace('https://classroom.google.com')
+            window.top.location.replace('https://classroom.google.com')
         }
       })
       window.onload = function(){
@@ -35,7 +34,7 @@
     <header>
         <banner>
             <div style = "font-size: smaller;" onclick="document.getElementsByTagName('banner')[0].style.display = 'none'; document.getElementsByClassName('logo')[0].style.marginTop = '-15%'">Dismiss</div>
-            <h1>Version 6: Only Students!</h1> <br> <span onclick = "window.location.href='explore.html'" style="color: rgb(0, 255, 0); text-decoration: underline; cursor: pointer;">Learn More</span>
+            <h1>Version 7: SAVE DATA!!!!!!!!!!</h1> <br> <span onclick = "window.location.href='explore.html'" style="color: rgb(0, 255, 0); text-decoration: underline; cursor: pointer;">Learn More</span>
         </banner>
         <div class = "welcome-text"> 
             <div id="right">
@@ -173,6 +172,7 @@
     </header>
 
 	<script src = "../../js/search.js"></script>  
-    <script src="../../js/gameInfo.js"></script>
+  <script src="../../js/gameInfo.js"></script>
+  <script src="../../js/rewind.js" type = "module"></script>
 </body>
 </html>
