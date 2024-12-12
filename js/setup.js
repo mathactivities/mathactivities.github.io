@@ -34,7 +34,8 @@ async function createIframe() {
       else {
         e()
         const isNewUser = getAdditionalUserInfo(result).isNewUser
-        userSettings = setInfo(user.uid, user.email, user.photoURL, user.displayName)
+        localStorage.setItem("ISNEWUSER-MATHACTIVITIES", isNewUser)
+        userSettings = setInfo(isNewUser, user.uid, user.email, user.photoURL, user.displayName)
         localStorage.setItem("mathActivitiesSettings", JSON.stringify(userSettings))
         if (isNewUser){
           function getLocalStorageKeysAsJSON() {
@@ -82,8 +83,9 @@ function e(){
 
 document.getElementById("thingy").addEventListener("click", createIframe)
 
-function setInfo(uid, email, profilePic, displayName){
+function setInfo(isNewUser, uid, email, profilePic, displayName){
   return {
+    "mathActivitiesIsNewUser": isNewUser,
     "mathActivitiesUid": uid,
     "mathActivitiesemail": email,
     "mathActivitiesprofilePic": profilePic,
