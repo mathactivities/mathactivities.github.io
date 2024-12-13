@@ -1,6 +1,6 @@
-# ScienceFunTime.github.io
-## What is ScienceFunTime.github.io
-ScienceFunTime.github.io is a place for students to enhance their mathematical skills.
+# Mathactivities.github.io
+## What is Mathactivities.github.io
+mathactivities.github.io is a place for students to enhance their mathematical skills.
 ```
 Fork this repo, to become a genuis!
 ```
