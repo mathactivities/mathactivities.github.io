@@ -125,7 +125,10 @@ onValue(ref(db, `users/${userUID}/localstorageData`), (snapshot) => {
             words.innerHTML =  `<span style = "font-size:45px;">Welcome ${JSON.parse(localStorage.getItem("mathActivitiesSettings")).mathActivitiesdisplayName}!</span> <br><h2>Here are the upcoming events you should know:</h2> Math Activities is going to moving to a new server where unlimited storage is avaliable. So in a week or so, try to expect a few bugs here and there. Contact <a href = "mailto:mathactivities@outlook.com">mathactivities@outlook.com</a><br>`
         }
         start = true
-        }
+    }
+    else {
+        start = true
+    }
     }, {
         onlyOnce: true
 });
