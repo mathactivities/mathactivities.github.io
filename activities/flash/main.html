@@ -144,16 +144,13 @@
     <link rel = 'preload' href = '..\..\images\lessons\absolute-value-graphs\absolute3.png' as = 'image'>
     <link rel = 'preload' href = '..\..\images\lessons\graphing-straight-lines\img_1.png' as = 'image'>
     <link rel = 'preload' href = '..\..\images\lessons\graphing-straight-lines\logo.png' as = 'image'>
-    <script>
-      window.addEventListener("contextmenu", (e) => {
-        e.preventDefault()
-      })
-      window.addEventListener('keydown', (e) => {
-        if (e.key=='`'){
-            window.top.location.replace('https://classroom.google.com')
-        }
-      })
+    <script src = "../../js/preventive.js">
     </script>
+    <style>
+      #adminSettings:hover{
+        color: white;
+      }
+    </style>
 </head>
 <body>
   <div id = "thingy">
@@ -174,6 +171,7 @@
         <span onclick="window.location.href = 'about.html'" id = "about"> <i class="fa-solid fa-address-card"></i>   About</span>
         <span onclick="window.location.href = 'explore.html'" id = "about"> <i class="fa-brands fa-space-awesome" style="color: #ffffff;"></i>   Explore</span>
         <span onclick="window.location.href = 'settings.html'" id = "about"> <i class="fa-solid fa-ghost" style="color: #ffffff;"></i>   Cloak</span>
+        <span style = "cursor: pointer;" onclick="window.location.href = 'adminSettings.html'" class = "hide"id = "adminSettings"> <i class="fa-solid fa-gear" style="color: #ffffff;"></i>   Admin Settings</span>
     </div>
     <header>
         <banner>
@@ -196,6 +194,7 @@
             <li class = "hot parkour" id = "slope-3"onclick="window.location.href='../../activitiesIframe/#slope-3'">Slope 3</li>
             <li class = "hot parkour" id = "super-mario-64"onclick="window.location.href='../../activitiesIframe/#super-mario-64'">Super Mario 64</li>
             <li  class = "hot parkour shooting"id="n-gon" onclick="window.location.href = '../../activitiesIframe/#n-gon'"> n-gon </li>
+            <li  class = "hot parkour shooting"id="ice-dodo" onclick="window.location.href = '../../activitiesIframe/#ice-dodo'"> Ice Dodo </li>
             <li  class = "hot sport multiplayer singleplayer"id="soccer-random" onclick="window.location.href = '../../activitiesIframe/#soccer-random'"> soccer random </li>
             <li  class = "hot sport multiplayer singleplayer"id="basket-random" onclick="window.location.href = '../../activitiesIframe/#basket-random'"> basket random </li>
             <li  class = "hot sport singleplayer"id="super-liquid-soccer" onclick="window.location.href = '../../activitiesIframe/#super-liquid-soccer'"> FIFA 20 </li>

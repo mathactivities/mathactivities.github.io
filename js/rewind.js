@@ -1,6 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js";
-import { getDatabase, ref, set, onValue, get, off, child} from "https://www.gstatic.com/firebasejs/9.0.1/firebase-database.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo  } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"; import { getDatabase, ref, set, onValue, get, off, child} from "https://www.gstatic.com/firebasejs/9.0.1/firebase-database.js"; import { getAuth, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo  } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js";
 
 let numbers = []
 function loading(is, percent, maxpercent){
@@ -18,7 +16,8 @@ function loading(is, percent, maxpercent){
             const div = document.getElementById("loading-wait")
             
             function percentage(currentPercent, totalPercent){
-                const outOf100 = Math.round(currentPercent * 100 / totalPercent)
+                const e = currentPercent * 100
+                let outOf100 = e / totalPercent
                 numbers.push(outOf100)
                 if (outOf100 !== document.getElementById("loading-percent-timer").textContent.split("%")[0] && numbers.length > 2){
                     document.getElementById("loading-percent-timer").textContent = numbers[numbers.length - 2] + "% there"
@@ -73,16 +72,21 @@ const userUID = userInfo.mathActivitiesUid
 const db = getDatabase(app);
 const auth = getAuth(app);
 let start = false
-
+let universalMessageHTML
 if (window.top.location.href.includes("/activities/flash/")){
     window.location.replace("../../401.html")
 }
+onValue(ref(db, `universalMessageHTML`), (snapshot) => {
+    universalMessageHTML = snapshot.val()
+}, {onlyOnce: true})
+
 
 onValue(ref(db, `users/${userUID}/localstorageData`), (snapshot) => {
     if (localStorage.getItem("gatheredData") !== "true"){
         const value = snapshot.val();
         const isNewUser = localStorage.getItem("ISNEWUSER-MATHACTIVITIES")
         const parseValue = JSON.parse(value);
+        console.log(parseValue)
         const e = parseValue
         let totalString = ""
        //console.log(parseValue)
@@ -122,8 +126,9 @@ onValue(ref(db, `users/${userUID}/localstorageData`), (snapshot) => {
             words.innerHTML =  `Welcome for the first time ${JSON.parse(localStorage.getItem("mathActivitiesSettings")).mathActivitiesdisplayName}! Go to this page: <span style = "color:rgb(0, 100, 200); cursor:pointer;"onclick = "window.location.href = 'about.html'">About</span> to learn more about what this website is! If you want to explore what this website has to offer go here: <span style = "color:rgb(0, 100, 200); cursor:pointer;"onclick = "window.location.href = 'about.html'">Explore</span>`
         }
         else {
-            words.innerHTML =  `<span style = "font-size:45px;">Welcome ${JSON.parse(localStorage.getItem("mathActivitiesSettings")).mathActivitiesdisplayName}!</span> <br><h2>Here are the upcoming events you should know:</h2> Math Activities is going to moving to a new server where unlimited storage is avaliable. So in a week or so, try to expect a few bugs here and there. Contact <a href = "mailto:mathactivities@outlook.com">mathactivities@outlook.com</a><br>`
+            words.innerHTML =  `<span style = "font-size:45px;">Welcome ${JSON.parse(localStorage.getItem("mathActivitiesSettings")).mathActivitiesdisplayName}!</span> <br> ${universalMessageHTML}`
         }
+        localStorage.setItem("gatheredData", true)
         start = true
     }
     else {
@@ -150,4 +155,15 @@ setInterval(function(){
 
 function writeUserData(gta) {
     set(ref(db, `users/${userUID}/localstorageData`), gta)
+}
+
+
+const queryString = window.location.search; // Get the query string from the URL
+const urlParams = new URLSearchParams(queryString);
+
+if (window.location.href.includes("?adminUser=true")){
+    document.getElementById("adminSettings").classList.remove("hide")
+}
+else {
+    document.getElementById("adminSettings").classList.add("hide")
 }

@@ -1,6 +1,11 @@
 const url = new URL(window.location.href);
 const params = new URLSearchParams(url.search);
+params.delete("place")
 
+let activities
+window.onload = function(){
+  activities = document.getElementById("Activities").innerHTML;
+}
 
 function random(){
   return Math.floor(Math.random()*12)
@@ -111,7 +116,7 @@ const links = {
                   3
                   x=3 satisfies the equation.<br><br>
                   Remember, these steps apply to linear equations. If you encounter more complex equations involving multiple variables or higher powers, additional methods like substitution, elimination, or graphing may be needed.`, 
-  "multiplication" : `<div style = "font-size:50px;"><span id = '1'>${randomFactor1}</span> x <span id = 2>${randomFactor2}</span> = <input style = "font-size:50px; background:none; border:5px solid #ffff; color:white; border-radius:50px; padding:20px; outline:none;" type = 'text' id = 'answer' style = "display:block;"> <div id = "enter"><i class="fa-solid nine" style="color: #ffffff; cursor:pointer; display:block;"></i></div> <span id = 'number-correct'>Number Correct: 0</span> <br> <span id = 'streak'>Streak: 0</span></div>`, 
+  "multiplication" : `<div style = "font-size:50px;" onload="multiplication()"><span id = '1'>${randomFactor1}</span> x <span id = 2>${randomFactor2}</span> = <input style = "font-size:50px; background:none; border:5px solid #ffff; color:white; border-radius:50px; padding:20px; outline:none;" type = 'text' id = 'answer' style = "display:block;"> <div id = "enter"><i class="fa-solid nine" style="color: #ffffff; cursor:pointer; display:block;"></i></div> <span id = 'number-correct'>Number Correct: 0</span> <br> <span id = 'streak'>Streak: 0</span></div>`, 
   "types-of-triangles" : 
     `<h2>Based on Sides: </h2><br><br><br>
     <ul style = "margin-left:0;"><li>Equilateral Triangle: All three sides are equal in length.</li> <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb-Bxcd04xu4cr_7hhytI3H_jJ4-1e2yY6qg&s"> <br>
@@ -300,25 +305,53 @@ const linksKeys = Object.keys(links)
 
 
 function setURLParameter(paramName, paramValue) {
-params.set(paramName, paramValue);
-  
-url.search = params.toString();
-window.history.pushState({}, 'classroom.google.com', url);
-for (var i = 0; i < linksKeys.length; i++){
-  if (params.get('place') == linksKeys[i]){
-    console.log('there')
-    document.getElementById('Activities').innerHTML = `
-          <div id = "info">${linksValues[i]}</div>
-      `
-    location.reload(true)
+  params.set(paramName, paramValue);
+    
+  url.search = params.toString();
+  window.history.pushState({}, 'classroom.google.com', url);
+  for (var i = 0; i < linksKeys.length; i++){
+    if (params.get('place') == linksKeys[i]){
+      console.log('there')
+      document.getElementById('Activities').innerHTML = `
+            <div id = "info">${linksValues[i]}</div>
+        `
+      window.scrollTo({
+        top: 0,
+        left: 0,
+      });
+      document.getElementById("searchInput").classList.add("hide")
     }
   }
 }
+window.addEventListener('popstate', () => {
+  for (var i = 0; i < linksKeys.length; i++){
+    if (params.get('place') == linksKeys[i]){
+      console.log('there')
+      document.getElementById('Activities').innerHTML = `
+            <div id = "info">${linksValues[i]}</div>
+        `
+        window.scrollTo({
+          top: 0,
+          left: 0,
+        });
+    }
+    else if (params.get('place') !== linksKeys[i]){
+      document.getElementById("info").innerHTML = ""
+      document.getElementById("Activities").innerHTML = activities
+      window.scrollTo({
+        top: 0,
+        left: 0,
+      });
+    }
+    
+  }
+});
 
+
+// search bar function
 for (var i = 0; i < linksKeys.length; i++){
   if (params.get('place') == linksKeys[i]){
     console.log('there')
-    document.getElementById('searchInput').classList.add('hide')
     document.getElementById('Activities').innerHTML = ` <div id = "info">${linksValues[i]} </div>`
   
   }
@@ -332,64 +365,51 @@ for (var i = 0; i < linksKeys.length; i++){
 //   add timer for problems, add practice
 //division practice
 //   add timer for problems, add practice
-var answer = randomFactor1*randomFactor2
-console.log(randomFactor1*randomFactor2, randomFactor1, randomFactor2)
-const userAnswer = document.getElementById('answer')
-userAnswer.focus()
-const enter = document.getElementById('enter')
-enter.addEventListener('click', () => {
-  if (userAnswer.value == answer){
-    console.log('correct!')
-    randomFactor1 = random()
-    randomFactor2 = random()
-    document.getElementById('1').innerHTML = randomFactor1
-    document.getElementById('2').innerHTML = randomFactor2
-    answer = randomFactor1*randomFactor2
-    userAnswer.value = ''
-    userAnswer.focus()
-    document.getElementById('Activities').style.backgroundColor = "rgb(0, 255, 0)"
-  } else {
-    console.log('incorrect')
-  }
-})
-var correct = 0
-var streak = 0
-userAnswer.addEventListener('keyup', (e) => {
-  if (e.key == 'Enter'){
-    if (userAnswer.value == answer){
-      correct++
-      streak++
-      document.getElementById('number-correct').innerHTML = 'Number Correct: ' + correct
-      document.getElementById('streak').innerHTML = 'Correct Answer Streak: ' + streak
-      console.log('correct!')
-      randomFactor1 = random()
-      randomFactor2 = random()
-      document.getElementById('1').innerHTML = randomFactor1
-      document.getElementById('2').innerHTML = randomFactor2
-      answer = randomFactor1*randomFactor2
-      userAnswer.value = ''
-      userAnswer.focus()
-      document.getElementById('Activities').style.backgroundColor = "rgb(50, 200, 50)"
-      setTimeout(() => {
-        revertColors()
-      }, 500);
-    } else {
-      console.log('incorrect')
-      streak = 0
-      userAnswer.value = ''
-      document.getElementById('streak').innerHTML = 'Correct Answer Streak: ' + streak
-      document.getElementById('Activities').style.backgroundColor = "rgb(250, 50, 0)"
-      setTimeout(() => {
-        revertColors()
-      }, 500);
+function multiplication(){
+  var answer = randomFactor1*randomFactor2
+  console.log(randomFactor1*randomFactor2, randomFactor1, randomFactor2)
+  const userAnswer = document.getElementById('answer')
+  userAnswer.focus()
+
+  var correct = 0
+  var streak = 0
+  userAnswer.addEventListener('keyup', (e) => {
+    if (e.key == 'Enter'){
+      console.log("enter")
+      if (userAnswer.value == answer){
+        correct++
+        streak++
+        document.getElementById('number-correct').innerHTML = 'Number Correct: ' + correct
+        document.getElementById('streak').innerHTML = 'Correct Answer Streak: ' + streak
+        console.log('correct!')
+        randomFactor1 = random()
+        randomFactor2 = random()
+        document.getElementById('1').innerHTML = randomFactor1
+        document.getElementById('2').innerHTML = randomFactor2
+        answer = randomFactor1*randomFactor2
+        userAnswer.value = ''
+        userAnswer.focus()
+        document.getElementById('Activities').style.backgroundColor = "rgb(50, 200, 50)"
+        setTimeout(() => {
+          revertColors()
+        }, 500);
+      } else {
+        console.log('incorrect')
+        streak = 0
+        userAnswer.value = ''
+        document.getElementById('streak').innerHTML = 'Correct Answer Streak: ' + streak
+        document.getElementById('Activities').style.backgroundColor = "rgb(250, 50, 0)"
+        setTimeout(() => {
+          revertColors()
+        }, 500);
+      }
     }
+  })
+
+  function revertColors() {
+    document.getElementById('Activities').style.backgroundColor = "#121212"
   }
-})
-
-function revertColors() {
-  document.getElementById('Activities').style.backgroundColor = "#121212"
 }
-
 
 const searchInput = document.getElementById('searchInput');
 const itemList = document.getElementById('Activities');

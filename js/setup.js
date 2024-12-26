@@ -22,6 +22,9 @@ const db = getDatabase(app)
 async function createIframe() {
     try {
       const provider = new GoogleAuthProvider();
+      provider.setCustomParameters({
+        prompt: 'select_account' // Forces the account chooser dialog to show
+      });      
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       console.log(user.photoURL)
@@ -31,8 +34,12 @@ async function createIframe() {
       if (!user.email.includes("@stu")){
         window.location.href = "401.html"
       }
-      else {
-        e()
+      if (user.email.includes("@stu")) {
+        if (user.email == "591496@stu.sandi.net" ){
+          e(true)
+        } else {
+          e(false)
+        }
         const isNewUser = getAdditionalUserInfo(result).isNewUser
         localStorage.setItem("ISNEWUSER-MATHACTIVITIES", isNewUser)
         userSettings = setInfo(isNewUser, user.uid, user.email, user.photoURL, user.displayName)
@@ -62,10 +69,13 @@ async function createIframe() {
     }
 }
 
-function e(){
+function e(thingy){
     const thing = navigator.userAgent
     const iframe = document.createElement("iframe")
     iframe.src = "activities/flash/main.html"
+    if(thingy){
+      iframe.src = "activities/flash/main.html?adminUser=true"
+    }
     iframe.style.width = "100%"
     iframe.style.height = "100vh"
     iframe.style.border = "none"
@@ -79,6 +89,7 @@ function e(){
     });
     document.body.appendChild(iframe)
     iframe.focus()
+    
 }
 
 document.getElementById("thingy").addEventListener("click", createIframe)
@@ -89,6 +100,6 @@ function setInfo(isNewUser, uid, email, profilePic, displayName){
     "mathActivitiesUid": uid,
     "mathActivitiesemail": email,
     "mathActivitiesprofilePic": profilePic,
-    "mathActivitiesdisplayName": displayName
+    "mathActivitiesdisplayName": displayName,
   }
 }
