@@ -3,7 +3,7 @@
     padding: 0;
     font-family: poppins;
     color: #ffffff;
-    transition: 0.3s all;
+    transition: 0.5s all;
 }
 
 body {
@@ -194,11 +194,25 @@ header {
     justify-content: center;
 }
 
-#about:hover, #name:hover, #logo:hover, #home:hover {
-    color: #fff;
+#links .link:hover {
+    color: #030303;
+    cursor: pointer;
+    background-color: #009dff;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+#links span:hover{
+    color: white;
     cursor: pointer;
 }
 
+
+#accountImage {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
 
 #logo {
     width: 50px;
@@ -208,7 +222,8 @@ header {
 }
 
 #name {
-    width: 500px;
+    width: fit-content;
+    padding: 5px;
     color: #ffff;
 }
 

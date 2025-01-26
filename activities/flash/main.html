@@ -146,18 +146,13 @@
     <link rel = 'preload' href = '..\..\images\lessons\graphing-straight-lines\logo.png' as = 'image'>
     <script src = "../../js/preventive.js">
     </script>
-    <style>
-      #adminSettings:hover{
-        color: white;
-      }
-    </style>
 </head>
 <body>
   <div id = "thingy">
     <div id = "user-info">
       <div style = "font-size: smaller; cursor: pointer; float: right;" onclick="document.getElementById('thingy').style.display = 'none';">Close</div>
       <div id = "profilePic">
-        <img id = "logo-into-welcome"src = "../../images/gorrilamonk.png"alt="" width="100">
+        <img id = "logo-into-welcome"src = "../../images/gorrilamonk.png"alt="ur profile pic" width="100">
       </div>
       <div id = "ee">
         Loading
@@ -167,16 +162,17 @@
     <div id="links">
         <img onclick = "index.html" id = "logo"src="../../images/gorrilamonk.png" alt="logo">
         <span onclick = "window.location.href='main.html'" id = "name">Gorrrila Monk</span>
-        <span onclick="window.location.href = 'main.html'" id = "home"> <i class="fa-solid fa-house"></i>  Home</span>
-        <span onclick="window.location.href = 'about.html'" id = "about"> <i class="fa-solid fa-address-card"></i>   About</span>
-        <span onclick="window.location.href = 'explore.html'" id = "about"> <i class="fa-brands fa-space-awesome" style="color: #ffffff;"></i>   Explore</span>
-        <span onclick="window.location.href = 'settings.html'" id = "about"> <i class="fa-solid fa-ghost" style="color: #ffffff;"></i>   Cloak</span>
-        <span style = "cursor: pointer;" onclick="window.location.href = 'adminSettings.html'" class = "hide"id = "adminSettings"> <i class="fa-solid fa-gear" style="color: #ffffff;"></i>   Admin Settings</span>
+        <span class = "link"onclick="window.location.href = 'main.html'" id = "home">  Home</span>
+        <span class = "link"onclick="window.location.href = 'about.html'" id = "about">   About</span>
+        <span class="link"onclick="window.location.href = 'explore.html'" id = "about">    Explore</span>
+        <span class="link"onclick="window.location.href = 'settings.html'" id = "about">  Cloak</span>
+        <span class="link"style = "cursor: pointer;" onclick="window.location.href = 'adminSettings.html'" class = "hide"id = "adminSettings">   Admin Settings</span>
+        <span style = "cursor: pointer;" onclick="window.location.href = 'adminSettings.html'" id = "account"></span>
     </div>
     <header>
         <banner>
             <div style = "font-size: smaller;" onclick="document.getElementsByTagName('banner')[0].style.display = 'none'; document.getElementsByClassName('logo')[0].style.marginTop = '-15%'">Dismiss</div>
-            <h1>Version 8: Panic Mode!</h1> <br> <span onclick = "window.location.href='explore.html'" style="color: rgb(0, 255, 0); text-decoration: underline; cursor: pointer;">Learn More</span>
+            <h1>Version 9: SPEEED LOADING!</h1> <br> <span onclick = "window.location.href='explore.html'" style="color: rgb(0, 255, 0); text-decoration: underline; cursor: pointer;">Learn More</span>
         </banner>
         <div class = "welcome-text"> 
             <div id="right">
@@ -240,7 +236,7 @@
             <li class = "hot parkour"id = 'subway-surfers' onclick="window.location.href='../../activitiesIframe/#subway-surfers'">Subway Surfers</li>
             <li class = "hot parkour"class = "hot"id = "snow-rider" onclick="window.location.href='../../activitiesIframe/#snow-rider'">Snow Rider 3d</li>
             <li class = "hot"id = "gun-spin" onclick="window.location.href='../../activitiesIframe/#gun-spin'">Gun Spin</li>
-		    <li class = ""id = "launcha-libre" onclick="window.location.href='../../activitiesIframe/#launcha-libre'">Launcha Libre</li>
+		        <li class = ""id = "launcha-libre" onclick="window.location.href='../../activitiesIframe/#launcha-libre'">Launcha Libre</li>
             <li class = " flash" id="escape-the-closet" onclick="window.location.href = '../../activitiesIframe/#escape-the-closet'"> escape the closet </li>
             <li class = " flash" id="riddle-transfer" onclick="window.location.href = '../../activitiesIframe/#riddle-transfer'"> riddle transfer </li>
             <li  class = " flash"id="escape-the-freezer" onclick="window.location.href = '../../activitiesIframe/#escape-the-freezer'"> escape the freezer </li>

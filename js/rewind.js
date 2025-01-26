@@ -15,23 +15,35 @@ function loading(is, percent, maxpercent){
         if (localStorage.getItem("gatheredData") !== "true"){
             const div = document.getElementById("loading-wait")
             
-            function percentage(currentPercent, totalPercent){
-                const e = currentPercent * 100
-                let outOf100 = e / totalPercent
-                numbers.push(outOf100)
-                if (outOf100 !== document.getElementById("loading-percent-timer").textContent.split("%")[0] && numbers.length > 2){
-                    document.getElementById("loading-percent-timer").textContent = numbers[numbers.length - 2] + "% there"
-                }
-                if (currentPercent/totalPercent == 1){
-                    const the = document.createElement("button")
-                    the.textContent = "Continue"
-                    the.id = "thethethe"
-                    the.onclick = function(){
-                        document.getElementById("loading-wait").remove()
+            function percentage(currentPercent, totalPercent) {
+                const outOf100 = Math.min(Math.round((currentPercent / totalPercent) * 100), 100);
+            
+                // Debugging Output
+                console.log(
+                    `currentPercent: ${currentPercent}, totalPercent: ${totalPercent}, ` +
+                    `outOf100: ${outOf100}`
+                );
+            
+                // Update DOM
+                document.getElementById("loading-percent-timer").textContent =
+                    outOf100 + "% there";
+            
+                // Add 'Continue' button when complete
+                if (currentPercent >= totalPercent) {
+                    const continueButton = document.createElement("button");
+                    continueButton.textContent = "Continue";
+                    continueButton.id = "thethethe";
+                    continueButton.onclick = function () {
+                        document.getElementById("loading-wait").remove();
+                    };
+                    if (!document.getElementById("thethethe")) {
+                        document.getElementById("loading-wait").appendChild(continueButton);
                     }
-                    document.getElementById("loading-wait").appendChild(the)
                 }
             }
+            
+            
+            
             percentage(percent, maxpercent)
         }
     }
@@ -86,35 +98,50 @@ onValue(ref(db, `users/${userUID}/localstorageData`), (snapshot) => {
         const value = snapshot.val();
         const isNewUser = localStorage.getItem("ISNEWUSER-MATHACTIVITIES")
         const parseValue = JSON.parse(value);
-        console.log(parseValue)
-        const e = parseValue
-        let totalString = ""
-       //console.log(parseValue)
-        //console.log("Parsed Data:", Object.keys(e));
-        for (var i = 0; i < Object.keys(e).length; i++){
-           const key = Object.keys(e)[i]
-             //console.log(key)
-            totalString += parseValue[key]
-            if (localStorage.getItem("gatheredData") !== true){
-               loading(false, i, Object.keys(e).length - 1)
-            }
-            /*if (localStorage.getItem("gatheredData") !== true){
-                loadingPercentage(i + 1, Object.keys(e).length, true)
-            }*/
-              
-                
-            //console.log(totalString)
-        }
-        totalString = JSON.parse(totalString)
-        localStorage.setItem("totalstring-download", JSON.stringify(totalString))
+        console.log(JSON.parse(parseValue))
+        const totalString = JSON.parse(parseValue)
         //console.log(totalString.length)
         //console.log(Object.keys(totalString))
-        for (var i = 0; i < Object.keys(totalString).length; i++){
-            const key = Object.keys(totalString)[i]
-            //console.log(key)
-            localStorage.setItem(key, totalString[key])
-             
+        for (var i = 0; i < Object.keys(totalString).length; i++) {
+            try {
+                const key = Object.keys(totalString)[i];
+                console.log(`Processing key: ${key}, i: ${i}`);
+                localStorage.setItem(key, totalString[key]); // Check if this line causes issues
+                function percentage(currentPercent, totalPercent) {
+                    const outOf100 = Math.min(Math.round((currentPercent / totalPercent) * 100), 100);
+                
+                    // Debugging Output
+                    console.log(
+                        `currentPercent: ${currentPercent}, totalPercent: ${totalPercent}, ` +
+                        `outOf100: ${outOf100}`
+                    );
+                
+                    // Update DOM
+                    document.getElementById("loading-percent-timer").textContent =
+                        outOf100 + "% there";
+                
+                    // Add 'Continue' button when complete
+                    if (currentPercent >= totalPercent) {
+                        const continueButton = document.createElement("button");
+                        continueButton.textContent = "Continue";
+                        continueButton.id = "thethethe";
+                        continueButton.onclick = function () {
+                            document.getElementById("loading-wait").remove();
+                        };
+                        if (!document.getElementById("thethethe")) {
+                            document.getElementById("loading-wait").appendChild(continueButton);
+                        }
+                    }
+                }
+                
+                
+                
+                percentage(i + 1, Object.keys(totalString).length)
+            } catch (error) {
+                console.error(`Error at iteration ${i}:`, error);
+            }
         }
+        
         const image = document.getElementById("logo-into-welcome")
         const words = document.getElementById("ee")
         const imageSrc = JSON.parse(localStorage.getItem("mathActivitiesSettings")).mathActivitiesprofilePic
@@ -154,7 +181,12 @@ setInterval(function(){
 }, 500)
 
 function writeUserData(gta) {
-    set(ref(db, `users/${userUID}/localstorageData`), gta)
+    if (localStorage.getItem("totalstring-download") !== null){
+        set(ref(db, `users/${userUID}/localstorageData`), gta)
+    } else {
+        localStorage.removeItem("totalstring-download")
+        set(ref(db, `users/${userUID}/localstorageData`), gta)
+    }
 }
 
 
