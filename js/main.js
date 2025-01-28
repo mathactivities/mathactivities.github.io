@@ -13,6 +13,18 @@ function random(){
 var randomFactor1 = random()
 var randomFactor2 = random()
 const links = {
+  'fractions': `<h2>Adding, Subtracting, Multiplying, and Dividing Fractions</h2>
+        <p>Here are some basic operations with fractions along with examples:</p>
+        <ul>
+            <li><strong>Adding Fractions:</strong> Make the denominators the same, then add the numerators.<br>
+                Example: <span class="fraction-wrapper"><span class="fraction"><span class="numerator">1</span><span class="denominator">4</span></span> + <span class="fraction"><span class="numerator">1</span><span class="denominator">2</span></span> = <span class="fraction"><span class="numerator">1</span><span class="denominator">4</span></span> + <span class="fraction"><span class="numerator">2</span><span class="denominator">4</span></span> = <span class="fraction"><span class="numerator">3</span><span class="denominator">4</span></span></span></li>
+            <li><strong>Subtracting Fractions:</strong> Make the denominators the same, then subtract the numerators.<br>
+                Example: <span class="fraction-wrapper"><span class="fraction"><span class="numerator">3</span><span class="denominator">4</span></span> - <span class="fraction"><span class="numerator">1</span><span class="denominator">2</span></span> = <span class="fraction"><span class="numerator">3</span><span class="denominator">4</span></span> - <span class="fraction"><span class="numerator">2</span><span class="denominator">4</span></span> = <span class="fraction"><span class="numerator">1</span><span class="denominator">4</span></span></span></li>
+            <li><strong>Multiplying Fractions:</strong> Multiply the numerators together and the denominators together.<br>
+                Example: <span class="fraction-wrapper"><span class="fraction"><span class="numerator">2</span><span class="denominator">3</span></span> × <span class="fraction"><span class="numerator">3</span><span class="denominator">4</span></span> = <span class="fraction"><span class="numerator">6</span><span class="denominator">12</span></span> = <span class="fraction"><span class="numerator">1</span><span class="denominator">2</span></span></span></li>
+            <li><strong>Dividing Fractions:</strong> Flip the second fraction (reciprocal) and multiply.<br>
+                Example: <span class="fraction-wrapper"><span class="fraction"><span class="numerator">2</span><span class="denominator">3</span></span> ÷ <span class="fraction"><span class="numerator">3</span><span class="denominator">4</span></span> = <span class="fraction"><span class="numerator">2</span><span class="denominator">3</span></span> × <span class="fraction"><span class="numerator">4</span><span class="denominator">3</span></span> = <span class="fraction"><span class="numerator">8</span><span class="denominator">9</span></span></span></li>
+        </ul>`,
   'about': `<h1>About</h1><p>mathactivities.github.io is a fun and effective learning website designed for kids to enhance their math skills in an engaging way. Our platform offers a variety of interactive math activities and games that make learning mathematics enjoyable and educational.</p><br>
     <p>Through a blend of fun games, puzzles, and quizzes, MathActivities.github.io aims to make math learning an exciting adventure for kids of all ages. Our activities are designed to improve mathematical abilities and foster a love for numbers and problem-solving.</p><br>
             <p>Join us on MathActivities.github.io to explore a world of mathematical wonders and embark on a journey towards mastering math in a fun and interactive manner!</p> <br>`,

@@ -92,6 +92,8 @@ var flash = ['escape-the-closet'    ,
     'riddle-school',
     'escape-the-car' ,            
    'riddle-transfer-2']
+
+const other = ["time2", "gladis"]
 var iframe = document.createElement('iframe');
 
 iframe.src = "../activities/"+ fragmentIdentifier
@@ -99,6 +101,12 @@ iframe.src = "../activities/"+ fragmentIdentifier
 for (var i = 0; i < flash.length; i++){
     if (fragmentIdentifier == flash[i]){
         iframe.src = '../activities/flash/?game=' + fragmentIdentifier
+    }
+}
+
+for (var i = 0; i < other.length; i++){
+    if (fragmentIdentifier == other[i]){
+        iframe.src = '../other/' + fragmentIdentifier
     }
 }
 

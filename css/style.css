@@ -198,8 +198,20 @@ header {
     color: #030303;
     cursor: pointer;
     background-color: #009dff;
-    border-radius: 30px;
     padding: 10px;
+}
+
+#links .link i {
+    color: #ffff;
+}
+
+#links .link:hover i {
+    color: #000000;
+}
+
+#links .link {
+    border-radius: 30px;
+    width: max-content;
 }
 
 #links span:hover{
