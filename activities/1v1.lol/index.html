@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8" />
-    <title>1v1.LOL</title>
-    <script src="js/googleAnalytics.js"></script>
+    <title>1v1 LOL - topVAZ #3</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <!-- <script src="js/googleAnalytics.js"></script> -->
     <script src="lib/jquery.min.js"></script>
     <script src="js/IronSourceRV.js"></script>
     <script src="js/mobileRedirect.js"></script>
@@ -142,7 +143,7 @@
     <script id="unity-loader" src="UnityLoader.js"></script>
     <!--<script src="Build/UnityLoader.js"></script>-->
     <script>
-      var gameJsonUrl = "https://justbuild.nyc3.cdn.digitaloceanspaces.com/CI/1v1/Prod/162/WebGL.json"; //%gameJsonUrl
+      var gameJsonUrl = "WebGL.json"; //%gameJsonUrl
       var hostname = window.location.hostname;
       if (hostname.indexOf("dev1v1") >= 0 || hostname.indexOf("dev.1v1") >= 0 || hostname.indexOf("test1v1") >= 0 || hostname.indexOf("test.1v1") >= 0) {
         let urlParams = new URLSearchParams(window.location.search);
@@ -216,14 +217,13 @@
         }
       }
 
-      injectAdByWindowSize();
 
       var refreshNextTime = true;
 
       function showAds() {
-        document.getElementsByClassName("ad-rectangle-bottom")[0].style.display = "block";
-        document.getElementsByClassName("ad-leaderboard-bottom")[0].style.display = "block";
-        document.getElementById("adRectangleUpper").style.display = "block";
+        document.getElementsByClassName("ad-rectangle-bottom")[0].style.display = "none";
+        document.getElementsByClassName("ad-leaderboard-bottom")[0].style.display = "none";
+        document.getElementById("adRectangleUpper").style.display = "none";
 
         if (typeof counter === "undefined") {
           startCounter();
@@ -338,6 +338,6 @@
 
       fixMacUserAgent();
     </script>
-    <script src="/js/main.js"></script>
+    <!-- <script src="/js/main.js"></script> -->
   </body>
 </html>

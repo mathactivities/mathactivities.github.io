@@ -211,7 +211,9 @@ header {
 
 #links .link {
     border-radius: 30px;
-    width: max-content;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 #links span:hover{

@@ -13,6 +13,123 @@ function random(){
 var randomFactor1 = random()
 var randomFactor2 = random()
 const links = {
+  "proportions":
+  `
+  <h2>What are Proportions?</h2>
+    <em>Definition:</em> A proportion is an equation that states two ratios are equal.<br>
+    The general form is: <br>
+    \[
+    \frac{a}{b} = \frac{c}{d}
+    \]<br>
+    This means \( a \times d = b \times c \) (cross multiplication).<br><br>
+
+    <h2>Rules for Proportions</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li>1. Ratios must involve the same units (e.g., miles to miles, dollars to dollars).</li>
+      <li>2. Cross multiplication helps verify or solve a proportion.</li>
+      <li>3. Ratios can be simplified before comparison or solving.</li>
+    </ul><br>
+
+    <h2>Examples of Proportions</h2>
+    <em>Example 1:</em> Are the ratios \( \frac{2}{3} \) and \( \frac{4}{6} \) proportional?<br>
+    Cross multiply: \( 2 \times 6 = 3 \times 4 \). Since \( 12 = 12 \), they are proportional.<br><br>
+
+    <em>Example 2:</em> Solve for \( x \): \( \frac{3}{4} = \frac{x}{8} \).<br>
+    Cross multiply: \( 3 \times 8 = 4 \times x \), giving \( 24 = 4x \). Solve: \( x = 6 \).<br><br>
+
+    <h2>What are Inverse Proportions?</h2>
+    <em>Definition:</em> Two quantities are inversely proportional if their product is constant.<br>
+    The general form is: <br>
+    \[
+    x \times y = k
+    \]<br>
+    This means as \( x \) increases, \( y \) decreases, and vice versa.<br><br>
+
+    <h2>Rules for Inverse Proportions</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li>1. The product \( x \times y \) remains constant.</li>
+      <li>2. Write the equation \( x_1 \times y_1 = x_2 \times y_2 \) to compare situations.</li>
+      <li>3. The graph of an inverse proportion forms a hyperbola.</li>
+    </ul><br>
+
+    <h2>Examples of Inverse Proportions</h2>
+    <em>Example 1:</em> If \( x = 4 \), \( y = 6 \), and \( x \times y = 24 \), find \( y \) when \( x = 8 \).<br>
+    Use \( x \times y = 24 \): \( 8 \times y = 24 \), so \( y = 3 \).<br><br>
+
+    <em>Example 2:</em> A car takes 4 hours to travel a distance at 60 mph. How long will it take at 80 mph?<br>
+    \( x_1 \times y_1 = x_2 \times y_2 \): \( 60 \times 4 = 80 \times y \). Solve for \( y \): \( y = 3 \) hours.<br><br>
+
+    <h2>Key Differences Between Proportions and Inverse Proportions</h2>
+    <table border="1" style="margin: auto; text-align: center;">
+      <tr>
+        <th>Proportions</th>
+        <th>Inverse Proportions</th>
+      </tr>
+      <tr>
+        <td>Ratios are equal (\( \frac{a}{b} = \frac{c}{d} \)).</td>
+        <td>Products are constant (\( x \times y = k \)).</td>
+      </tr>
+      <tr>
+        <td>As one value increases, the other also increases.</td>
+        <td>As one value increases, the other decreases.</td>
+      </tr>
+      <tr>
+        <td>Graph is a straight line (if plotted correctly).</td>
+        <td>Graph is a hyperbola.</td>
+      </tr>
+    </table><br>
+
+    <h2>Real-World Applications</h2>
+    <em>Proportions:</em> Scaling recipes, map distances, unit conversions.<br>
+    <em>Inverse Proportions:</em> Speed vs. time, workers vs. completion time.<br><br>
+
+    <h2>Practice Problems</h2>
+    <em>1.</em> Solve: \( \frac{5}{x} = \frac{15}{12} \).<br>
+    <em>2.</em> If \( x \) and \( y \) are inversely proportional and \( x = 2 \), \( y = 10 \), find \( y \) when \( x = 5 \).<br>
+    <em>3.</em> A train travels 180 miles in 3 hours. How far will it travel in 5 hours at the same speed?<br>
+  `
+  ,
+  "functions":
+  `
+  <h2>1. Linear Functions</h2>
+    <em>Rules:</em> Represent straight lines on a graph. The general form is \( f(x) = mx + b \), where \( m \) is the slope and \( b \) is the y-intercept.<br>
+    <em>Example:</em> \( f(x) = 2x + 1 \) (a line with slope 2 and y-intercept 1).<br><br>
+
+    <h2>2. Quadratic Functions</h2>
+    <em>Rules:</em> Represent parabolas on a graph. The general form is \( f(x) = ax^2 + bx + c \), where \( a, b, \) and \( c \) are constants.<br>
+    <em>Example:</em> \( f(x) = x^2 - 4x + 3 \) (a parabola opening upwards).<br><br>
+
+    <h2>3. Exponential Functions</h2>
+    <em>Rules:</em> Have the form \( f(x) = a^x \), where \( a > 0 \) and \( a \neq 1 \).<br>
+    <em>Example:</em> \( f(x) = 2^x \) (grows exponentially as \( x \) increases).<br><br>
+
+    <h2>4. Logarithmic Functions</h2>
+    <em>Rules:</em> The inverse of exponential functions, with the general form \( f(x) = \log_a(x) \), where \( a > 0 \) and \( a \neq 1 \).<br>
+    <em>Example:</em> \( f(x) = \log_2(x) \) (the base-2 logarithm).<br><br>
+
+    <h2>5. Trigonometric Functions</h2>
+    <em>Rules:</em> Relate angles of a triangle to their ratios, including sine (\( \sin \)), cosine (\( \cos \)), and tangent (\( \tan \)).<br>
+    <em>Example:</em> \( f(x) = \sin(x) \), \( f(x) = \cos(x) \), \( f(x) = \tan(x) \) (wave-like periodic functions).<br><br>
+
+    <h2>6. Rational Functions</h2>
+    <em>Rules:</em> Formed by the ratio of two polynomials, \( f(x) = \frac{P(x)}{Q(x)} \), where \( Q(x) \neq 0 \).<br>
+    <em>Example:</em> \( f(x) = \frac{1}{x} \) (undefined at \( x = 0 \)).<br><br>
+
+    <h2>7. Piecewise Functions</h2>
+    <em>Rules:</em> Defined by different expressions for different intervals of \( x \).<br>
+    <em>Example:</em> 
+    \[
+    f(x) =
+    \begin{cases} 
+      x + 2 & \text{if } x < 0 \\
+      x^2 & \text{if } x \geq 0 
+    \end{cases}
+    \]<br><br>
+
+    <h2>8. Absolute Value Functions</h2>
+    <em>Rules:</em> Represent the distance of \( x \) from zero, \( f(x) = |x| \).<br>
+    <em>Example:</em> \( f(x) = |x - 3| \) (a V-shaped graph shifted 3 units right).<br><br>
+  `,
   'fractions': `<h2>Adding, Subtracting, Multiplying, and Dividing Fractions</h2>
         <p>Here are some basic operations with fractions along with examples:</p>
         <ul>

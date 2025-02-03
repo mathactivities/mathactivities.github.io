@@ -1,6 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"; import { getDatabase, ref, set, onValue, get, off, child} from "https://www.gstatic.com/firebasejs/9.0.1/firebase-database.js"; import { getAuth, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo  } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js";
 
-let numbers = []
 function loading(is, percent, maxpercent){
     if (is){
         if (localStorage.getItem("gatheredData") !== "true"){
@@ -93,13 +92,49 @@ onValue(ref(db, `universalMessageHTML`), (snapshot) => {
 }, {onlyOnce: true})
 
 
-onValue(ref(db, `users/${userUID}/localstorageData`), (snapshot) => {
+const getStorageData = onValue(ref(db, `users/${userUID}/localstorageData`), (snapshot) => {
     if (localStorage.getItem("gatheredData") !== "true"){
         const value = snapshot.val();
         const isNewUser = localStorage.getItem("ISNEWUSER-MATHACTIVITIES")
-        const parseValue = JSON.parse(value);
-        console.log(JSON.parse(parseValue))
-        const totalString = JSON.parse(parseValue)
+        if (value == null){
+            const image = document.getElementById("logo-into-welcome")
+            const words = document.getElementById("ee")
+            const imageSrc = JSON.parse(localStorage.getItem("mathActivitiesSettings")).mathActivitiesprofilePic
+            image.src = imageSrc
+            image.style.width = "150px"
+            image.style.height = "150px"
+            //console.log(imageSrc)
+            if (isNewUser == true){
+                words.innerHTML =  `Welcome for the first time ${JSON.parse(localStorage.getItem("mathActivitiesSettings")).mathActivitiesdisplayName}! Go to this page: <span style = "color:rgb(0, 100, 200); cursor:pointer;"onclick = "window.location.href = 'about.html'">About</span> to learn more about what this website is! If you want to explore what this website has to offer go here: <span style = "color:rgb(0, 100, 200); cursor:pointer;"onclick = "window.location.href = 'about.html'">Explore</span>`
+            }
+            else {
+                words.innerHTML =  `<span style = "font-size:45px;">Welcome ${JSON.parse(localStorage.getItem("mathActivitiesSettings")).mathActivitiesdisplayName}!</span> <br> ${universalMessageHTML}`
+            }
+            localStorage.setItem("gatheredData", true)
+            localStorage.setItem("bestScore", 0)
+            set(ref(db, `users/${userUID}/localstorageData`), getLocalStorageKeysAsJSON())
+            document.getElementById("loading-wait").remove()
+            off(ref(db, `users/${userUID}/localstorageData`), getStorageData)
+        }
+        console.log(value)
+        let parseValue = JSON.parse(value);
+        let totalString
+        if (typeof parseValue=="string"){
+            try {
+                totalString = JSON.parse(parseValue)
+            }
+            catch (error) {
+                console.error(error)
+            }
+        }
+        else if (typeof parseValue == "object") {
+            try {
+                totalString = parseValue
+            }
+            catch (error) {
+                console.error(error)
+            }
+        }
         //console.log(totalString.length)
         //console.log(Object.keys(totalString))
         for (var i = 0; i < Object.keys(totalString).length; i++) {
@@ -167,14 +202,6 @@ onValue(ref(db, `users/${userUID}/localstorageData`), (snapshot) => {
 
 setInterval(function(){
     if (start == true){
-        function getLocalStorageKeysAsJSON() {
-            const keys = {};
-            for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            keys[key] = localStorage.getItem(key);
-            }
-            return JSON.stringify(keys);
-        }
         const combinedJSON = getLocalStorageKeysAsJSON();
         writeUserData(JSON.stringify(combinedJSON))
     }
@@ -189,6 +216,14 @@ function writeUserData(gta) {
     }
 }
 
+function getLocalStorageKeysAsJSON() {
+    const keys = {};
+    for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    keys[key] = localStorage.getItem(key);
+    }
+    return JSON.stringify(keys);
+}
 
 const queryString = window.location.search; // Get the query string from the URL
 const urlParams = new URLSearchParams(queryString);

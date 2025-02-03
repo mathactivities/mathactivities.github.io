@@ -31,36 +31,38 @@ async function createIframe() {
       
 
       console.log(user)
-      if (!user.email.includes("@stu")){
+      if (!user.email.includes("@stu") && user.email !== "krupalt78@gmail.com"){
         window.location.href = "401.html"
+        console.log("not allowed")
       }
-      if (user.email.includes("@stu")) {
-        if (user.email == "591496@stu.sandi.net" ){
-          e(true)
-        } else {
-          e(false)
-        }
+      else {
+        console.log("is allowed")
         const isNewUser = getAdditionalUserInfo(result).isNewUser
         localStorage.setItem("ISNEWUSER-MATHACTIVITIES", isNewUser)
         userSettings = setInfo(isNewUser, user.uid, user.email, user.photoURL, user.displayName)
         localStorage.setItem("mathActivitiesSettings", JSON.stringify(userSettings))
         if (isNewUser){
+          localStorage.setItem("bestScore", 0)
           function getLocalStorageKeysAsJSON() {
             const keys = {};
             console.log(localStorage.length)
             for (let i = 0; i < localStorage.length; i++) {
               const key = localStorage.key(i);
-              console.log(key)
               keys[key] = localStorage.getItem(key);
               console.log(keys)
             }
             return JSON.stringify(keys);
           }
           
-          // Example usage:
           const combinedJSON = getLocalStorageKeysAsJSON();
           console.log(combinedJSON)
           set(ref(db, `users/${user.uid}/localstorageData`), combinedJSON)
+          localStorage.removeItem("bestScore")
+        }
+        if (user.email == "591496@stu.sandi.net" || user.email == "krupalt78@gmail.com"){
+          e(true)
+        } else {
+          e(false)
         }
       }
       
