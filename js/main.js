@@ -245,7 +245,7 @@ const links = {
                   3
                   x=3 satisfies the equation.<br><br>
                   Remember, these steps apply to linear equations. If you encounter more complex equations involving multiple variables or higher powers, additional methods like substitution, elimination, or graphing may be needed.`, 
-  "multiplication" : `<div style = "font-size:50px;" onload="multiplication()"><span id = '1'>${randomFactor1}</span> x <span id = 2>${randomFactor2}</span> = <input style = "font-size:50px; background:none; border:5px solid #ffff; color:white; border-radius:50px; padding:20px; outline:none;" type = 'text' id = 'answer' style = "display:block;"> <div id = "enter"><i class="fa-solid nine" style="color: #ffffff; cursor:pointer; display:block;"></i></div> <span id = 'number-correct'>Number Correct: 0</span> <br> <span id = 'streak'>Streak: 0</span></div>`, 
+  "multiplication" : `<div style = "font-size:50px;" onload="multiplication()"><span id = '1'>${randomFactor1}</span> x <span id = 2>${randomFactor2}</span> = <input style = "font-size:50px; background:none; border:5px solid #ffff; color:white; border-radius:50px; padding:20px; outline:none;" type = 'text' id = 'answer' style = "display:block;"> <div id = "enter"><i class="fa-solid nine" style="color: #ffffff; cursor:pointer; display:block;"></i></div> <span id = 'number-correct'>Number Correct: 0</span> <br> <span id = 'streak'>Streak: 0</span><br> <span id = 'totalquestions'>Total Questions Answered: 0</span></div>`, 
   "types-of-triangles" : 
     `<h2>Based on Sides: </h2><br><br><br>
     <ul style = "margin-left:0;"><li>Equilateral Triangle: All three sides are equal in length.</li> <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb-Bxcd04xu4cr_7hhytI3H_jJ4-1e2yY6qg&s"> <br>
@@ -449,6 +449,9 @@ function setURLParameter(paramName, paramValue) {
         left: 0,
       });
       document.getElementById("searchInput").classList.add("hide")
+      if (paramValue == "multiplication"){
+        multiplication()
+      }
     }
   }
 }
@@ -456,13 +459,14 @@ window.addEventListener('popstate', () => {
   for (var i = 0; i < linksKeys.length; i++){
     if (params.get('place') == linksKeys[i]){
       console.log('there')
+      console.log(params.get("place"))
       document.getElementById('Activities').innerHTML = `
             <div id = "info">${linksValues[i]}</div>
         `
-        window.scrollTo({
-          top: 0,
-          left: 0,
-        });
+      window.scrollTo({
+        top: 0,
+        left: 0,
+      });
     }
     else if (params.get('place') !== linksKeys[i]){
       document.getElementById("info").innerHTML = ""
@@ -502,9 +506,12 @@ function multiplication(){
 
   var correct = 0
   var streak = 0
+  let questions = 0
   userAnswer.addEventListener('keyup', (e) => {
     if (e.key == 'Enter'){
       console.log("enter")
+      questions++
+      document.getElementById('totalquestions').innerHTML = 'Total Questions Answered: ' + questions
       if (userAnswer.value == answer){
         correct++
         streak++

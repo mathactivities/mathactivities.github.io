@@ -153,7 +153,7 @@
             <h3>
                 mathactivities.github.io
             </h3>
-            <h4>©2024 Math Activites</h4>
+            <h4 id = "mathactivitiescopyright"></h4>
             <ul>
                 <li onclick = "setURLParameter('place', 'about')">About</li>
                 <li onclick = "setURLParameter('place', 'contact')">Contact</li>
@@ -164,5 +164,8 @@
     <script src="js/main.js"></script>
     <script src="js/setup.js" type="module"></script>
     <script src="js/setting.js"></script>
+    <script>
+        document.getElementById("mathactivitiescopyright").textContent = `©${new Date().getFullYear()} Math Activities`
+    </script>
 </body>
 </html>
