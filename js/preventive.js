@@ -24,5 +24,5 @@ window.addEventListener('keydown', (e) => {
 })
 
 if (window.location.top.includes("activities/flash/")){
-    window.location.top.replace("about:blank")
+    //window.location.top.replace("about:blank")
 }

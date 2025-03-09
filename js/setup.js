@@ -31,7 +31,7 @@ async function createIframe() {
       
 
       console.log(user)
-      if (!user.email.includes("@stu") && user.email !== "krupalt78@gmail.com"){
+      if (!user.email.includes("@stu") && user.email !== "krupalt78@gmail.com" && user.email !== "jebba272727@gmail.com"){
         window.location.href = "401.html"
         console.log("not allowed")
       }

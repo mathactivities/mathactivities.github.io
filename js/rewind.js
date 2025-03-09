@@ -85,10 +85,51 @@ const auth = getAuth(app);
 let start = false
 let universalMessageHTML
 if (window.top.location.href.includes("/activities/flash/")){
-    window.location.replace("../../401.html")
+    //window.location.replace("../../401.html")
 }
 onValue(ref(db, `universalMessageHTML`), (snapshot) => {
     universalMessageHTML = snapshot.val()
+}, {onlyOnce: true})
+
+
+const getStreak = onValue(ref(db, `users/${userUID}/streak`), (snapshot) => {
+    const val = snapshot.val()
+
+    function isNextDay(previousDate) {
+        const currentDate = new Date();
+        const prevDate = new Date(previousDate);
+        const currentWithoutTime = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+        const previousWithoutTime = new Date(prevDate.getFullYear(), prevDate.getMonth(), prevDate.getDate());
+        const nextDay = currentWithoutTime.getTime() > previousWithoutTime.getTime();
+        return nextDay
+    }
+
+    if (val == null){
+        const streakData = {
+            lastLoggedIn: new Date().toISOString().slice(0, 19),
+            streak: 1,
+        }
+        set(ref(db, `users/${userUID}/streak`), JSON.stringify(streakData))
+        document.getElementById("streak").innerHTML = `1 Day Streak <i class="fa-solid fa-fire" style="color:rgb(255, 115, 0);"></i>`
+    } else {
+        const object = JSON.parse(val)
+        let stuff
+        if (typeof object == "string"){
+            stuff = JSON.parse(object)
+        } else if (typeof object == "object"){
+            stuff = object
+        }
+        if (isNextDay(stuff.lastLoggedIn)){
+            console.log("next day")
+            stuff.streak++
+            stuff.lastLoggedIn = new Date().toISOString().slice(0, 19)
+            set(ref(db, `users/${userUID}/streak`), JSON.stringify(stuff))
+        } else {
+            console.log("not next day")
+        }
+
+        document.getElementById("streak").innerHTML = `${stuff.streak} Day Streak <i class="fa-solid fa-fire" style="color:rgb(255, 115, 0);"></i>`
+    }
 }, {onlyOnce: true})
 
 
@@ -103,7 +144,6 @@ const getStorageData = onValue(ref(db, `users/${userUID}/localstorageData`), (sn
             image.src = imageSrc
             image.style.width = "150px"
             image.style.height = "150px"
-            //console.log(imageSrc)
             if (isNewUser == true){
                 words.innerHTML =  `Welcome for the first time ${JSON.parse(localStorage.getItem("mathActivitiesSettings")).mathActivitiesdisplayName}! Go to this page: <span style = "color:rgb(0, 100, 200); cursor:pointer;"onclick = "window.location.href = 'about.html'">About</span> to learn more about what this website is! If you want to explore what this website has to offer go here: <span style = "color:rgb(0, 100, 200); cursor:pointer;"onclick = "window.location.href = 'about.html'">Explore</span>`
             }
@@ -116,6 +156,8 @@ const getStorageData = onValue(ref(db, `users/${userUID}/localstorageData`), (sn
             document.getElementById("loading-wait").remove()
             off(ref(db, `users/${userUID}/localstorageData`), getStorageData)
         }
+
+        console.log("this will not be displayed")
         console.log(value)
         let parseValue = JSON.parse(value);
         let totalString
@@ -135,9 +177,8 @@ const getStorageData = onValue(ref(db, `users/${userUID}/localstorageData`), (sn
                 console.error(error)
             }
         }
-        //console.log(totalString.length)
-        //console.log(Object.keys(totalString))
-        for (var i = 0; i < Object.keys(totalString).length; i++) {
+        const localStorageData = Object.keys(totalString).length
+        for (var i = 0; i < localStorageData; i++) {
             try {
                 const key = Object.keys(totalString)[i];
                 console.log(`Processing key: ${key}, i: ${i}`);
@@ -145,23 +186,17 @@ const getStorageData = onValue(ref(db, `users/${userUID}/localstorageData`), (sn
                 function percentage(currentPercent, totalPercent) {
                     const outOf100 = Math.min(Math.round((currentPercent / totalPercent) * 100), 100);
                 
-                    // Debugging Output
-                    console.log(
-                        `currentPercent: ${currentPercent}, totalPercent: ${totalPercent}, ` +
-                        `outOf100: ${outOf100}`
-                    );
-                
                     // Update DOM
                     document.getElementById("loading-percent-timer").textContent =
                         outOf100 + "% there";
                 
-                    // Add 'Continue' button when complete
                     if (currentPercent >= totalPercent) {
                         const continueButton = document.createElement("button");
                         continueButton.textContent = "Continue";
                         continueButton.id = "thethethe";
                         continueButton.onclick = function () {
                             document.getElementById("loading-wait").remove();
+                            alert("By going on this website, you agree to the Terms and Policies")
                         };
                         if (!document.getElementById("thethethe")) {
                             document.getElementById("loading-wait").appendChild(continueButton);
@@ -171,7 +206,7 @@ const getStorageData = onValue(ref(db, `users/${userUID}/localstorageData`), (sn
                 
                 
                 
-                percentage(i + 1, Object.keys(totalString).length)
+                percentage(i + 1, localStorageData)
             } catch (error) {
                 console.error(`Error at iteration ${i}:`, error);
             }
@@ -200,27 +235,59 @@ const getStorageData = onValue(ref(db, `users/${userUID}/localstorageData`), (sn
         onlyOnce: true
 });
 
-setInterval(function(){
+console.log("started writing")
+setInterval(setupWriting, 10000)
+
+function setupWriting(){
     if (start == true){
         const combinedJSON = getLocalStorageKeysAsJSON();
-        writeUserData(JSON.stringify(combinedJSON))
-    }
-}, 500)
-
-function writeUserData(gta) {
-    if (localStorage.getItem("totalstring-download") !== null){
-        set(ref(db, `users/${userUID}/localstorageData`), gta)
-    } else {
-        localStorage.removeItem("totalstring-download")
-        set(ref(db, `users/${userUID}/localstorageData`), gta)
+        writeUserData("localstorage", JSON.stringify(combinedJSON))
     }
 }
 
+window.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && e.key == "s"){
+        e.preventDefault()
+        setupWriting()
+    }
+})
+
+
+  let previousLocalstorage
+
+
+function writeUserData(type, value) {
+    if (type == "localstorage"){
+        if (localStorage.getItem("totalstring-download") !== null){
+            localStorage.removeItem("totalstring-download")
+            set(ref(db, `users/${userUID}/localstorageData`), value)
+        } else {
+            localStorage.removeItem("totalstring-download")
+            set(ref(db, `users/${userUID}/localstorageData`), value)
+        }
+    }
+}
+
+
+let profilePicDateURL;
+
+fetch(userInfo.mathActivitiesprofilePic)
+      .then(response => response.arrayBuffer())
+      .then(buffer => {
+          const base64String = btoa(
+              new Uint8Array(buffer)
+                  .reduce((data, byte) =>
+                      data + String.fromCharCode(byte), '')
+          );
+          profilePicDateURL = "data:image/png;base64,"+base64String
+});
+
 function getLocalStorageKeysAsJSON() {
+    localStorage.setItem("mathprofilepic", profilePicDateURL)
     const keys = {};
     for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    keys[key] = localStorage.getItem(key);
+        const key = localStorage.key(i);
+        keys[key] = localStorage.getItem(key);
     }
     return JSON.stringify(keys);
 }

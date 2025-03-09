@@ -13,6 +13,44 @@ function random(){
 var randomFactor1 = random()
 var randomFactor2 = random()
 const links = {
+  "mials":
+  `
+  Polynomials are expressions that have more than 3 terms. <br>
+  Trionomials are expressions that have three terms. <br>
+  Bionomials are expressions that have 2 terms. <br>
+  Monomials are expressions that have one term.
+  `
+  ,
+  "quadratic-equation":
+  `
+  <h1>What are quadractic equations and how to factor and solve them</h1>
+
+  Quadratic equations are trionomials, bionomials, or polynomials. Review what they are <span style = "cursor:pointer; color:blue;" onclick = "setURLParameter('place', 'mials')">HERE</span>
+  
+
+  <br>
+  <br>
+  A base quadratic trionomial equation: <span>ax<sup>2</sup> + bx + c = 0</span> <br>
+  A quadratic equation has a degree (highest power) of 2. <br>
+  A quadratic equation also can't have a = 0. <br><br>
+
+  A bionomial quadratic equation will look like this: <span>ax<sup>2</sup> + bx = 0</span> or <span>ax<sup>2</sup> + c = 0</span><br>
+
+  A monomial quadratic equation will look like this: <span>ax<sup>2</sup> = 0</span>
+
+  <h1>How to solve and factor them:</h1>
+
+  <h2>Factoring</h2>
+
+  Here's a sample equation:
+  <span>x<sup>2</sup> + 7x + 12 = 0</span><br>
+
+
+  We can see that 3x + 4x = 7x and 3 * 4 = 12.
+  the factored form: <span>(x+3)(x+4)</span>
+  This is a trionomial equation. <br>
+  `
+  ,
   "proportions":
   `
   <h2>What are Proportions?</h2>
