@@ -108,6 +108,7 @@ const getStreak = onValue(ref(db, `users/${userUID}/streak`), (snapshot) => {
         const streakData = {
             lastLoggedIn: new Date().toISOString().slice(0, 19),
             streak: 1,
+            custom: false
         }
         set(ref(db, `users/${userUID}/streak`), JSON.stringify(streakData))
         document.getElementById("streak").innerHTML = `1 Day Streak <i class="fa-solid fa-fire" style="color:rgb(255, 115, 0);"></i>`
@@ -119,9 +120,14 @@ const getStreak = onValue(ref(db, `users/${userUID}/streak`), (snapshot) => {
         } else if (typeof object == "object"){
             stuff = object
         }
+        if (stuff.custom == null){
+            stuff.custom = false
+        }
         if (isNextDay(stuff.lastLoggedIn)){
             console.log("next day")
-            stuff.streak++
+            if (stuff.custom == false){
+                stuff.streak++
+            }
             stuff.lastLoggedIn = new Date().toISOString().slice(0, 19)
             set(ref(db, `users/${userUID}/streak`), JSON.stringify(stuff))
         } else {
