@@ -93,7 +93,7 @@ var flash = ['escape-the-closet'    ,
     'escape-the-car' ,            
    'riddle-transfer-2']
 
-const other = ["time2", "gladis", "tetrs", "boxing-random", "polytrack", "superhot"]
+const other = ["time2", "gladis", "tetrs", "boxing-random", "polytrack", "superhot", "escaperoadcity2"]
 var iframe = document.createElement('iframe');
 
 iframe.src = "../activities/"+ fragmentIdentifier
