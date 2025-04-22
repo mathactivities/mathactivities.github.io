@@ -13,7 +13,59 @@ function random(){
 var randomFactor1 = random()
 var randomFactor2 = random()
 const links = {
-  "mials":
+  "quadratic-formula": `
+  
+  <h1>Quadratic Formula.</h1>
+  In the last lesson we learned about how to factor and then solve for quadratic equations and identifying the a, b, and c variables of the equation. Now we will be learning how to use the quadratic formula to solve these types of equations.
+<br><br>
+<h1>What is the Quadratic Equation?</h1>
+  <p>A quadratic equation looks like this:</p>
+  <div class="equation">ax² + bx + c = 0</div>
+  <p>Where <span class="highlight">a</span>, <span class="highlight">b</span>, and <span class="highlight">c</span> are numbers, and <span class="highlight">x</span> is what we're trying to solve for.</p>
+
+  <h2>How Do We Solve It?</h2>
+  <p>We use something called the <strong>quadratic formula</strong>:</p>
+  <div class="equation">x = (-b ± √(b² - 4ac)) / (2a)</div>
+
+  <h2>Where Did This Come From?</h2>
+  <div class="step">
+    Step 1: Start with the general form → <strong>ax² + bx + c = 0</strong>
+  </div>
+  <div class="step">
+    Step 2: Divide everything by a to make the x² alone → <strong>x² + (b/a)x + (c/a) = 0</strong>
+  </div>
+  <div class="step">
+    Step 3: We complete the square (fancy math trick!) to make a perfect square on one side.
+  </div>
+  <div class="step">
+    Step 4: After completing the square and solving, we get the formula:<br>
+    <strong>x = (-b ± √(b² - 4ac)) / (2a)</strong>
+  </div>
+
+  <h2>How to Use the Formula</h2>
+  <p>If you know <strong>a</strong>, <strong>b</strong>, and <strong>c</strong>, just plug them into the formula!</p>
+  <div class="step">
+    Example: Solve 2x² + 4x - 6 = 0<br>
+    <ul>
+      <li>a = 2</li>
+      <li>b = 4</li>
+      <li>c = -6</li>
+    </ul>
+    Plug into the formula:<br>
+    x = (-4 ± √(4² - 4×2×-6)) / (2×2) <br>
+    x = (-4 ± √(16 + 48)) / 4 <br>
+    x = (-4 ± √64) / 4 <br>
+    x = (-4 ± 8) / 4 <br>
+    So the two answers are: <br>
+    x = (4) / 4 = 1 and x = (-12) / 4 = -3
+  </div>
+
+  <h2>🎉 You're a Quadratic Pro Now!</h2>
+  <p>Just remember: if you see ax² + bx + c = 0, you can always use the formula to solve for x!</p>
+  
+  
+  `
+  ,"mials":
   `
   Polynomials are expressions that have more than 3 terms. <br>
   Trionomials are expressions that have three terms. <br>
@@ -53,78 +105,74 @@ const links = {
   ,
   "proportions":
   `
-  <h2>What are Proportions?</h2>
-    <em>Definition:</em> A proportion is an equation that states two ratios are equal.<br>
-    The general form is: <br>
-    \[
-    \frac{a}{b} = \frac{c}{d}
-    \]<br>
-    This means \( a \times d = b \times c \) (cross multiplication).<br><br>
+ <h2>What are Proportions?</h2>
+  <p><strong>Definition:</strong> A proportion is an equation that states two ratios are equal.</p>
+  <p>The general form is:</p>
+  <p>a/b = c/d</p>
+  <p>This means a × d = b × c (cross multiplication).</p>
 
-    <h2>Rules for Proportions</h2>
-    <ul style="list-style: none; padding: 0;">
-      <li>1. Ratios must involve the same units (e.g., miles to miles, dollars to dollars).</li>
-      <li>2. Cross multiplication helps verify or solve a proportion.</li>
-      <li>3. Ratios can be simplified before comparison or solving.</li>
-    </ul><br>
+  <h2>Rules for Proportions</h2>
+  <ul>
+    <li>1. Ratios must involve the same units (e.g., miles to miles, dollars to dollars).</li>
+    <li>2. Cross multiplication helps verify or solve a proportion.</li>
+    <li>3. Ratios can be simplified before comparison or solving.</li>
+  </ul>
 
-    <h2>Examples of Proportions</h2>
-    <em>Example 1:</em> Are the ratios \( \frac{2}{3} \) and \( \frac{4}{6} \) proportional?<br>
-    Cross multiply: \( 2 \times 6 = 3 \times 4 \). Since \( 12 = 12 \), they are proportional.<br><br>
+  <h2>Examples of Proportions</h2>
+  <p><strong>Example 1:</strong> Are the ratios 2/3 and 4/6 proportional?</p>
+  <p>Cross multiply: 2 × 6 = 3 × 4. Since 12 = 12, they are proportional.</p>
 
-    <em>Example 2:</em> Solve for \( x \): \( \frac{3}{4} = \frac{x}{8} \).<br>
-    Cross multiply: \( 3 \times 8 = 4 \times x \), giving \( 24 = 4x \). Solve: \( x = 6 \).<br><br>
+  <p><strong>Example 2:</strong> Solve for x: 3/4 = x/8</p>
+  <p>Cross multiply: 3 × 8 = 4 × x, giving 24 = 4x. Solve: x = 6.</p>
 
-    <h2>What are Inverse Proportions?</h2>
-    <em>Definition:</em> Two quantities are inversely proportional if their product is constant.<br>
-    The general form is: <br>
-    \[
-    x \times y = k
-    \]<br>
-    This means as \( x \) increases, \( y \) decreases, and vice versa.<br><br>
+  <h2>What are Inverse Proportions?</h2>
+  <p><strong>Definition:</strong> Two quantities are inversely proportional if their product is constant.</p>
+  <p>The general form is:</p>
+  <p>x × y = k</p>
+  <p>This means as x increases, y decreases, and vice versa.</p>
 
-    <h2>Rules for Inverse Proportions</h2>
-    <ul style="list-style: none; padding: 0;">
-      <li>1. The product \( x \times y \) remains constant.</li>
-      <li>2. Write the equation \( x_1 \times y_1 = x_2 \times y_2 \) to compare situations.</li>
-      <li>3. The graph of an inverse proportion forms a hyperbola.</li>
-    </ul><br>
+  <h2>Rules for Inverse Proportions</h2>
+  <ul>
+    <li>1. The product x × y remains constant.</li>
+    <li>2. Write the equation x₁ × y₁ = x₂ × y₂ to compare situations.</li>
+    <li>3. The graph of an inverse proportion forms a hyperbola.</li>
+  </ul>
 
-    <h2>Examples of Inverse Proportions</h2>
-    <em>Example 1:</em> If \( x = 4 \), \( y = 6 \), and \( x \times y = 24 \), find \( y \) when \( x = 8 \).<br>
-    Use \( x \times y = 24 \): \( 8 \times y = 24 \), so \( y = 3 \).<br><br>
+  <h2>Examples of Inverse Proportions</h2>
+  <p><strong>Example 1:</strong> If x = 4, y = 6, and x × y = 24, find y when x = 8.</p>
+  <p>Use x × y = 24: 8 × y = 24, so y = 3.</p>
 
-    <em>Example 2:</em> A car takes 4 hours to travel a distance at 60 mph. How long will it take at 80 mph?<br>
-    \( x_1 \times y_1 = x_2 \times y_2 \): \( 60 \times 4 = 80 \times y \). Solve for \( y \): \( y = 3 \) hours.<br><br>
+  <p><strong>Example 2:</strong> A car takes 4 hours to travel a distance at 60 mph. How long will it take at 80 mph?</p>
+  <p>x₁ × y₁ = x₂ × y₂: 60 × 4 = 80 × y. Solve for y: y = 3 hours.</p>
 
-    <h2>Key Differences Between Proportions and Inverse Proportions</h2>
-    <table border="1" style="margin: auto; text-align: center;">
-      <tr>
-        <th>Proportions</th>
-        <th>Inverse Proportions</th>
-      </tr>
-      <tr>
-        <td>Ratios are equal (\( \frac{a}{b} = \frac{c}{d} \)).</td>
-        <td>Products are constant (\( x \times y = k \)).</td>
-      </tr>
-      <tr>
-        <td>As one value increases, the other also increases.</td>
-        <td>As one value increases, the other decreases.</td>
-      </tr>
-      <tr>
-        <td>Graph is a straight line (if plotted correctly).</td>
-        <td>Graph is a hyperbola.</td>
-      </tr>
-    </table><br>
+  <h2>Key Differences Between Proportions and Inverse Proportions</h2>
+  <table border="1">
+    <tr>
+      <th>Proportions</th>
+      <th>Inverse Proportions</th>
+    </tr>
+    <tr>
+      <td>Ratios are equal (a/b = c/d).</td>
+      <td>Products are constant (x × y = k).</td>
+    </tr>
+    <tr>
+      <td>As one value increases, the other also increases.</td>
+      <td>As one value increases, the other decreases.</td>
+    </tr>
+    <tr>
+      <td>Graph is a straight line (if plotted correctly).</td>
+      <td>Graph is a hyperbola.</td>
+    </tr>
+  </table>
 
-    <h2>Real-World Applications</h2>
-    <em>Proportions:</em> Scaling recipes, map distances, unit conversions.<br>
-    <em>Inverse Proportions:</em> Speed vs. time, workers vs. completion time.<br><br>
+  <h2>Real-World Applications</h2>
+  <p><strong>Proportions:</strong> Scaling recipes, map distances, unit conversions.</p>
+  <p><strong>Inverse Proportions:</strong> Speed vs. time, workers vs. completion time.</p>
 
-    <h2>Practice Problems</h2>
-    <em>1.</em> Solve: \( \frac{5}{x} = \frac{15}{12} \).<br>
-    <em>2.</em> If \( x \) and \( y \) are inversely proportional and \( x = 2 \), \( y = 10 \), find \( y \) when \( x = 5 \).<br>
-    <em>3.</em> A train travels 180 miles in 3 hours. How far will it travel in 5 hours at the same speed?<br>
+  <h2>Practice Problems</h2>
+  <p>1. Solve: 5/x = 15/12</p>
+  <p>2. If x and y are inversely proportional and x = 2, y = 10, find y when x = 5.</p>
+  <p>3. A train travels 180 miles in 3 hours. How far will it travel in 5 hours at the same speed?</p>
   `
   ,
   "functions":
