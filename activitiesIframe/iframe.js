@@ -93,7 +93,7 @@ var flash = ['escape-the-closet'    ,
     'escape-the-car' ,            
    'riddle-transfer-2']
 
-const other = ["time2", "gladis", "tetrs", "boxing-random", "polytrack", "superhot", "escaperoadcity2", "escaperoadcity", "smashyroad", "paperio2"]
+const other = ['boxing-random', 'eag1-11-2', 'escaperoadcity', 'escaperoadcity2', 'gladis', 'monkey-mart', 'n-gon', 'only-up', 'polytrack', 'precision-client', 'retro-bowl', 'slope', 'slope-2', 'slope-3', 'snow-rider', 'soccer-random', 'subway-surfers', 'super-liquid-soccer', 'super-mario-64', 'superhot', 'tag', 'temple-run-2', 'tetrs', 'time2', 'timeshooter3', 'tiny-fishing', 'topguns.io', 'tunnel-rush', 'vex7', 'w-flash', 'x-trench-run', 'yohoho']
 var iframe = document.createElement('iframe');
 
 iframe.src = "../activities/"+ fragmentIdentifier
