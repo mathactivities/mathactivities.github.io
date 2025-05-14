@@ -13,6 +13,89 @@ function random(){
 var randomFactor1 = random()
 var randomFactor2 = random()
 const links = {
+  "pythagorean-theorem": `
+  <h1 style="color: #90caf9;">Understanding the Pythagorean Theorem</h1>
+
+  <p>
+    The <strong>Pythagorean Theorem</strong> is a fundamental rule in geometry that applies to right-angled triangles. It states that:
+  </p>
+
+  <p style="font-size: 1.4em; color: #f48fb1; font-weight: bold;">a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
+
+  <p>
+    Where:
+    <ul>
+      <li><strong>a</strong> and <strong>b</strong> are the lengths of the legs (shorter sides) of the triangle.</li>
+      <li><strong>c</strong> is the length of the hypotenuse (the longest side, opposite the right angle).</li>
+    </ul>
+  </p>
+
+  <h2 style="color: #90caf9;">Why It's Used</h2>
+  <p>
+    The Pythagorean Theorem is useful in:
+    <ul>
+      <li>Calculating distances</li>
+      <li>Architecture and construction</li>
+      <li>Navigation and mapping</li>
+      <li>Computer graphics and game development</li>
+    </ul>
+  </p>
+
+  <h2 style="color: #90caf9;">Visual Example</h2>
+  <img src="https://www.geogebra.org/resource/MFymwdZT/Zm4uGsn1SMh70sIW/material-MFymwdZT.png" alt="Pythagorean Theorem Diagram"
+    style="max-width: 100%; height: auto; border: 1px solid #444; padding: 10px; margin: 1em 0; background: #1e1e1e;" />
+
+  <h2 style="color: #90caf9;">Examples</h2>
+
+  <div style="background: #1e1e1e; padding: 1em; margin: 1em 0; border-left: 5px solid #64b5f6; box-shadow: 0 0 5px rgba(255,255,255,0.1);">
+    <h3 style="color: #81d4fa;">Example 1</h3>
+    <p>Given: a = 3, b = 4</p>
+    <p>
+      a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup><br/>
+      3<sup>2</sup> + 4<sup>2</sup> = c<sup>2</sup><br/>
+      9 + 16 = 25<br/>
+      c = √25 = <strong>5</strong>
+    </p>
+  </div>
+
+  <div style="background: #1e1e1e; padding: 1em; margin: 1em 0; border-left: 5px solid #64b5f6; box-shadow: 0 0 5px rgba(255,255,255,0.1);">
+    <h3 style="color: #81d4fa;">Example 2</h3>
+    <p>Given: a = 5, b = 12</p>
+    <p>
+      5<sup>2</sup> + 12<sup>2</sup> = c<sup>2</sup><br/>
+      25 + 144 = 169<br/>
+      c = √169 = <strong>13</strong>
+    </p>
+  </div>
+
+  <div style="background: #1e1e1e; padding: 1em; margin: 1em 0; border-left: 5px solid #64b5f6; box-shadow: 0 0 5px rgba(255,255,255,0.1);">
+    <h3 style="color: #81d4fa;">Example 3</h3>
+    <p>Given: b = 24, c = 25</p>
+    <p>
+      a<sup>2</sup> + 24<sup>2</sup> = 25<sup>2</sup><br/>
+      a<sup>2</sup> + 576 = 625<br/>
+      a<sup>2</sup> = 625 - 576 = 49<br/>
+      a = √49 = <strong>7</strong>
+    </p>
+  </div>
+
+  <div style="background: #1e1e1e; padding: 1em; margin: 1em 0; border-left: 5px solid #64b5f6; box-shadow: 0 0 5px rgba(255,255,255,0.1);">
+    <h3 style="color: #81d4fa;">Example 4</h3>
+    <p>Given: a = 8, c = 10</p>
+    <p>
+      8<sup>2</sup> + b<sup>2</sup> = 10<sup>2</sup><br/>
+      64 + b<sup>2</sup> = 100<br/>
+      b<sup>2</sup> = 36<br/>
+      b = √36 = <strong>6</strong>
+    </p>
+  </div>
+
+  <p>The Pythagorean Theorem helps us find any side of a right-angled triangle when the other two sides are known.</p>
+  
+  To learn about the Pythagorean Theorem proof, watch the video below:
+  <iframe width="1265" height="480" src="https://www.youtube.com/embed/yfGtbNgcrQ8" title="Pythagorean Theorem II (visual proof)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  `,
   "quadratic-formula": `
   
   <h1>Quadratic Formula.</h1>
