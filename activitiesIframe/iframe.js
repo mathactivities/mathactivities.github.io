@@ -95,7 +95,7 @@ var flash = ['escape-the-closet'    ,
 
 const other = ['boxing-random', 'chicken-jockey-clicker', 'eag1-11-2', 'escaperoad', 'escaperoad2', 'escaperoadcity2', 'gladis', 'monkey-mart', 'n-gon', 'only-up', 'paperio2', 'polytrack', 'precision-client', 'retro-bowl', 'slope', 'slope-2', 'slope-3', 'snow-rider', 'soccer-random', 'subway-surfers', 'super-liquid-soccer', 'super-mario-64', 'superhot', 'tag', 'temple-run-2', 'tetrs', 'time2', 'timeshooter3', 'tiny-fishing', 'topguns.io', 'tunnel-rush', 'vex7', 'w-flash', 'x-trench-run', 'yohoho']
 const external = {
-    unblocker: "https://unblocker-taupe-six.vercel.app/"
+    ublock: "https://bob-one-tau.vercel.app/"
 }
 const externalEntries = Object.entries(external)
 var iframe = document.createElement('iframe');
