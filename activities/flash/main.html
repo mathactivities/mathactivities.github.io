@@ -1,205 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/style.css">
-    <title>Math Activities</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel=stylesheet>
-    <script src="https://kit.fontawesome.com/838c29decd.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href= "../../images/mathlogo.png">
-    <script src = "../../js/preventive.js">
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/style.css">
+  <title>Math Activities</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel=stylesheet>
+  <script src="https://kit.fontawesome.com/838c29decd.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="../../images/mathlogo.png">
+  <script src="../../js/preventive.js">
+  </script>
 </head>
+
 <body>
-  <div id = "thingy">
-    <div id = "user-info">
-      <div style = "font-size: smaller; cursor: pointer; float: right;" onclick="document.getElementById('thingy').style.display = 'none';">Close</div>
-      <div id = "profilePic">
-        <img id = "logo-into-welcome"src = "../../images/gorrilamonk.png"alt="ur profile pic" width="100">
+  <div id="thingy">
+    <div id="user-info">
+      <div style="font-size: smaller; cursor: pointer; float: right;"
+        onclick="document.getElementById('thingy').style.display = 'none';">Close</div>
+      <div id="profilePic">
+        <img id="logo-into-welcome" src="../../images/gorrilamonk.png" alt="ur profile pic" width="100">
       </div>
-      <div id = "ee">
+      <div id="ee">
         Loading
       </div>
     </div>
   </div>
-    <div id="links">
-        <img onclick = "index.html" id = "logo"src="../../images/gorrilamonk.png" alt="logo">
-        <span onclick = "window.location.href='main.html'" id = "name">Gorrrila Monk</span>
-        <span class = "link"onclick="window.location.href = 'main.html'" id = "home"><i class="fa-solid fa-house" ></i></span>
-        <span class = "link"onclick="window.location.href = 'about.html'" id = "about">   <i class="fa-solid fa-address-card"></i></span>
-        <span class="link"onclick="window.location.href = 'explore.html'" id = "about">    <i class="fa-solid fa-rocket"></i></span>
-        <span class="link"onclick="window.location.href = 'settings.html'" id = "about">  <i class="fa-solid fa-ghost"></i></span>
-        <span class="link"style = "cursor: pointer;" onclick="window.location.href = 'adminSettings.html?adminUser=true'" class = "hide"id = "adminSettings">   <i class="fa-solid fa-gear"></i></span>
-        <span style = "cursor: pointer;" onclick="window.location.href = `../../activitiesIframe/#ublock`" class = "link">Unblocker</span>
-        <span style = "cursor: pointer;" onclick="window.location.href = `../../activitiesIframe/#soundboard`" class = "link">Soundboard</span>
-        <span style = "cursor: pointer;" onclick="window.location.href = 'termsandpolicies.html'" class = "link">Terms and Policies</span>
-        <span style = "cursor: pointer;" class = "link"><a href = "https://lolfactor39.github.io/chat" target="_blank">Chat</a></span>
-    </div>
-    <header>
-        <banner>
-            <div style = "font-size: smaller;" onclick="document.getElementsByTagName('banner')[0].style.display = 'none'; document.getElementsByClassName('logo')[0].style.marginTop = '-15%'">Dismiss</div>
-            <h1>Unblocker!!!! Cookie clicker updated.</h1> <br> <span onclick = "window.location.href='explore.html'" style="color: rgb(0, 255, 0); text-decoration: underline; cursor: pointer;"></span>
-        </banner>
-        <div class = "welcome-text"> 
-            <div id="right">
-          <div class="logo">
-                <img src="../../images/gorrilamonk.png" draggable="false">
-          </div>
-          <h1><span>Become a</span> Gorrrilla Monk</h1>
-          <span id = "streak" style="color: red; font-weight: bold; font-family: 'Courier New', Courier, monospace; font-size: 40px;">0 Day Streak</span> <br>
-          <span style = "font-size: 15px; color: white;">Go onto this website everyday to earn a streak!</span> <br> <br>
-          <span id = "no-of-games" style="color: #1aff00; font-weight: bold; font-family: 'Courier New', Courier, monospace; font-size: 40px;">106 GAMES</span> <br>
-                    <input type="text" id="searchInput" placeholder="Search Games...">
-			</div>   
-        
-		<ul id="itemList">
-            <li class = "hot parkour" id = "slope"onclick="window.location.href='../../activitiesIframe/#slope'">Slope</li>
-            <li class = "hot parkour multiplayer" id = "slope-2"onclick="window.location.href='../../activitiesIframe/#slope-2'">Slope 2</li>
-            <li class = "hot parkour" id = "slope-3"onclick="window.location.href='../../activitiesIframe/#slope-3'">Slope 3</li>
-            <li class = "hot parkour" id = "super-mario-64"onclick="window.location.href='../../activitiesIframe/#super-mario-64'">Super Mario 64</li>
-            <li  class = "hot parkour shooting"id="n-gon" onclick="window.location.href = '../../activitiesIframe/#n-gon'"> n-gon </li>
-            <li  class = "hot multiplayer parkour"id="boxing-random" onclick="window.location.href = '../../activitiesIframe/#boxing-random'"> boxing random </li>
-            <li  class = "hot singleplayer car parkour"id="escaperoadcity" onclick="window.location.href = '../../activitiesIframe/#escaperoad'">Escape Road</li>
-            <li  class = "hot singleplayer car parkour"id="escaperoadcity2" onclick="window.location.href = '../../activitiesIframe/#escaperoad2'">Escape Road 2</li>
-            <li  class = "hot singleplayer car parkour"id="escaperoadcitycity" onclick="window.location.href = '../../activitiesIframe/#escaperoadcity2'">Escape Road City 2</li>
-            <li  class = "hot parkour shooting"id="ice-dodo" onclick="window.location.href = '../../activitiesIframe/#ice-dodo'"> Ice Dodo </li>
-            <li  class = "hot sport multiplayer singleplayer"id="soccer-random" onclick="window.location.href = '../../activitiesIframe/#soccer-random'"> soccer random </li>
-            <li  class = "hot multiplayer"id="paperio2" onclick="window.location.href = '../../activitiesIframe/#paperio2'"> paper io 2 </li>
-            <li  class = "hot sport multiplayer singleplayer"id="basket-random" onclick="window.location.href = '../../activitiesIframe/#basket-random'"> basket random </li>
-            <li  class = "hot sport singleplayer"id="super-liquid-soccer" onclick="window.location.href = '../../activitiesIframe/#super-liquid-soccer'"> FIFA 20 </li>
-            <li  class = "hot sport singleplayer"id="superhot" onclick="window.location.href = '../../activitiesIframe/#superhot'"> Super Hot </li>
-            <li class = "hot" id = "cluster-rush"onclick="window.location.href='../../activitiesIframe/#clusterrush'">Cluster Rush</li>
-            <li class = "hot car parkour" id = "polytrack"onclick="window.location.href='../../activitiesIframe/#polytrack'">Polytrack</li>
-            <li class = "" id = "chicken-jockey-clicker"onclick="window.location.href='../../activitiesIframe/#chicken-jockey-clicker'">Chicken Jockey Clicker</li>
-            <li class = "iq tetris" id = "tetris"onclick="window.location.href='../../activitiesIframe/#tetrs'">Tetris</li>
-            <li class = "hot shooting" id = "1v1.lol"onclick="window.location.href='../../activitiesIframe/#1v1.lol'">1v1.lol</li>
-            <li class = "parkour" id = "temple-run-2"onclick="window.location.href='../../activitiesIframe/#temple-run-2'">Temple Run 2</li>
-            <li class = "hot singleplayer parkour" id = "tanuki-sunset"onclick="window.location.href='../../activitiesIframe/#Tanuki-Sunset-main'">Tanuki Sunset</li>
-            <li class = "shooting" id = "gladihoppers"onclick="window.location.href='../../activitiesIframe/#gladis'">Gladihoppers</li>
-            <li class = "hot parkour" id = "just-fall"onclick="window.location.href='../../activitiesIframe/#just-fall'">Just Fall</li>
-            <li class = "shooting" id = "timeshooter"onclick="window.location.href='../../activitiesIframe/#time2'">Timeshooter 2</li>
-            <li class = "shooting"id = "time-shooter-3"onclick="window.location.href='../../activitiesIframe/#timeshooter3'">Timeshooter 3</li>
-            <li class = "hot multiplayer"id = "yohoho"onclick="window.location.href='../../activitiesIframe/#yohoho'">Yohoho</li>
-            <li class = ""id = "cookie-clicker" onclick="window.top.location='../cookieclicker-updated'">Cookie Clicker (updated)</li>
-            <li class = "parkour"id = "x-trench-run"onclick="window.location.href='../../activitiesIframe/#x-trench-run'">X Trench Run</li>
-            <li class = "hot shooting multiplayer"id = "topguns.io"onclick="window.location.href='../../activitiesIframe/#topguns.io'">TopGuns.io</li>
-            <li class = "hot multiplayer sport"id = "basketball-legends"onclick="window.location.href='../../activitiesIframe/#basketball-legends'">Basketball Legends</li>
-            <li class = "hot parkour"id = "vex-7"onclick="window.location.href='../../activitiesIframe/#vex7'">Vex 7</li>
-            <li class = "hot multiplayer singleplayer"id= "1.8.8"onclick="window.location.href='../../activitiesIframe/#1.8.8'">Eaglercraft 1.8.8</li>
-            <li class = "hot iq"id= "block-blast"onclick="window.location.href='../../activitiesIframe/#block-blast'">Block Blast</li>
-            <li class = ""id = "stickman-hook"onclick="window.location.href='../../activitiesIframe/#stickman-hook'">Stickman Hook</li>
-            <li class = "retro"id = "retro-bowl" onclick="window.location.href='../../activitiesIframe/#retro-bowl'">Retro Bowl</li>
-            <li class = ""id = "monkey-mart"onclick="window.location.href='../../activitiesIframe/#monkey-mart'">Monkey Mart</li>
-            <li class = "hot multiplayer singleplayer"id = "1.5.2"onclick="window.location.href='../../activitiesIframe/#precision-client'">Eaglercraft with mods (1.5.2)</li>
-            <li class = "shooting multiplayer singleplayer"id = "getaway-shootout"onclick="window.location.href='../../activitiesIframe/#getaway-shootout'">Getaway Shootout</li>
-            <li class = ""id = "dune"onclick="window.location.href='../../activitiesIframe/#dune'">Dune</li>
-            <li class = "car"id = "drift-boss"onclick="window.location.href='../../activitiesIframe/#drift-boss'">Drift Boss</li>
-            <li class = ""id = "doodle-jump"onclick="window.location.href='../../activitiesIframe/#doodle-jump'">Doodle Jump</li>
-            <li class = "parkour" id = "aquapark.io"onclick="window.location.href='../../activitiesIframe/#aquapark.io'">Aquapark.io</li>
-            <li class = "hot"id = "bitlife"onclick="window.location.href='../../activitiesIframe/#bit-life'">Bit Life</li>
-            <li class = "hot"id = "2048"onclick="window.location.href='../../activitiesIframe/#2048'">2048</li>
-            <li class = "parkour"id = "chrome-dino"onclick="window.location.href='../../activitiesIframe/#chrome-dino'">Chrome Dino</li>
-            <li class = "car"id = "drive-mad"onclick="window.location.href='../../activitiesIframe/#drive-mad'">Drive Mad</li>
-            <li class = "hot shooting"id = "space-invaders"onclick="window.location.href='../../activitiesIframe/#SPACEINVADERS'">Space Invaders</li>
-            <li class = "parkour"id = "only-up"onclick="window.location.href='../../activitiesIframe/#only-up'">Only Up</li>
-            <li class = "parkour"id = "ovo"onclick="window.location.href='../../activitiesIframe/#ovo/1.4.4'">OvO</li>
-            <li class = "parkour"id = "ovo-2"onclick="window.location.href='../../activitiesIframe/#ovo/2.0.2alpha'">OvO 2</li>
-            <li class = "parkour"id='tunnel-rush'onclick="window.location.href='../../activitiesIframe/#tunnel-rush'">Tunnel Rush</li>
-            <li class = "sport"id = "tiny-fishing" onclick="window.location.href='../../activitiesIframe/#tiny-fishing'">Tiny Fishing</li>
-            <li id = "mario-game" class = "retro"onclick="window.location.href='../../activitiesIframe/#mario-game'">Mario Game</li>
-            <li class = "hot"id='flappy-bird'onclick="window.location.href='../../activitiesIframe/#flappy-bird'">Flappy Bird</li>
-            <li id='doge-miner'onclick="window.location.href='../../activitiesIframe/#doge-miner'">Doge Miner</li>
-            <li id='tag'onclick="window.location.href='../../activitiesIframe/#tag'">Tag 2, 3, 4 Players</li>
-            <li class = "parkour"id='crossy-road'onclick="window.location.href='../../activitiesIframe/#crossy-road'">Crossy Road</li>
-            <li class = "hot car sport parkour"id = "rocket-league" onclick="window.location.href='../../activitiesIframe/#rocket-league'">Rocket League</li>
-            <li class = "hot parkour"id = 'subway-surfers' onclick="window.location.href='../../activitiesIframe/#subway-surfers'">Subway Surfers</li>
-            <li class = "hot parkour"class = "hot"id = "snow-rider" onclick="window.location.href='../../activitiesIframe/#snow-rider'">Snow Rider 3d</li>
-            <li class = "hot"id = "gun-spin" onclick="window.location.href='../../activitiesIframe/#gun-spin'">Gun Spin</li>
-		        <li class = ""id = "launcha-libre" onclick="window.location.href='../../activitiesIframe/#launcha-libre'">Launcha Libre</li>
-            <li class = " flash" id="escape-the-closet" onclick="window.location.href = '../../activitiesIframe/#escape-the-closet'"> escape the closet </li>
-            <li class = " flash" id="riddle-transfer" onclick="window.location.href = '../../activitiesIframe/#riddle-transfer'"> riddle transfer </li>
-            <li  class = " flash"id="escape-the-freezer" onclick="window.location.href = '../../activitiesIframe/#escape-the-freezer'"> escape the freezer </li>
-            <li  class = " flash"id="rogue-soul-2" onclick="window.location.href = '../../activitiesIframe/#rogue-soul-2'"> rogue soul 2 </li>
-            <li class = " flash" id="achievement-unlocked-2" onclick="window.location.href = '../../activitiesIframe/#achievement-unlocked-2'"> achievement unlocked 2 </li>
-            <li class = " flash" id="escape-the-phonebooth" onclick="window.location.href = '../../activitiesIframe/#escape-the-phonebooth'"> escape the phonebooth </li>
-            <li  class = " flash"id="rogue-soul" onclick="window.location.href = '../../activitiesIframe/#rogue-soul'"> rogue soul </li>
-            <li  class = " flash"id="achievement-unlocked-3" onclick="window.location.href = '../../activitiesIframe/#achievement-unlocked-3'"> achievement unlocked 3 </li>
-            <li  class = " flash"id="escape-the-shack" onclick="window.location.href = '../../activitiesIframe/#escape-the-shack'"> escape the shack </li>
-            <li  class = " flash"id="stealing-the-diamond" onclick="window.location.href = '../../activitiesIframe/#stealing-the-diamond'"> stealing the diamond </li>
-            <li  class = " flash"id="achievement-unlocked" onclick="window.location.href = '../../activitiesIframe/#achievement-unlocked'"> achievement unlocked </li>
-            <li class = " flash" id="escaping-the-prison" onclick="window.location.href = '../../activitiesIframe/#escaping-the-prison'"> escaping the prison </li>
-            <li class = " flash" id="stick-war" onclick="window.location.href = '../../activitiesIframe/#stick-war'"> stick war </li>
-            <li class = " flash" id="age-of-war-hacked" onclick="window.location.href = '../../activitiesIframe/#age-of-war-hacked'"> age of war hacked </li>
-            <li class = " flash" id="factory-balls" onclick="window.location.href = '../../activitiesIframe/#factory-balls'"> factory balls </li>
-            <li class = " flash" id="submachine-0" onclick="window.location.href = '../../activitiesIframe/#submachine-0'"> submachine 0 </li>
-            <li class = " flash" id="age-of-war" onclick="window.location.href = '../../activitiesIframe/#age-of-war'"> age of war </li>
-            <li  class = " flash"id="flash-chess" onclick="window.location.href = '../../activitiesIframe/#flash-chess'"> flash chess </li>
-            <li  class = " flash"id="bloons-td-1" onclick="window.location.href = '../../activitiesIframe/#bloons-td-1'"> bloons td 1 </li>
-            <li  class = " flash" class = " flash"id="submachine-2" onclick="window.location.href = '../../activitiesIframe/#submachine-2'"> submachine 2 </li>
-            <li class = "hot flash" id="bloons-td-2" onclick="window.location.href = '../../activitiesIframe/#bloons-td-2'"> bloons td 2 </li>
-            <li  class = " flash"id="gun-mayhem-2" onclick="window.location.href = '../../activitiesIframe/#gun-mayhem-2'"> gun mayhem 2 </li>
-            <li  class = " flash" id="submachine-3" onclick="window.location.href = '../../activitiesIframe/#submachine-3'"> submachine 3 </li>
-            <li  class = " flash"class = "hot" id="bloons-td-3" onclick="window.location.href = '../../activitiesIframe/#bloons-td-3'"> bloons td 3 </li>
-            <li  class = " flash"class = "hot" id="gun-mayhem" onclick="window.location.href = '../../activitiesIframe/#gun-mayhem'"> gun mayhem </li>
-            <li  class = " flash"id="submachine-32-chambers" onclick="window.location.href = '../../activitiesIframe/#submachine-32-chambers'"> submachine 32 chambers </li>
-            <li  class = " flash"id="bloons-td-4" onclick="window.location.href = '../../activitiesIframe/#bloons-td-4'"> bloons td 4 </li>
-            <li  class = " flash"id="submachine-4" onclick="window.location.href = '../../activitiesIframe/#submachine-4'"> submachine 4 </li>
-            <li  class = " flash"id="bloons" onclick="window.location.href = '../../activitiesIframe/#bloons'"> bloons </li>
-            <li  class = " flash"id="learn-to-fly-2" onclick="window.location.href = '../../activitiesIframe/#learn-to-fly-2'"> learn to fly 2 </li>
-            <li  class = " flash"id="submachine-5" onclick="window.location.href = '../../activitiesIframe/#submachine-5'"> submachine 5 </li>
-            <li  class = " flash"id="bloxorz" onclick="window.location.href = '../../activitiesIframe/#bloxorz'"> bloxorz </li>
-            <li  class = " flash"id="learn-to-fly-3" onclick="window.location.href = '../../activitiesIframe/#learn-to-fly-3'"> learn to fly 3 </li>
-            <li  class = " flash"id="submachine-6" onclick="window.location.href = '../../activitiesIframe/#submachine-6'"> submachine 6 </li>
-            <li  class = " flash"id="breaking-the-bank" onclick="window.location.href = '../../activitiesIframe/#breaking-the-bank'"> breaking the bank </li>
-            <li class = "hot flash" id="learn-to-fly-idle" onclick="window.location.href = '../../activitiesIframe/#learn-to-fly-idle'"> learn to fly idle </li>
-            <li  class = " flash"id="submachine-7" onclick="window.location.href = '../../activitiesIframe/#submachine-7'"> submachine 7 </li>
-            <li  class = " flash"id="cat-ninja" onclick="window.location.href = '../../activitiesIframe/#cat-ninja'"> cat ninja </li>
-            <li  class = " flash"id="learn-to-fly" onclick="window.location.href = '../../activitiesIframe/#learn-to-fly'"> learn to fly </li>
-            <li  class = " flash"id="submachine-8" onclick="window.location.href = '../../activitiesIframe/#submachine-8'"> submachine 8 </li>
-            <li  class = " flash"id="creative-kill-chamber" onclick="window.location.href = '../../activitiesIframe/#creative-kill-chamber'"> creative kill chamber </li>
-            <li  class = " flash"class = "hot"id="papas-freezeria" onclick="window.location.href = '../../activitiesIframe/#papas-freezeria'"> papas freezeria </li>
-            <li  class = " flash"id="submachine-9" onclick="window.location.href = '../../activitiesIframe/#submachine-9'"> submachine 9 </li>
-            <li class = "hot flash"id="curveball" onclick="window.location.href = '../../activitiesIframe/#curveball'"> curveball </li>
-            <li class = "hot flash"id="papas-pizzaria" onclick="window.location.href = '../../activitiesIframe/#papas-pizzaria'"> papas pizzaria </li>
-            <li  class = " flash"id="submachine-flf" onclick="window.location.href = '../../activitiesIframe/#submachine-flf'"> submachine flf </li>
-            <li  class = " flash"id="raft-wars-2" onclick="window.location.href = '../../activitiesIframe/#raft-wars-2'"> raft wars 2 </li>
-            <li  class = " flash"id="submachine" onclick="window.location.href = '../../activitiesIframe/#submachine'"> submachine </li>
-            <li  class = " flash"id="raft-wars" onclick="window.location.href = '../../activitiesIframe/#raft-wars'"> raft wars </li>
-            <li  class = " flash"id="sugar-sugar" onclick="window.location.href = '../../activitiesIframe/#sugar-sugar'"> sugar sugar </li>
-            <li  class = " flash"id="riddle-school-2" onclick="window.location.href = '../../activitiesIframe/#riddle-school-2'"> riddle school 2 </li>
-            <li  class = " flash"id="the-impossible-quiz" onclick="window.location.href = '../../activitiesIframe/#the-impossible-quiz'"> the impossible quiz </li>
-            <li  class = " flash"id="duck-life-2" onclick="window.location.href = '../../activitiesIframe/#duck-life-2'"> duck life 2 </li>
-            <li  class = " flash"id="riddle-school-3" onclick="window.location.href = '../../activitiesIframe/#riddle-school-3'"> riddle school 3 </li>
-            <li  class = " flash"id="this-is-the-only-level-2" onclick="window.location.href = '../../activitiesIframe/#this-is-the-only-level-2'"> this is the only level 2 </li>   
-            <li  class = " flash"id="duck-life-3" onclick="window.location.href = '../../activitiesIframe/#duck-life-3'"> duck life 3 </li>
-            <li  class = " flash"id="riddle-school-4" onclick="window.location.href = '../../activitiesIframe/#riddle-school-4'"> riddle school 4 </li>
-            <li class = "hot flash"id="this-is-the-only-level" onclick="window.location.href = '../../activitiesIframe/#this-is-the-only-level'"> this is the only level </li>
-            <li  class = " flash"id="duck-life" onclick="window.location.href = '../../activitiesIframe/#duck-life'"> duck life </li>
-            <li  class = " flash"id="riddle-school-5" onclick="window.location.href = '../../activitiesIframe/#riddle-school-5'"> riddle school 5 </li>
-            <li  class = " flash"id="ultimate-chess" onclick="window.location.href = '../../activitiesIframe/#ultimate-chess'"> ultimate chess </li>
-            <li  class = " flash"id="escape-the-bathroom" onclick="window.location.href = '../../activitiesIframe/#escape-the-bathroom'"> escape the bathroom </li>
-            <li  class = " flash"id="riddle-school" onclick="window.location.href = '../../activitiesIframe/#riddle-school'"> riddle school </li>
-            <li  class = " flash"id="escape-the-car" onclick="window.location.href = '../../activitiesIframe/#escape-the-car'"> escape the car </li>
-            <li  class = " flash"id="riddle-transfer-2" onclick="window.location.href = '../../activitiesIframe/#riddle-transfer-2'"> riddle transfer 2 </li>
-		</ul>
-        <div id= "info">
+  <div id="links">
+    <img onclick="index.html" id="logo" src="../../images/gorrilamonk.png" alt="logo">
+    <span onclick="window.location.href='main.html'" id="name">Gorrrila Monk</span>
+    <span class="link" onclick="window.location.href = 'main.html'" id="home"><i class="fa-solid fa-house"></i></span>
+    <span class="link" onclick="window.location.href = 'about.html'" id="about"> <i
+        class="fa-solid fa-address-card"></i></span>
+    <span class="link" onclick="window.location.href = 'explore.html'" id="about"> <i
+        class="fa-solid fa-rocket"></i></span>
+    <span class="link" onclick="window.location.href = 'settings.html'" id="about"> <i
+        class="fa-solid fa-ghost"></i></span>
+    <span class="link" style="cursor: pointer;" onclick="window.location.href = 'adminSettings.html?adminUser=true'"
+      class="hide" id="adminSettings"> <i class="fa-solid fa-gear"></i></span>
+    <span style="cursor: pointer;" onclick="window.location.href = `../../activitiesIframe/#ublock`"
+      class="link">Unblocker</span>
+    <span style="cursor: pointer;" onclick="window.location.href = `../../activitiesIframe/#soundboard`"
+      class="link">Soundboard</span>
+    <span style="cursor: pointer;" onclick="window.location.href = 'termsandpolicies.html'" class="link">Terms and
+      Policies</span>
+    <span style="cursor: pointer;" class="link"><a href="https://lolfactor39.github.io/chat"
+        target="_blank">Chat</a></span>
+    <button id="theme-toggle" aria-label="Toggle theme"></button>
 
+
+  </div>
+
+  <header>
+    <banner>
+      <div style="font-size: smaller;"
+        onclick="document.getElementsByTagName('banner')[0].style.display = 'none'; document.getElementsByClassName('logo')[0].style.marginTop = '-15%'">
+        Dismiss</div>
+      <h1>By going on this website, you agree to the Terms and Policies</h1> <br> <span onclick="window.location.href='explore.html'"
+        style="color: rgb(0, 255, 0); text-decoration: underline; cursor: pointer;"></span>
+    </banner>
+    <div class="welcome-text">
+      <div id="right">
+        <div class="logo">
+          <img src="../../images/gorrilamonk.png" draggable="false">
         </div>
-		
-    </header>
+        <h1><span>Become a</span> Gorrrilla Monk</h1>
+        <span id="streak"
+          style="color: red; font-weight: bold; font-family: 'Courier New', Courier, monospace; font-size: 40px;">0 Day
+          Streak</span> <br>
+        <span style="font-size: 15px;" id="goontowebsite">Go onto this website everyday to earn a streak!</span> <br>
+        <br>
+        <span id="no-of-games"
+          style="color: #1aff00; font-weight: bold; font-family: 'Courier New', Courier, monospace; font-size: 40px;">106
+          GAMES</span> <br>
+        <input type="text" id="searchInput" placeholder="Search Games...">
+      </div>
 
-	<script src = "../../js/search.js"></script>  
+      <ul id="itemList">
+        <li class="hot parkour" id="slope" onclick="window.location.href='../../activitiesIframe/#slope'">Slope</li>
+        <li class="hot parkour multiplayer" id="slope-2"
+          onclick="window.location.href='../../activitiesIframe/#slope-2'">Slope 2</li>
+        <li class="hot parkour" id="slope-3" onclick="window.location.href='../../activitiesIframe/#slope-3'">Slope 3
+        </li>
+        <li class="hot parkour" id="super-mario-64"
+          onclick="window.location.href='../../activitiesIframe/#super-mario-64'">Super Mario 64</li>
+        <li class="hot parkour shooting" id="n-gon" onclick="window.location.href = '../../activitiesIframe/#n-gon'">
+          n-gon </li>
+        <li class="hot multiplayer parkour" id="boxing-random"
+          onclick="window.location.href = '../../activitiesIframe/#boxing-random'"> boxing random </li>
+        <li class="hot singleplayer car parkour" id="escaperoadcity"
+          onclick="window.location.href = '../../activitiesIframe/#escaperoad'">Escape Road</li>
+        <li class="hot singleplayer car parkour" id="escaperoadcity2"
+          onclick="window.location.href = '../../activitiesIframe/#escaperoad2'">Escape Road 2</li>
+        <li class="hot singleplayer car parkour" id="escaperoadcitycity"
+          onclick="window.location.href = '../../activitiesIframe/#escaperoadcity2'">Escape Road City 2</li>
+        <li class="hot parkour shooting" id="ice-dodo"
+          onclick="window.location.href = '../../activitiesIframe/#ice-dodo'"> Ice Dodo </li>
+        <li class="hot sport multiplayer singleplayer" id="soccer-random"
+          onclick="window.location.href = '../../activitiesIframe/#soccer-random'"> soccer random </li>
+        <li class="hot multiplayer" id="paperio2" onclick="window.location.href = '../../activitiesIframe/#paperio2'">
+          paper io 2 </li>
+        <li class="hot sport multiplayer singleplayer" id="basket-random"
+          onclick="window.location.href = '../../activitiesIframe/#basket-random'"> basket random </li>
+        <li class="hot sport singleplayer" id="super-liquid-soccer"
+          onclick="window.location.href = '../../activitiesIframe/#super-liquid-soccer'"> FIFA 20 </li>
+        <li class="hot sport singleplayer" id="superhot"
+          onclick="window.location.href = '../../activitiesIframe/#superhot'"> Super Hot </li>
+        <li class="hot" id="cluster-rush" onclick="window.location.href='../../activitiesIframe/#clusterrush'">Cluster
+          Rush</li>
+        <li class="hot car parkour" id="polytrack" onclick="window.location.href='../../activitiesIframe/#polytrack'">
+          Polytrack</li>
+        <li class="" id="chicken-jockey-clicker"
+          onclick="window.location.href='../../activitiesIframe/#chicken-jockey-clicker'">Chicken Jockey Clicker</li>
+        <li class="iq tetris" id="tetris" onclick="window.location.href='../../activitiesIframe/#tetrs'">Tetris</li>
+        <li class="hot shooting" id="1v1.lol" onclick="window.location.href='../../activitiesIframe/#1v1.lol'">1v1.lol
+        </li>
+        <li class="parkour" id="temple-run-2" onclick="window.location.href='../../activitiesIframe/#temple-run-2'">
+          Temple Run 2</li>
+        <li class="hot singleplayer parkour" id="tanuki-sunset"
+          onclick="window.location.href='../../activitiesIframe/#Tanuki-Sunset-main'">Tanuki Sunset</li>
+        <li class="shooting" id="gladihoppers" onclick="window.location.href='../../activitiesIframe/#gladis'">
+          Gladihoppers</li>
+        <li class="hot parkour" id="just-fall" onclick="window.location.href='../../activitiesIframe/#just-fall'">Just
+          Fall</li>
+        <li class="shooting" id="timeshooter" onclick="window.location.href='../../activitiesIframe/#time2'">Timeshooter
+          2</li>
+        <li class="shooting" id="time-shooter-3" onclick="window.location.href='../../activitiesIframe/#timeshooter3'">
+          Timeshooter 3</li>
+        <li class="hot multiplayer" id="yohoho" onclick="window.location.href='../../activitiesIframe/#yohoho'">Yohoho
+        </li>
+        <li class="" id="cookie-clicker" onclick="window.top.location='../cookieclicker-updated'">Cookie Clicker
+          (updated)</li>
+        <li class="parkour" id="x-trench-run" onclick="window.location.href='../../activitiesIframe/#x-trench-run'">X
+          Trench Run</li>
+        <li class="hot shooting multiplayer" id="topguns.io"
+          onclick="window.location.href='../../activitiesIframe/#topguns.io'">TopGuns.io</li>
+        <li class="hot multiplayer sport" id="basketball-legends"
+          onclick="window.location.href='../../activitiesIframe/#basketball-legends'">Basketball Legends</li>
+        <li class="hot parkour" id="vex-7" onclick="window.location.href='../../activitiesIframe/#vex7'">Vex 7</li>
+        <li class="hot multiplayer singleplayer" id="1.8.8"
+          onclick="window.location.href='../../activitiesIframe/#1.8.8'">Eaglercraft 1.8.8</li>
+        <li class="hot iq" id="block-blast" onclick="window.location.href='../../activitiesIframe/#block-blast'">Block
+          Blast</li>
+        <li class="" id="stickman-hook" onclick="window.location.href='../../activitiesIframe/#stickman-hook'">Stickman
+          Hook</li>
+        <li class="retro" id="retro-bowl" onclick="window.location.href='../../activitiesIframe/#retro-bowl'">Retro Bowl
+        </li>
+        <li class="" id="monkey-mart" onclick="window.location.href='../../activitiesIframe/#monkey-mart'">Monkey Mart
+        </li>
+        <li class="hot multiplayer singleplayer" id="1.5.2"
+          onclick="window.location.href='../../activitiesIframe/#precision-client'">Eaglercraft with mods (1.5.2)</li>
+        <li class="shooting multiplayer singleplayer" id="getaway-shootout"
+          onclick="window.location.href='../../activitiesIframe/#getaway-shootout'">Getaway Shootout</li>
+        <li class="" id="dune" onclick="window.location.href='../../activitiesIframe/#dune'">Dune</li>
+        <li class="car" id="drift-boss" onclick="window.location.href='../../activitiesIframe/#drift-boss'">Drift Boss
+        </li>
+        <li class="" id="doodle-jump" onclick="window.location.href='../../activitiesIframe/#doodle-jump'">Doodle Jump
+        </li>
+        <li class="parkour" id="aquapark.io" onclick="window.location.href='../../activitiesIframe/#aquapark.io'">
+          Aquapark.io</li>
+        <li class="hot" id="bitlife" onclick="window.location.href='../../activitiesIframe/#bit-life'">Bit Life</li>
+        <li class="hot" id="2048" onclick="window.location.href='../../activitiesIframe/#2048'">2048</li>
+        <li class="parkour" id="chrome-dino" onclick="window.location.href='../../activitiesIframe/#chrome-dino'">Chrome
+          Dino</li>
+        <li class="car" id="drive-mad" onclick="window.location.href='../../activitiesIframe/#drive-mad'">Drive Mad</li>
+        <li class="hot shooting" id="space-invaders"
+          onclick="window.location.href='../../activitiesIframe/#SPACEINVADERS'">Space Invaders</li>
+        <li class="parkour" id="only-up" onclick="window.location.href='../../activitiesIframe/#only-up'">Only Up</li>
+        <li class="parkour" id="ovo" onclick="window.location.href='../../activitiesIframe/#ovo/1.4.4'">OvO</li>
+        <li class="parkour" id="ovo-2" onclick="window.location.href='../../activitiesIframe/#ovo/2.0.2alpha'">OvO 2
+        </li>
+        <li class="parkour" id='tunnel-rush' onclick="window.location.href='../../activitiesIframe/#tunnel-rush'">Tunnel
+          Rush</li>
+        <li class="sport" id="tiny-fishing" onclick="window.location.href='../../activitiesIframe/#tiny-fishing'">Tiny
+          Fishing</li>
+        <li id="mario-game" class="retro" onclick="window.location.href='../../activitiesIframe/#mario-game'">Mario Game
+        </li>
+        <li class="hot" id='flappy-bird' onclick="window.location.href='../../activitiesIframe/#flappy-bird'">Flappy
+          Bird</li>
+        <li id='doge-miner' onclick="window.location.href='../../activitiesIframe/#doge-miner'">Doge Miner</li>
+        <li id='tag' onclick="window.location.href='../../activitiesIframe/#tag'">Tag 2, 3, 4 Players</li>
+        <li class="parkour" id='crossy-road' onclick="window.location.href='../../activitiesIframe/#crossy-road'">Crossy
+          Road</li>
+        <li class="hot car sport parkour" id="rocket-league"
+          onclick="window.location.href='../../activitiesIframe/#rocket-league'">Rocket League</li>
+        <li class="hot parkour" id='subway-surfers'
+          onclick="window.location.href='../../activitiesIframe/#subway-surfers'">Subway Surfers</li>
+        <li class="hot parkour" class="hot" id="snow-rider"
+          onclick="window.location.href='../../activitiesIframe/#snow-rider'">Snow Rider 3d</li>
+        <li class="hot" id="gun-spin" onclick="window.location.href='../../activitiesIframe/#gun-spin'">Gun Spin</li>
+        <li class="" id="launcha-libre" onclick="window.location.href='../../activitiesIframe/#launcha-libre'">Launcha
+          Libre</li>
+        <li class=" flash" id="escape-the-closet"
+          onclick="window.location.href = '../../activitiesIframe/#escape-the-closet'"> escape the closet </li>
+        <li class=" flash" id="riddle-transfer"
+          onclick="window.location.href = '../../activitiesIframe/#riddle-transfer'"> riddle transfer </li>
+        <li class=" flash" id="escape-the-freezer"
+          onclick="window.location.href = '../../activitiesIframe/#escape-the-freezer'"> escape the freezer </li>
+        <li class=" flash" id="rogue-soul-2" onclick="window.location.href = '../../activitiesIframe/#rogue-soul-2'">
+          rogue soul 2 </li>
+        <li class=" flash" id="achievement-unlocked-2"
+          onclick="window.location.href = '../../activitiesIframe/#achievement-unlocked-2'"> achievement unlocked 2
+        </li>
+        <li class=" flash" id="escape-the-phonebooth"
+          onclick="window.location.href = '../../activitiesIframe/#escape-the-phonebooth'"> escape the phonebooth </li>
+        <li class=" flash" id="rogue-soul" onclick="window.location.href = '../../activitiesIframe/#rogue-soul'"> rogue
+          soul </li>
+        <li class=" flash" id="achievement-unlocked-3"
+          onclick="window.location.href = '../../activitiesIframe/#achievement-unlocked-3'"> achievement unlocked 3
+        </li>
+        <li class=" flash" id="escape-the-shack"
+          onclick="window.location.href = '../../activitiesIframe/#escape-the-shack'"> escape the shack </li>
+        <li class=" flash" id="stealing-the-diamond"
+          onclick="window.location.href = '../../activitiesIframe/#stealing-the-diamond'"> stealing the diamond </li>
+        <li class=" flash" id="achievement-unlocked"
+          onclick="window.location.href = '../../activitiesIframe/#achievement-unlocked'"> achievement unlocked </li>
+        <li class=" flash" id="escaping-the-prison"
+          onclick="window.location.href = '../../activitiesIframe/#escaping-the-prison'"> escaping the prison </li>
+        <li class=" flash" id="stick-war" onclick="window.location.href = '../../activitiesIframe/#stick-war'"> stick
+          war </li>
+        <li class=" flash" id="age-of-war-hacked"
+          onclick="window.location.href = '../../activitiesIframe/#age-of-war-hacked'"> age of war hacked </li>
+        <li class=" flash" id="factory-balls" onclick="window.location.href = '../../activitiesIframe/#factory-balls'">
+          factory balls </li>
+        <li class=" flash" id="submachine-0" onclick="window.location.href = '../../activitiesIframe/#submachine-0'">
+          submachine 0 </li>
+        <li class=" flash" id="age-of-war" onclick="window.location.href = '../../activitiesIframe/#age-of-war'"> age of
+          war </li>
+        <li class=" flash" id="flash-chess" onclick="window.location.href = '../../activitiesIframe/#flash-chess'">
+          flash chess </li>
+        <li class=" flash" id="bloons-td-1" onclick="window.location.href = '../../activitiesIframe/#bloons-td-1'">
+          bloons td 1 </li>
+        <li class=" flash" class=" flash" id="submachine-2"
+          onclick="window.location.href = '../../activitiesIframe/#submachine-2'"> submachine 2 </li>
+        <li class="hot flash" id="bloons-td-2" onclick="window.location.href = '../../activitiesIframe/#bloons-td-2'">
+          bloons td 2 </li>
+        <li class=" flash" id="gun-mayhem-2" onclick="window.location.href = '../../activitiesIframe/#gun-mayhem-2'">
+          gun mayhem 2 </li>
+        <li class=" flash" id="submachine-3" onclick="window.location.href = '../../activitiesIframe/#submachine-3'">
+          submachine 3 </li>
+        <li class=" flash" class="hot" id="bloons-td-3"
+          onclick="window.location.href = '../../activitiesIframe/#bloons-td-3'"> bloons td 3 </li>
+        <li class=" flash" class="hot" id="gun-mayhem"
+          onclick="window.location.href = '../../activitiesIframe/#gun-mayhem'"> gun mayhem </li>
+        <li class=" flash" id="submachine-32-chambers"
+          onclick="window.location.href = '../../activitiesIframe/#submachine-32-chambers'"> submachine 32 chambers
+        </li>
+        <li class=" flash" id="bloons-td-4" onclick="window.location.href = '../../activitiesIframe/#bloons-td-4'">
+          bloons td 4 </li>
+        <li class=" flash" id="submachine-4" onclick="window.location.href = '../../activitiesIframe/#submachine-4'">
+          submachine 4 </li>
+        <li class=" flash" id="bloons" onclick="window.location.href = '../../activitiesIframe/#bloons'"> bloons </li>
+        <li class=" flash" id="learn-to-fly-2"
+          onclick="window.location.href = '../../activitiesIframe/#learn-to-fly-2'"> learn to fly 2 </li>
+        <li class=" flash" id="submachine-5" onclick="window.location.href = '../../activitiesIframe/#submachine-5'">
+          submachine 5 </li>
+        <li class=" flash" id="bloxorz" onclick="window.location.href = '../../activitiesIframe/#bloxorz'"> bloxorz
+        </li>
+        <li class=" flash" id="learn-to-fly-3"
+          onclick="window.location.href = '../../activitiesIframe/#learn-to-fly-3'"> learn to fly 3 </li>
+        <li class=" flash" id="submachine-6" onclick="window.location.href = '../../activitiesIframe/#submachine-6'">
+          submachine 6 </li>
+        <li class=" flash" id="breaking-the-bank"
+          onclick="window.location.href = '../../activitiesIframe/#breaking-the-bank'"> breaking the bank </li>
+        <li class="hot flash" id="learn-to-fly-idle"
+          onclick="window.location.href = '../../activitiesIframe/#learn-to-fly-idle'"> learn to fly idle </li>
+        <li class=" flash" id="submachine-7" onclick="window.location.href = '../../activitiesIframe/#submachine-7'">
+          submachine 7 </li>
+        <li class=" flash" id="cat-ninja" onclick="window.location.href = '../../activitiesIframe/#cat-ninja'"> cat
+          ninja </li>
+        <li class=" flash" id="learn-to-fly" onclick="window.location.href = '../../activitiesIframe/#learn-to-fly'">
+          learn to fly </li>
+        <li class=" flash" id="submachine-8" onclick="window.location.href = '../../activitiesIframe/#submachine-8'">
+          submachine 8 </li>
+        <li class=" flash" id="creative-kill-chamber"
+          onclick="window.location.href = '../../activitiesIframe/#creative-kill-chamber'"> creative kill chamber </li>
+        <li class=" flash" class="hot" id="papas-freezeria"
+          onclick="window.location.href = '../../activitiesIframe/#papas-freezeria'"> papas freezeria </li>
+        <li class=" flash" id="submachine-9" onclick="window.location.href = '../../activitiesIframe/#submachine-9'">
+          submachine 9 </li>
+        <li class="hot flash" id="curveball" onclick="window.location.href = '../../activitiesIframe/#curveball'">
+          curveball </li>
+        <li class="hot flash" id="papas-pizzaria"
+          onclick="window.location.href = '../../activitiesIframe/#papas-pizzaria'"> papas pizzaria </li>
+        <li class=" flash" id="submachine-flf"
+          onclick="window.location.href = '../../activitiesIframe/#submachine-flf'"> submachine flf </li>
+        <li class=" flash" id="raft-wars-2" onclick="window.location.href = '../../activitiesIframe/#raft-wars-2'"> raft
+          wars 2 </li>
+        <li class=" flash" id="submachine" onclick="window.location.href = '../../activitiesIframe/#submachine'">
+          submachine </li>
+        <li class=" flash" id="raft-wars" onclick="window.location.href = '../../activitiesIframe/#raft-wars'"> raft
+          wars </li>
+        <li class=" flash" id="sugar-sugar" onclick="window.location.href = '../../activitiesIframe/#sugar-sugar'">
+          sugar sugar </li>
+        <li class=" flash" id="riddle-school-2"
+          onclick="window.location.href = '../../activitiesIframe/#riddle-school-2'"> riddle school 2 </li>
+        <li class=" flash" id="the-impossible-quiz"
+          onclick="window.location.href = '../../activitiesIframe/#the-impossible-quiz'"> the impossible quiz </li>
+        <li class=" flash" id="duck-life-2" onclick="window.location.href = '../../activitiesIframe/#duck-life-2'"> duck
+          life 2 </li>
+        <li class=" flash" id="riddle-school-3"
+          onclick="window.location.href = '../../activitiesIframe/#riddle-school-3'"> riddle school 3 </li>
+        <li class=" flash" id="this-is-the-only-level-2"
+          onclick="window.location.href = '../../activitiesIframe/#this-is-the-only-level-2'"> this is the only level 2
+        </li>
+        <li class=" flash" id="duck-life-3" onclick="window.location.href = '../../activitiesIframe/#duck-life-3'"> duck
+          life 3 </li>
+        <li class=" flash" id="riddle-school-4"
+          onclick="window.location.href = '../../activitiesIframe/#riddle-school-4'"> riddle school 4 </li>
+        <li class="hot flash" id="this-is-the-only-level"
+          onclick="window.location.href = '../../activitiesIframe/#this-is-the-only-level'"> this is the only level
+        </li>
+        <li class=" flash" id="duck-life" onclick="window.location.href = '../../activitiesIframe/#duck-life'"> duck
+          life </li>
+        <li class=" flash" id="riddle-school-5"
+          onclick="window.location.href = '../../activitiesIframe/#riddle-school-5'"> riddle school 5 </li>
+        <li class=" flash" id="ultimate-chess"
+          onclick="window.location.href = '../../activitiesIframe/#ultimate-chess'"> ultimate chess </li>
+        <li class=" flash" id="escape-the-bathroom"
+          onclick="window.location.href = '../../activitiesIframe/#escape-the-bathroom'"> escape the bathroom </li>
+        <li class=" flash" id="riddle-school" onclick="window.location.href = '../../activitiesIframe/#riddle-school'">
+          riddle school </li>
+        <li class=" flash" id="escape-the-car"
+          onclick="window.location.href = '../../activitiesIframe/#escape-the-car'"> escape the car </li>
+        <li class=" flash" id="riddle-transfer-2"
+          onclick="window.location.href = '../../activitiesIframe/#riddle-transfer-2'"> riddle transfer 2 </li>
+      </ul>
+      <div id="info">
+
+      </div>
+
+  </header>
+
+  <script src="../../js/search.js"></script>
   <script src="../../js/gameInfo.js"></script>
-  <script src="../../js/rewind.js" type = "module"></script>
+  <script src="../../js/modelToggle.js"></script>
+  <script src="../../js/rewind.js" type="module"></script>
   <script type="text/javascript">
     atOptions = {
-      'key' : '653a14f22744584ca5c2b6367dbe7288',
-      'format' : 'iframe',
-      'height' : 50,
-      'width' : 320,
-      'params' : {}
+      'key': '653a14f22744584ca5c2b6367dbe7288',
+      'format': 'iframe',
+      'height': 50,
+      'width': 320,
+      'params': {}
     };
   </script>
 </body>
+
 </html>

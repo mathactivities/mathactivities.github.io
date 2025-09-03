@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,105 +8,126 @@
     <title>Math Activities</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel=stylesheet>
     <script src="https://kit.fontawesome.com/838c29decd.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href= "../../images/mathlogo.png">
-    <script src = "../../js/preventive.js">
+    <link rel="shortcut icon" href="../../images/mathlogo.png">
+    <script src="../../js/preventive.js">
     </script>
 </head>
+
 <body>
     <div id="links">
-        <img onclick = "index.html" id = "logo"src="../../images/gorrilamonk.png" alt="logo">
-        <span onclick = "window.location.href='main.html'" id = "name">Gorrrila Monk</span>
-        <span class = "link"onclick="window.location.href = 'main.html'" id = "home"><i class="fa-solid fa-house" ></i></span>
-        <span class = "link"onclick="window.location.href = 'about.html'" id = "about">   <i class="fa-solid fa-address-card"></i></span>
-        <span class="link"onclick="window.location.href = 'explore.html'" id = "about">    <i class="fa-solid fa-rocket"></i></span>
-        <span class="link"onclick="window.location.href = 'settings.html'" id = "about">  <i class="fa-solid fa-ghost"></i></span>
-        <span class="link"style = "cursor: pointer;" onclick="window.location.href = 'adminSettings.html?adminUser=true'" class = "hide"id = "adminSettings">   <i class="fa-solid fa-gear"></i></span>
-        <span style = "cursor: pointer;" onclick="window.location.href = 'termsandpolicies.html'" class = "link">Terms and Policies</span>
+        <img onclick="index.html" id="logo" src="../../images/gorrilamonk.png" alt="logo">
+        <span onclick="window.location.href='main.html'" id="name">Gorrrila Monk</span>
+        <span class="link" onclick="window.location.href = 'main.html'" id="home"><i
+                class="fa-solid fa-house"></i></span>
+        <span class="link" onclick="window.location.href = 'about.html'" id="about"> <i
+                class="fa-solid fa-address-card"></i></span>
+        <span class="link" onclick="window.location.href = 'explore.html'" id="about"> <i
+                class="fa-solid fa-rocket"></i></span>
+        <span class="link" onclick="window.location.href = 'settings.html'" id="about"> <i
+                class="fa-solid fa-ghost"></i></span>
+        <span class="link" style="cursor: pointer;" onclick="window.location.href = 'adminSettings.html?adminUser=true'"
+            class="hide" id="adminSettings"> <i class="fa-solid fa-gear"></i></span>
+        <span style="cursor: pointer;" onclick="window.location.href = 'termsandpolicies.html'" class="link">Terms and
+            Policies</span>
     </div>
+    <button id="mode-toggle" class="tech-button">
+        <i class="fas fa-moon"></i>
+    </button>
     <header>
-        <div class = "welcome-text" style = "translate: 0 -50%; align-items: center;"> 
-            <div id="right" >
-          <div class="logo" >
-                <img src="../../images/gorrilamonk.png" draggable="false">
-          </div>
-          <h1><span>Explore</span> Gorrrilla Monk</h1>
-        </div>
-        <div id="escape" style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
-            
-            <div id = "cloaker"style = 'background-color:red; font-size:50px;'>
-            Version 9: Faster Loading Speed!!!!!
+        <div class="welcome-text" style="translate: 0 -50%; align-items: center;">
+            <div id="right">
+                <div class="logo">
+                    <img src="../../images/gorrilamonk.png" draggable="false">
+                </div>
+                <h1><span>Explore</span> Gorrrilla Monk</h1>
             </div>
-            <div style = "margin-right: 10%; background-color: #1367c77e;">This new update removes the pain of people playing on this website. This increases the speed of your loading time greatly!
-            </div>
-        </div>
-        <div id="escape" style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
-            
-            <div id = "cloaker"style = 'background-color:red; font-size:50px;'>
-            Version 8: Panic Mode!!!!
-            </div>
-            <div style = "margin-right: 10%; background-color: #1367c77e;">You can be quickly transported to Google Classroom by pressing the ` key.
-            </div>
-        </div>
-        
-        <div id="save-data" style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
-            
-            <div id = "cloaker"style = 'background-color:red; font-size:50px;'>
-            Version 7: SAVE DATA!!!!
-            </div>
-            <div style = "margin-right: 10%; background-color: #1367c77e;">This saves your data so that you can play wherever you left off! Notice: This only saves data saved in the localstorage, so there might be some games where it doesn't store.
-            </div>
-        </div>
-        <div id="second-only" style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
-            
-            <div id = "cloaker"style = 'background-color:red; font-size:50px;'>
-            Version 6: Only Students
-            </div>
-            <div style = "margin-right: 10%; background-color: #1367c77e;">You can only access the main website if you are a student signing in with your school account
-            </div>
-        </div>
-        <div id="only" style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
-            
-            <div id = "cloaker"style = 'background-color:red; font-size:50px;'>
-            Version 5: Only Chromebooks
-            </div>
-            <div style = "margin-right: 10%; background-color: #1367c77e;">Your teachers cannot access the main website because they do not have chromeOs on their laptops. Only you can! (Removed to make sure students on other laptops will also work.)
-            </div>
-        </div>
+            <div id="escape" style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
 
-        <div id="cloak" style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
-            
-            <div id = "cloaker"style = 'background-color:red; font-size:50px;'>
-            Version 4: Cloaker
+                <div id="cloaker" style='background-color:red; font-size:50px;'>
+                    Version 9: Faster Loading Speed!!!!!
+                </div>
+                <div style="margin-right: 10%; background-color: #1367c77e;">This new update removes the pain of people
+                    playing on this website. This increases the speed of your loading time greatly!
+                </div>
             </div>
-            <div style = "margin-right: 10%; background-color: #1367c77e;">You can now cloak your website. Go to the Settings section. 
+            <div id="escape" style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
+
+                <div id="cloaker" style='background-color:red; font-size:50px;'>
+                    Version 8: Panic Mode!!!!
+                </div>
+                <div style="margin-right: 10%; background-color: #1367c77e;">You can be quickly transported to Google
+                    Classroom by pressing the ` key.
+                </div>
             </div>
-        </div>
+
+            <div id="save-data"
+                style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
+
+                <div id="cloaker" style='background-color:red; font-size:50px;'>
+                    Version 7: SAVE DATA!!!!
+                </div>
+                <div style="margin-right: 10%; background-color: #1367c77e;">This saves your data so that you can play
+                    wherever you left off! Notice: This only saves data saved in the localstorage, so there might be
+                    some games where it doesn't store.
+                </div>
+            </div>
+            <div id="second-only"
+                style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
+
+                <div id="cloaker" style='background-color:red; font-size:50px;'>
+                    Version 6: Only Students
+                </div>
+                <div style="margin-right: 10%; background-color: #1367c77e;">You can only access the main website if you
+                    are a student signing in with your school account
+                </div>
+            </div>
+            <div id="only" style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
+
+                <div id="cloaker" style='background-color:red; font-size:50px;'>
+                    Version 5: Only Chromebooks
+                </div>
+                <div style="margin-right: 10%; background-color: #1367c77e;">Your teachers cannot access the main
+                    website because they do not have chromeOs on their laptops. Only you can! (Removed to make sure
+                    students on other laptops will also work.)
+                </div>
+            </div>
+
+            <div id="cloak" style="display: flex; flex-direction: row-reverse; height: fit-content; margin-top: 10%;">
+
+                <div id="cloaker" style='background-color:red; font-size:50px;'>
+                    Version 4: Cloaker
+                </div>
+                <div style="margin-right: 10%; background-color: #1367c77e;">You can now cloak your website. Go to the
+                    Settings section.
+                </div>
+            </div>
 
 
-        <div id = "categonicer" style="display: flex; flex-direction: row-reverse; margin-top: 10%;">
-            <div style = 'background-color:red; font-size: 50px;'>
-            Version 3: Categonicer
+            <div id="categonicer" style="display: flex; flex-direction: row-reverse; margin-top: 10%;">
+                <div style='background-color:red; font-size: 50px;'>
+                    Version 3: Categonicer
+                </div>
+                <div style='margin-right: 10%; background-color: #1367c77e; width: fit-content;'>
+                    <div style="">This is used for finding and quickly searching by genres, by putting /cat [genre].
+                        <br>List of genres:
+                        <ol style="list-style: none;">
+                            <li>Hot</li>
+                            <li>sport</li>
+                            <li>Cars</li>
+                            <li>Parkour</li>
+                            <li>Retro</li>
+                            <li>Shooting</li>
+                            <li>Flash</li>
+                            <li>Singleplayer</li>
+                            <li>Multiplayer</li>
+                            <li>IQ</li>
+                        </ol>
+                    </div> <br> <br> <br>
+                </div>
             </div>
-            <div style = 'margin-right: 10%; background-color: #1367c77e; width: fit-content;'>
-                <div style = "">This is used for finding and quickly searching by genres, by putting /cat [genre]. 
-                    <br>List of genres:
-                    <ol style = "list-style: none;">
-                        <li>Hot</li>
-                        <li>sport</li>
-                        <li>Cars</li>
-                        <li>Parkour</li>
-                        <li>Retro</li>
-                        <li>Shooting</li>
-                        <li>Flash</li>
-                        <li>Singleplayer</li>
-                        <li>Multiplayer</li>
-                        <li>IQ</li>
-                </ol>
-                </div> <br> <br> <br>
-            </div>
-        </div>
 
     </header>
-
+    <script src="../../js/modelToggle.js"></script>
 </body>
+
 </html>

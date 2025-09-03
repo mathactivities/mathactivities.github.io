@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,55 +8,68 @@
     <title>Math Activities</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel=stylesheet>
     <script src="https://kit.fontawesome.com/838c29decd.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href= "../../images/mathlogo.png">
-    <script src = "../../js/preventive.js">
+    <link rel="shortcut icon" href="../../images/mathlogo.png">
+    <script src="../../js/preventive.js">
     </script>
 </head>
+
 <body>
     <div id="links">
-        <img onclick = "index.html" id = "logo"src="../../images/gorrilamonk.png" alt="logo">
-        <span onclick = "window.location.href='main.html'" id = "name">Gorrrila Monk</span>
-        <span class = "link"onclick="window.location.href = 'main.html'" id = "home"><i class="fa-solid fa-house" ></i></span>
-        <span class = "link"onclick="window.location.href = 'about.html'" id = "about">   <i class="fa-solid fa-address-card"></i></span>
-        <span class="link"onclick="window.location.href = 'explore.html'" id = "about">    <i class="fa-solid fa-rocket"></i></span>
-        <span class="link"onclick="window.location.href = 'settings.html'" id = "about">  <i class="fa-solid fa-ghost"></i></span>
-        <span class="link"style = "cursor: pointer;" onclick="window.location.href = 'adminSettings.html?adminUser=true'" class = "hide"id = "adminSettings">   <i class="fa-solid fa-gear"></i></span>
-        <span style = "cursor: pointer;" onclick="window.location.href = 'termsandpolicies.html'" class = "link">Terms and Policies</span>
+        <img onclick="index.html" id="logo" src="../../images/gorrilamonk.png" alt="logo">
+        <span onclick="window.location.href='main.html'" id="name">Gorrrila Monk</span>
+        <span class="link" onclick="window.location.href = 'main.html'" id="home"><i
+                class="fa-solid fa-house"></i></span>
+        <span class="link" onclick="window.location.href = 'about.html'" id="about"> <i
+                class="fa-solid fa-address-card"></i></span>
+        <span class="link" onclick="window.location.href = 'explore.html'" id="about"> <i
+                class="fa-solid fa-rocket"></i></span>
+        <span class="link" onclick="window.location.href = 'settings.html'" id="about"> <i
+                class="fa-solid fa-ghost"></i></span>
+        <span class="link" style="cursor: pointer;" onclick="window.location.href = 'adminSettings.html?adminUser=true'"
+            class="hide" id="adminSettings"> <i class="fa-solid fa-gear"></i></span>
+        <span style="cursor: pointer;" onclick="window.location.href = 'termsandpolicies.html'" class="link">Terms and
+            Policies</span>
     </div>
-<header>
-    <div id = "navBg"></div>
-    <div class = "welcome-text"> 
-        <div id="right">
-            <div class="logo">
+    <button id="mode-toggle" class="tech-button">
+        <i class="fas fa-moon"></i>
+    </button>
+    <header>
+        <div id="navBg"></div>
+        <div class="welcome-text">
+            <div id="right">
+                <div class="logo">
                     <img src="../../images/gorrilamonk.png" draggable="false">
+                </div>
+                <h1><span>Settings</span> Gorrrilla Monk</h1>
             </div>
-            <h1><span>Settings</span> Gorrrilla Monk</h1>        
-        </div>   
-        <div id = "settings">
-            Change Title: <br>
-            <input type="text" name="" id="title">
-            <button>Submit Title</button> <br> <br>
-            Change Favicon: <br>
-            <input type="file" name="" id="file" accept="image/*">
-            <button>Submit Image</button> <br> <br>
-            Pre-Added Settings: <br>
-            <select name="pre-added" id="color-select">
-                <option value="none">None</option>
-                <option value="docs">Google Docs</option>
-                <option value="google-classroom">Google Classroom</option> 
-                <option value="gmail">Gmail</option>
-                <option value="amplify">Amplify</option>
-                <option value="google-light">Chrome New Tab (Only use if your web browser has a light background)</option>
-                <option value="google-dark">Chrome New Tab (Only use if your web browser has a dark background)</option>
-                <option value="powerschool">Powerschool</option>
-                <option value="canvas">Canvas</option>
-                <option value="google-drive">Google Drive</option>
-            </select>
-            <button>Submit Pre-Added Settings</button> <br> <br>
-        </div>
+            <div id="settings">
+                Change Title: <br>
+                <input type="text" name="" id="title">
+                <button>Submit Title</button> <br> <br>
+                Change Favicon: <br>
+                <input type="file" name="" id="file" accept="image/*">
+                <button>Submit Image</button> <br> <br>
+                Pre-Added Settings: <br>
+                <select name="pre-added" id="color-select">
+                    <option value="none">None</option>
+                    <option value="docs">Google Docs</option>
+                    <option value="google-classroom">Google Classroom</option>
+                    <option value="gmail">Gmail</option>
+                    <option value="amplify">Amplify</option>
+                    <option value="google-light">Chrome New Tab (Only use if your web browser has a light background)
+                    </option>
+                    <option value="google-dark">Chrome New Tab (Only use if your web browser has a dark background)
+                    </option>
+                    <option value="powerschool">Powerschool</option>
+                    <option value="canvas">Canvas</option>
+                    <option value="google-drive">Google Drive</option>
+                </select>
+                <button>Submit Pre-Added Settings</button> <br> <br>
+            </div>
 
-    </div>
+        </div>
     </header>
     <script src="../../js/setting.js"></script>
 </body>
+
 </html>
