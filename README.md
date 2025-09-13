@@ -8,4 +8,4 @@ Fork this repo, to become a genuis!
 
 
 
-This website is created by a twelve-year-old, so if you have any questions, please email: krupaldeveloper@gmail.com
+if you have any questions, please email: <a href = "//lolfactor39.github.io">HERE</a>
