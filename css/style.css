@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 /* --- CSS Variables for Color Themes --- */
 :root {
     /* Dark Mode (Default) */
@@ -88,15 +90,16 @@ header {
     width: 160px;
     height: auto;
     border-radius: 50%;
-    margin-top: 40%;
+    margin-top: 25%;
     margin-right: 20px;
 }
 
 .welcome-text {
     position: absolute;
-    width: 600px;
+    width: calc(100% - 100px);
     height: 300px;
-    margin-left: 5%;
+    margin-left: 0%;
+    padding-bottom: 50px;
     text-align: center;
     top: 0;
     font-family: 'Courier New', Courier, monospace;
@@ -208,7 +211,91 @@ header {
 }
 
 #itemList li.hide {
-    display: none;
+    display: none !important;
+}
+
+/* Grid view styles */
+#itemList.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-auto-rows: 140px; /* Makes cells square */
+  gap: 30px;
+  height: auto;
+  border-radius: 30px;
+  padding: 20px;
+  animation: none;
+}
+
+#itemList.grid-view li {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  font-size: 1.2em;
+  width: 100%; /* grid controls width */
+  height: 100%; /* grid controls height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  transition: box-shadow 0.3s, filter 0.3s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+#itemList.grid-view li span,
+#itemList.grid-view li i {
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  font-size: 1em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  display: block;
+  text-align: center;
+  width: 100%;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#itemList.grid-view li:hover span,
+#itemList.grid-view li:hover i {
+  opacity: 1;
+  z-index: 10;
+}
+#itemList.grid-view li::before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  transition: filter 0.3s;
+  background-image: var(--bg-img);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  filter: blur(0px) brightness(0.9);
+  z-index: 0;
+}
+
+#itemList.grid-view li:hover::before {
+  filter: blur(8px) brightness(0.7);
+}
+
+/* Set background from data-bg attribute */
+
+
+/* Hide hover preview in grid view */
+#itemList.grid-view li:hover #info {
+  display: none !important;
+  visibility: hidden !important;
 }
 
 /* Info Box */
@@ -219,48 +306,59 @@ header {
     background-size: cover;
     position: fixed;
     top: 0;
-    width: 7%;
+    width: 7vw;
     height: 7vw;
     display: none;
     border-radius: 5px;
     transition: 0.05s all;
+    z-index: 2000;
 }
 
 /* Navigation Links */
-#links span {
-    color: var(--text-color);
+
+#links span{
+    color: #bdbdbd;
     padding: 0.3em;
     margin-left: 10px;
-    margin-top: 30px;
+}
+
+#links .left {
+    display: flex;
+    width: 30%;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+    float: left;
 }
 
 #links {
-    font-size: 19px;
-    height: 80px;
+    font-size: 17px;
+    height: 50px;
     width: 100%;
     transition: 0.3s all;
     display: flex;
     z-index: 1000;
     position: fixed;
-    background-color: var(--links-bg);
+    background-color: #343434d6;
     backdrop-filter: blur(10px);
+    display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 
 #links .link:hover {
-    color: var(--link-hover-color);
+    color: #030303;
     cursor: pointer;
     background-color: #009dff;
-    padding: 10px;
 }
 
 #links .link i {
-    color: var(--text-color);
+    color: #ffff;
 }
 
 #links .link:hover i {
-    color: var(--link-hover-color);
+    color: #000000;
 }
 
 #links .link {
@@ -268,12 +366,19 @@ header {
     align-items: center;
     text-align: center;
     justify-content: center;
+    color: white;
 }
 
-#links span:hover {
-    color: var(--link-hover-color);
+#links span:hover{
+    color: white;
     cursor: pointer;
 }
+
+#links a {
+    text-decoration: none;
+    color: white;
+}
+
 
 #accountImage {
     border-radius: 50%;
@@ -282,10 +387,9 @@ header {
 }
 
 #logo {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    margin-top: 20px;
 }
 
 #name {
@@ -576,4 +680,47 @@ body.dark-mode #theme-toggle::before {
 
 #loading-wait span{
     color: #fff;
+}
+
+#itemList.grid-view li .text-overlay {
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  padding: 8px 0;
+  background: rgba(0,0,0,0.7);
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 0 2px #000;
+  pointer-events: none;
+}
+
+#itemList.grid-view li:hover .text-overlay {
+  opacity: 1;
+}
+
+#grid-toggle {
+  background: linear-gradient(90deg, #4f8cff 0%, #6a5af9 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(76, 110, 245, 0.15);
+  transition: background 0.2s, transform 0.2s;
+  margin-left: 10px;
+}
+
+#grid-toggle:hover {
+  background: linear-gradient(90deg, #6a5af9 0%, #4f8cff 100%);
+  transform: scale(1.05);
 }

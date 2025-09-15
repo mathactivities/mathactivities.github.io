@@ -1,1 +1,29 @@
-const _0x3d4492=_0x173a;(function(_0x516d88,_0x47c730){const _0x502324=_0x173a,_0x28da4f=_0x516d88();while(!![]){try{const _0x2396b9=parseInt(_0x502324(0x9c))/0x1+-parseInt(_0x502324(0xa5))/0x2+-parseInt(_0x502324(0x9d))/0x3+-parseInt(_0x502324(0x99))/0x4+parseInt(_0x502324(0xa9))/0x5+parseInt(_0x502324(0x98))/0x6+parseInt(_0x502324(0x9e))/0x7;if(_0x2396b9===_0x47c730)break;else _0x28da4f['push'](_0x28da4f['shift']());}catch(_0x19e1ba){_0x28da4f['push'](_0x28da4f['shift']());}}}(_0x5184,0xe4ec8),fetch(_0x3d4492(0xa4))[_0x3d4492(0x9b)](_0x890d5=>{const _0x4efa24=_0x3d4492;if(!_0x890d5['ok'])throw new Error(_0x4efa24(0xa8)+_0x890d5[_0x4efa24(0xab)]);return _0x890d5[_0x4efa24(0xa3)]();})['then'](_0x2f0930=>{const _0x7d58dc=_0x3d4492;console[_0x7d58dc(0xa1)](_0x2f0930);const _0x37e8fa=_0x2f0930['gameInfo'],_0x1af865=document[_0x7d58dc(0xa0)](_0x7d58dc(0xa7));_0x1af865['type']='module',_0x1af865[_0x7d58dc(0xa2)]=_0x37e8fa,document[_0x7d58dc(0x9a)][_0x7d58dc(0xaa)](_0x1af865);})[_0x3d4492(0xa6)](_0x598524=>{const _0x376c47=_0x3d4492;console[_0x376c47(0x9f)]('Unable\x20to\x20fetch\x20data:',_0x598524);}));function _0x173a(_0x48bb16,_0x5c06d8){const _0x518465=_0x5184();return _0x173a=function(_0x173a84,_0x2ab21d){_0x173a84=_0x173a84-0x98;let _0x422b09=_0x518465[_0x173a84];return _0x422b09;},_0x173a(_0x48bb16,_0x5c06d8);}function _0x5184(){const _0x1f59ed=['catch','script','HTTP\x20error!\x20Status:\x20','64975yNlEUU','appendChild','status','4147026nxpmKC','472280pcVASN','body','then','1859189GgHpBq','1844754pMWYew','5594673jPJNSB','error','createElement','log','textContent','json','https://mathactivities.github.io/anandndnadnandnad/adesdfsesdfasdgesdadesfd.json','3383868SFYtDN'];_0x5184=function(){return _0x1f59ed;};return _0x5184();}
+const info = document.getElementById("info");
+const listItems = document.querySelectorAll("li");
+listItems.forEach(item => {
+  item.addEventListener("mousemove", _0x24c5d1 => {
+    console.log("Item with ID: " + item.id + ", Image Path: " + ("images/games/" + item.id + ".png"));
+    console.log(item.parentElement.classList.contains("grid-view"));
+    if (item.parentElement.classList.contains("grid-view")){
+        info.style.width = "0px";
+        info.style.height = "0px";
+        return
+    }
+
+    info.style.width = window.innerWidth * 7/100 + "px";
+    info.style.height = window.innerWidth * 7/100 + "px";
+    
+    info.style.backgroundImage = "url(../../images/games/" + item.id + ".png)";
+    info.style.top = _0x24c5d1.clientY - 50 + "px";
+    console.log(window.scrollY);
+    info.style.left = _0x24c5d1.clientX + 30 + "px";
+    info.style.display = "block";
+    if (parseFloat(info.style.top) > window.innerHeight - 100) {
+      info.style.top = _0x24c5d1.clientY - 100 + "px";
+    }
+  });
+  item.addEventListener("mouseout", _0x4959f8 => {
+    info.style.display = "none";
+  });
+});
+

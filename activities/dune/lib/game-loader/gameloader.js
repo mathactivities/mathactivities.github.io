@@ -1410,9 +1410,8 @@ var myCnf = {},
         }, u.prototype.sandboxedWarning = function(e) {
             if (window.self !== window.top) try {
                 var t = atob("dnNlaWdydS5vbmU=");
-                if ("" === document.referrer || document.referrer.includes(t)) return "sandboxing-disallowed"
             } catch (t) {}
-            return Object(r.k)() && Object(r.h)() ? "sandboxing-disallowed" : null
+            return Object(r.k)() && Object(r.h)() ? null : null
         }, u.prototype.canLoad = function(e) {
             return this.loaderWarning(e).then(function(e) {
                 return !!e

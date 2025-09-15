@@ -91,6 +91,23 @@ onValue(ref(db, `universalMessageHTML`), (snapshot) => {
     universalMessageHTML = snapshot.val()
 }, {onlyOnce: true})
 
+const onlineRef = ref(db, `onlineUsers/${userUID}`);
+set(onlineRef, { online: true, lastActive: Date.now() });
+
+// Remove user from online list when they leave
+window.addEventListener("beforeunload", () => {
+  set(onlineRef, null);
+});
+
+// Listen for changes and update online count
+const onlineCountSpan = document.getElementById("online-count");
+onValue(ref(db, "onlineUsers"), (snapshot) => {
+  let count = 0;
+  snapshot.forEach(child => {
+    if (child.val().online) count++;
+  });
+  onlineCountSpan.textContent = `Online: ${count}`;
+});
 
 const getStreak = onValue(ref(db, `users/${userUID}/streak`), (snapshot) => {
     const val = snapshot.val()
