@@ -93,7 +93,7 @@ var flash = ['escape-the-closet',
     'escape-the-car',
     'riddle-transfer-2']
 
-const other = ['boxing-random', 'chicken-jockey-clicker', 'eag1-11-2', 'escaperoad', 'escaperoad2', 'escaperoadcity2', 'gladis', 'monkey-mart', 'n-gon', 'only-up', 'paperio2', 'polytrack', 'precision-client', 'retro-bowl', 'slope', 'slope-2', 'slope-3', 'snow-rider', 'soccer-random', 'subway-surfers', 'super-liquid-soccer', 'super-mario-64', 'superhot', 'tag', 'temple-run-2', 'tetrs', 'time2', 'timeshooter3', 'tiny-fishing', 'topguns.io', 'tunnel-rush', 'vex7', 'w-flash', 'x-trench-run', 'yohoho', "tomb-of-the-mask", "ultimate-car-driving", "elastic-man", "slow-roads-io", "football-legends", "snow-ball-io", "armed-forces-io", "among-us", "war-strike", "csgo", "viking-clash"]
+const other = ['boxing-random', 'chicken-jockey-clicker', 'eag1-11-2', 'escaperoad', 'escaperoad2', 'escaperoadcity2', 'gladis', 'monkey-mart', 'n-gon', 'only-up', 'paperio2', 'polytrack', 'precision-client', 'retro-bowl', 'slope', 'slope-2', 'slope-3', 'snow-rider', 'soccer-random', 'subway-surfers', 'super-liquid-soccer', 'super-mario-64', 'superhot', 'tag', 'temple-run-2', 'tetrs', 'time2', 'timeshooter3', 'tiny-fishing', 'topguns.io', 'tunnel-rush', 'vex7', 'w-flash', 'x-trench-run', 'yohoho', "tomb-of-the-mask", "ultimate-car-driving", "elastic-man", "slow-roads-io", "football-legends", "snow-ball-io", "armed-forces-io", "among-us", "war-strike", "csgo", "viking-clash", "deadly-decent"]
 const external = {
     ublock: "https://bob-one-tau.vercel.app/",
     soundboard: "../activities/flash/soundboard.html"
