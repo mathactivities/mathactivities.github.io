@@ -93,7 +93,7 @@ var flash = ['escape-the-closet',
     'escape-the-car',
     'riddle-transfer-2']
 
-const other = ['boxing-random', 'chicken-jockey-clicker', 'eag1-11-2', 'escaperoad', 'escaperoad2', 'escaperoadcity2', 'gladis', 'monkey-mart', 'n-gon', 'only-up', 'paperio2', 'polytrack', 'precision-client', 'retro-bowl', 'slope', 'slope-2', 'slope-3', 'snow-rider', 'soccer-random', 'subway-surfers', 'super-liquid-soccer', 'super-mario-64', 'superhot', 'tag', 'temple-run-2', 'tetrs', 'time2', 'timeshooter3', 'tiny-fishing', 'topguns.io', 'tunnel-rush', 'vex7', 'w-flash', 'x-trench-run', 'yohoho', "tomb-of-the-mask", "ultimate-car-driving", "elastic-man", "slow-roads-io", "football-legends", "snow-ball-io", "armed-forces-io", "among-us", "war-strike", "csgo"]
+const other = ['boxing-random', 'chicken-jockey-clicker', 'eag1-11-2', 'escaperoad', 'escaperoad2', 'escaperoadcity2', 'gladis', 'monkey-mart', 'n-gon', 'only-up', 'paperio2', 'polytrack', 'precision-client', 'retro-bowl', 'slope', 'slope-2', 'slope-3', 'snow-rider', 'soccer-random', 'subway-surfers', 'super-liquid-soccer', 'super-mario-64', 'superhot', 'tag', 'temple-run-2', 'tetrs', 'time2', 'timeshooter3', 'tiny-fishing', 'topguns.io', 'tunnel-rush', 'vex7', 'w-flash', 'x-trench-run', 'yohoho', "tomb-of-the-mask", "ultimate-car-driving", "elastic-man", "slow-roads-io", "football-legends", "snow-ball-io", "armed-forces-io", "among-us", "war-strike", "csgo", "viking-clash"]
 const external = {
     ublock: "https://bob-one-tau.vercel.app/",
     soundboard: "../activities/flash/soundboard.html"
@@ -185,3 +185,56 @@ setInterval(function () {
 function writeUserData(gta) {
     set(ref(db, `users/${userUID}/localstorageData`), gta)
 }
+
+const onlineRef = ref(db, `onlineUsers/${userUID}`);
+set(onlineRef, { online: true, lastActive: Date.now() });
+
+// Remove user from online list when they leave
+window.addEventListener("beforeunload", () => {
+  set(onlineRef, null);
+});
+
+const getStreak = onValue(ref(db, `users/${userUID}/streak`), (snapshot) => {
+    const val = snapshot.val();
+
+    function daysBetween(date1, date2) {
+        const d1 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate());
+        const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate());
+        const diffTime = d2 - d1;
+        return Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    }
+
+    if (val == null) {
+        const streakData = {
+            lastLoggedIn: new Date().toISOString().slice(0, 19),
+            streak: 1,
+            custom: false
+        };
+        set(ref(db, `users/${userUID}/streak`), JSON.stringify(streakData));
+    } else {
+        let object = val;
+        if (typeof object === "string") object = JSON.parse(object);
+        let stuff = object;
+        if (typeof stuff === "string") stuff = JSON.parse(stuff);
+
+        if (stuff.custom == null) stuff.custom = false;
+
+        const lastDate = new Date(stuff.lastLoggedIn);
+        const today = new Date();
+        const diffDays = daysBetween(lastDate, today);
+
+        if (diffDays === 1) {
+            if (!stuff.custom) stuff.streak++;
+            stuff.lastLoggedIn = today.toISOString().slice(0, 19);
+            set(ref(db, `users/${userUID}/streak`), JSON.stringify(stuff));
+            console.log("next day → streak incremented");
+        } else if (diffDays > 1) {
+            stuff.streak = 1;
+            stuff.lastLoggedIn = today.toISOString().slice(0, 19);
+            set(ref(db, `users/${userUID}/streak`), JSON.stringify(stuff));
+            console.log("missed days → streak reset to 1");
+        } else {
+            console.log("already logged today → streak unchanged");
+        }
+    }
+}, { onlyOnce: true });
