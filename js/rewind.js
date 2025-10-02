@@ -92,7 +92,7 @@ onValue(ref(db, `universalMessageHTML`), (snapshot) => {
 }, { onlyOnce: true })
 
 const onlineRef = ref(db, `onlineUsers/${userUID}`);
-set(onlineRef, { online: true, lastActive: Date.now() });
+set(onlineRef, { online: true});
 
 // Remove user from online list when they leave
 window.addEventListener("beforeunload", () => {

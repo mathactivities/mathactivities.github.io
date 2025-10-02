@@ -187,6 +187,7 @@ function writeUserData(gta) {
 }
 
 const onlineRef = ref(db, `onlineUsers/${userUID}`);
+set(onlineRef, { online: true});
 
 // Remove user from online list when they leave
 window.addEventListener("beforeunload", () => {
