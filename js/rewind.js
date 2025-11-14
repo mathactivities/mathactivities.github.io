@@ -90,24 +90,6 @@ if (window.top.location.href.includes("/activities/flash/")) {
 onValue(ref(db, `universalMessageHTML`), (snapshot) => {
     universalMessageHTML = snapshot.val()
 }, { onlyOnce: true })
-
-const onlineRef = ref(db, `onlineUsers/${userUID}`);
-set(onlineRef, { online: true});
-
-// Remove user from online list when they leave
-window.addEventListener("beforeunload", () => {
-    set(onlineRef, null);
-});
-
-// Listen for changes and update online count
-const onlineCountSpan = document.getElementById("online-count");
-onValue(ref(db, "onlineUsers"), (snapshot) => {
-    let count = 0;
-    snapshot.forEach(child => {
-        if (child.val().online) count++;
-    });
-    onlineCountSpan.textContent = `Online: ${count}`;
-});
 const getStreak = onValue(ref(db, `users/${userUID}/streak`), (snapshot) => {
     const val = snapshot.val();
 
@@ -139,16 +121,14 @@ const getStreak = onValue(ref(db, `users/${userUID}/streak`), (snapshot) => {
         const today = new Date();
         const diffDays = daysBetween(lastDate, today);
 
-        if (diffDays === 1) {
-            if (!stuff.custom) stuff.streak++;
+        if (diffDays >= 1) {
+            // Only increment if not custom
+            if (!stuff.custom) {
+                stuff.streak++; // Never reset, always keeps going
+            }
             stuff.lastLoggedIn = today.toISOString().slice(0, 19);
             set(ref(db, `users/${userUID}/streak`), JSON.stringify(stuff));
-            console.log("next day → streak incremented");
-        } else if (diffDays > 1) {
-            stuff.streak = 1;
-            stuff.lastLoggedIn = today.toISOString().slice(0, 19);
-            set(ref(db, `users/${userUID}/streak`), JSON.stringify(stuff));
-            console.log("missed days → streak reset to 1");
+            console.log("streak incremented or continued (no reset)");
         } else {
             console.log("already logged today → streak unchanged");
         }
@@ -157,6 +137,7 @@ const getStreak = onValue(ref(db, `users/${userUID}/streak`), (snapshot) => {
             `${stuff.streak} Day Streak <i class="fa-solid fa-fire" style="color:rgb(255, 115, 0);"></i>`;
     }
 }, { onlyOnce: true });
+
 
 
 

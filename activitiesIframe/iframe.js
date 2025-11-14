@@ -185,11 +185,3 @@ setInterval(function () {
 function writeUserData(gta) {
     set(ref(db, `users/${userUID}/localstorageData`), gta)
 }
-
-const onlineRef = ref(db, `onlineUsers/${userUID}`);
-set(onlineRef, { online: true});
-
-// Remove user from online list when they leave
-window.addEventListener("beforeunload", () => {
-  set(onlineRef, null);
-});
