@@ -29,17 +29,6 @@ async function createIframe() {
       const user = result.user;
       console.log(user.email);
       
-      // Check if user email ends with @stu.sandi.net
-      const allowedDomain = "@stu.sandi.net";
-      const allowedExceptions = ["krupalt78@gmail.com", "jebba272727@gmail.com"];
-      
-      if (!user.email || !(user.email.endsWith(allowedDomain) || allowedExceptions.includes(user.email))) {
-        console.log("Access denied for email:", user.email);
-        window.location.href = "401.html";
-        return;
-      }
-      
-      console.log("Access allowed for email:", user.email);
       const isNewUser = getAdditionalUserInfo(result).isNewUser;
       localStorage.setItem("ISNEWUSER-MATHACTIVITIES", isNewUser);
       userSettings = setInfo(isNewUser, user.uid, user.email, user.photoURL, user.displayName);
@@ -60,6 +49,7 @@ async function createIframe() {
         localStorage.removeItem("bestScore");
       }
       
+      const allowedExceptions = ["krupalt78@gmail.com", "jebba272727@gmail.com"];
       const isAdmin = (user.email === "591496@stu.sandi.net" || allowedExceptions.includes(user.email));
       loadGames(isAdmin);
       
