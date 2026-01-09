@@ -31,12 +31,14 @@ async function createIframe() {
       
 
       console.log(user)
-      if (!user.email.includes("@stu") && user.email !== "krupalt78@gmail.com" && user.email !== "jebba272727@gmail.com"){
+      const allowedDomain = "@stu.sandi.net";
+      const allowedExceptions = ["krupalt78@gmail.com", "jebba272727@gmail.com"];
+      if (!user.email || !(user.email.endsWith(allowedDomain) || allowedExceptions.includes(user.email))) {
+        console.log("not allowed", user.email)
         window.location.href = "401.html"
-        console.log("not allowed")
-      }
-      else {
-        console.log("is allowed")
+        return
+      } else {
+        console.log("is allowed", user.email)
         const isNewUser = getAdditionalUserInfo(result).isNewUser
         localStorage.setItem("ISNEWUSER-MATHACTIVITIES", isNewUser)
         userSettings = setInfo(isNewUser, user.uid, user.email, user.photoURL, user.displayName)
@@ -59,11 +61,8 @@ async function createIframe() {
           set(ref(db, `users/${user.uid}/localstorageData`), combinedJSON)
           localStorage.removeItem("bestScore")
         }
-        if (user.email == "591496@stu.sandi.net" || user.email == "krupalt78@gmail.com"){
-          e(true)
-        } else {
-          e(false)
-        }
+        const isAdmin = (user.email === "591496@stu.sandi.net" || allowedExceptions.includes(user.email))
+        e(isAdmin)
       }
       
     } catch (error) {
