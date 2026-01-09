@@ -23,74 +23,68 @@ async function createIframe() {
     try {
       const provider = new GoogleAuthProvider();
       provider.setCustomParameters({
-        prompt: 'select_account' // Forces the account chooser dialog to show
+        prompt: 'select_account'
       });      
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
-      console.log(user.photoURL)
+      console.log(user.email);
       
-
-      console.log(user)
+      // Check if user email ends with @stu.sandi.net
       const allowedDomain = "@stu.sandi.net";
       const allowedExceptions = ["krupalt78@gmail.com", "jebba272727@gmail.com"];
+      
       if (!user.email || !(user.email.endsWith(allowedDomain) || allowedExceptions.includes(user.email))) {
-        console.log("not allowed", user.email)
-        window.location.href = "401.html"
-        return
-      } else {
-        console.log("is allowed", user.email)
-        const isNewUser = getAdditionalUserInfo(result).isNewUser
-        localStorage.setItem("ISNEWUSER-MATHACTIVITIES", isNewUser)
-        userSettings = setInfo(isNewUser, user.uid, user.email, user.photoURL, user.displayName)
-        localStorage.setItem("mathActivitiesSettings", JSON.stringify(userSettings))
-        if (isNewUser){
-          localStorage.setItem("bestScore", 0)
-          function getLocalStorageKeysAsJSON() {
-            const keys = {};
-            console.log(localStorage.length)
-            for (let i = 0; i < localStorage.length; i++) {
-              const key = localStorage.key(i);
-              keys[key] = localStorage.getItem(key);
-              console.log(keys)
-            }
-            return JSON.stringify(keys);
-          }
-          
-          const combinedJSON = getLocalStorageKeysAsJSON();
-          console.log(combinedJSON)
-          set(ref(db, `users/${user.uid}/localstorageData`), combinedJSON)
-          localStorage.removeItem("bestScore")
-        }
-        const isAdmin = (user.email === "591496@stu.sandi.net" || allowedExceptions.includes(user.email))
-        e(isAdmin)
+        console.log("Access denied for email:", user.email);
+        window.location.href = "401.html";
+        return;
       }
+      
+      console.log("Access allowed for email:", user.email);
+      const isNewUser = getAdditionalUserInfo(result).isNewUser;
+      localStorage.setItem("ISNEWUSER-MATHACTIVITIES", isNewUser);
+      userSettings = setInfo(isNewUser, user.uid, user.email, user.photoURL, user.displayName);
+      localStorage.setItem("mathActivitiesSettings", JSON.stringify(userSettings));
+      
+      if (isNewUser) {
+        localStorage.setItem("bestScore", 0);
+        function getLocalStorageKeysAsJSON() {
+          const keys = {};
+          for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            keys[key] = localStorage.getItem(key);
+          }
+          return JSON.stringify(keys);
+        }
+        const combinedJSON = getLocalStorageKeysAsJSON();
+        set(ref(db, `users/${user.uid}/localstorageData`), combinedJSON);
+        localStorage.removeItem("bestScore");
+      }
+      
+      const isAdmin = (user.email === "591496@stu.sandi.net" || allowedExceptions.includes(user.email));
+      loadGames(isAdmin);
       
     } catch (error) {
       console.error("Error signing in with Google:", error);
     }
 }
 
-function e(thingy){
-    const thing = navigator.userAgent
-    const iframe = document.createElement("iframe")
-    iframe.src = "activities/flash/main.html"
-    if(thingy){
-      iframe.src = "activities/flash/main.html?adminUser=true"
-    }
-    iframe.style.width = "100%"
-    iframe.style.height = "100vh"
-    iframe.style.border = "none"
-    iframe.style.position = "absolute"
-    iframe.style.top = "0"
-    iframe.style.zIndex = "5000"
-    document.body.style.overflow = "hidden"
+function loadGames(isAdmin){
+    const iframe = document.createElement("iframe");
+    iframe.src = isAdmin ? "activities/flash/main.html?adminUser=true" : "activities/flash/main.html";
+    iframe.style.width = "100%";
+    iframe.style.height = "100vh";
+    iframe.style.border = "none";
+    iframe.style.position = "fixed";
+    iframe.style.top = "0";
+    iframe.style.left = "0";
+    iframe.style.zIndex = "5000";
+    document.body.style.overflow = "hidden";
     window.scrollTo({
         top: 0,
         left: 0,
     });
-    document.body.appendChild(iframe)
-    iframe.focus()
-    
+    document.body.appendChild(iframe);
+    iframe.focus();
 }
 
 document.getElementById("thingy").addEventListener("click", createIframe)
