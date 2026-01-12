@@ -4,14 +4,14 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo  } 
 let userSettings
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCPoYZZ4uJSkZytTUNAstPrWKyhYF9wmLc",
-    authDomain: "thingy-2f35d.firebaseapp.com",
-    databaseURL: "https://thingy-2f35d-default-rtdb.firebaseio.com",
-    projectId: "thingy-2f35d",
-    storageBucket: "thingy-2f35d.firebasestorage.app",
-    messagingSenderId: "93295196463",
-    appId: "1:93295196463:web:cf072dae28eeaf692989da",
-    measurementId: "G-CT1NYQ5W3L"
+  apiKey: "AIzaSyBSy5rlU8c-oPxLSHMAinW3vI9EhCkqlEE",
+  authDomain: "science-work-de587.firebaseapp.com",
+  databaseURL: "https://science-work-de587-default-rtdb.firebaseio.com",
+  projectId: "science-work-de587",
+  storageBucket: "science-work-de587.firebasestorage.app",
+  messagingSenderId: "925820192132",
+  appId: "1:925820192132:web:5876df20b0934367a209d1",
+  measurementId: "G-L3LWT54PT5"
 };
   
 // Initialize Firebase
