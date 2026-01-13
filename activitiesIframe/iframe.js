@@ -96,7 +96,53 @@ var flash = ['escape-the-closet',
 const other = ['boxing-random', 'chicken-jockey-clicker', 'eag1-11-2', 'escaperoad', 'escaperoad2', 'escaperoadcity2', 'gladis', 'monkey-mart', 'n-gon', 'only-up', 'paperio2', 'polytrack', 'precision-client', 'retro-bowl', 'slope', 'slope-2', 'slope-3', 'snow-rider', 'soccer-random', 'subway-surfers', 'super-liquid-soccer', 'super-mario-64', 'superhot', 'tag', 'temple-run-2', 'tetrs', 'time2', 'timeshooter3', 'tiny-fishing', 'topguns.io', 'tunnel-rush', 'vex7', 'w-flash', 'x-trench-run', 'yohoho', "tomb-of-the-mask", "ultimate-car-driving", "elastic-man", "slow-roads-io", "football-legends", "snow-ball-io", "armed-forces-io", "among-us", "war-strike", "csgo", "viking-clash", "deadly-decent"]
 const external = {
     ublock: "https://bob-one-tau.vercel.app/",
-    soundboard: "../activities/flash/soundboard.html"
+    soundboard: "../activities/flash/soundboard.html",
+    slope: "https://slope-game.github.io/",
+    "slope-2": "https://slope2.github.io/",
+    "slope-3": "https://slope3.github.io/",
+    "super-mario-64": "https://sm64web.com/",
+    "tomb-of-the-mask": "https://tomb-of-the-mask.github.io/",
+    "ultimate-car-driving": "https://ultimate-car-driving.github.io/",
+    "elastic-man": "https://elastic-man.github.io/",
+    "slow-roads-io": "https://slowroads.io/",
+    "football-legends": "https://football-legends.github.io/",
+    "snow-ball-io": "https://snowball-io.github.io/",
+    "armed-forces-io": "https://armedforces.io/",
+    "among-us": "https://among-us-online.github.io/",
+    "war-strike": "https://warstrike.io/",
+    csgo: "https://csgo-online.github.io/",
+    "viking-clash": "https://vikingclash.io/",
+    "deadly-decent": "https://deadlydecent.github.io/",
+    "boxing-random": "https://boxing-random.github.io/",
+    "chicken-jockey-clicker": "https://chicken-jockey-clicker.github.io/",
+    "eag1-11-2": "https://eag1-11-2.github.io/",
+    escaperoad: "https://escaperoad.github.io/",
+    escaperoad2: "https://escaperoad2.github.io/",
+    escaperoadcity2: "https://escaperoadcity2.github.io/",
+    gladis: "https://gladis.github.io/",
+    "monkey-mart": "https://monkey-mart.github.io/",
+    "n-gon": "https://n-gon.github.io/",
+    "only-up": "https://only-up.github.io/",
+    polytrack: "https://polytrack.github.io/",
+    "precision-client": "https://precision-client.github.io/",
+    "retro-bowl": "https://retro-bowl.github.io/",
+    "snow-rider": "https://snow-rider.github.io/",
+    "soccer-random": "https://soccer-random.github.io/",
+    "subway-surfers": "https://subway-surfers.github.io/",
+    "super-liquid-soccer": "https://super-liquid-soccer.github.io/",
+    superhot: "https://superhot.github.io/",
+    tag: "https://tag.github.io/",
+    "temple-run-2": "https://temple-run-2.github.io/",
+    tetrs: "https://tetrs.github.io/",
+    time2: "https://time2.github.io/",
+    timeshooter3: "https://timeshooter3.github.io/",
+    "tiny-fishing": "https://tiny-fishing.github.io/",
+    "topguns.io": "https://topguns.io/",
+    "tunnel-rush": "https://tunnel-rush.github.io/",
+    vex7: "https://vex7.github.io/",
+    "w-flash": "https://w-flash.github.io/",
+    "x-trench-run": "https://x-trench-run.github.io/",
+    yohoho: "https://yohoho.github.io/"
 }
 const externalEntries = Object.entries(external)
 var iframe = document.createElement('iframe');
@@ -111,7 +157,7 @@ for (var i = 0; i < flash.length; i++) {
 
 for (var i = 0; i < other.length; i++) {
     if (fragmentIdentifier == other[i]) {
-        iframe.src = '../other/' + fragmentIdentifier
+        iframe.src = '../activities/' + fragmentIdentifier
     }
 }
 
