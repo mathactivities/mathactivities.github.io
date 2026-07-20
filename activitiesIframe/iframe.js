@@ -150,7 +150,7 @@ for (var i = 0; i < externalEntries.length; i++) {
 
 for (var i = 0; i < otherother.length; i++) {
     if (fragmentIdentifier == otherother[i][0]) {
-        iframe.src = otherother[i][1]
+        iframe.src = "../other-other/" + otherother[i][1]
     }
 }
 
