@@ -73,7 +73,13 @@
           style="color: #1aff00; font-weight: bold; font-family: 'Courier New', Courier, monospace; font-size: 40px;">106
           GAMES</span> <br>
         <input type="text" id="searchInput" placeholder="Search Games...">
-        <button id="grid-toggle" aria-label="Toggle grid view" style="margin-left:10px;">Grid View</button>
+        <div style = "display:flex; flex-direction:column; gap: 10px; margin-top: 10px; width:100%; align-items: center;">
+          <button id="grid-toggle" aria-label="Toggle grid view" style="margin-left:10px;">Grid View</button>
+          <button id="order-normal" aria-label="Order normally">Order Normally</button>
+          <button id="order-az" aria-label="Order A to Z">Order A-Z</button>
+          <button id="order-za" aria-label="Order Z to A">Order Z-A</button>
+          <button id="random-game" aria-label="Random game">Random Game</button>
+        </div>
       </div>
 
       <ul id="itemList">
@@ -87,8 +93,125 @@
         <li class="hot parkour" id="slope-3" onclick="window.location.href='../../activitiesIframe/#slope-3'">
           <div class="text-overlay">Slope 3</div>
         </li>
-        <li class="iq" id="viking-clash"
-          onclick="window.location.href='../../activitiesIframe/#viking-clash'">
+        <li class="singleplayer iq" id="a-dark-room"
+          onclick="window.location.href = '../../activitiesIframe/#a-dark-room'">
+          <div class="text-overlay">A Dark Room</div>
+        </li>
+
+        <li class="sport multiplayer" id="a-small-world-cup"
+          onclick="window.location.href = '../../activitiesIframe/#a-small-world-cup'">
+          <div class="text-overlay">A Small World Cup</div>
+        </li>
+
+        <li class="singleplayer iq" id="bob-the-robber"
+          onclick="window.location.href = '../../activitiesIframe/#bob-the-robber'">
+          <div class="text-overlay">Bob The Robber</div>
+        </li>
+
+        <li class="singleplayer iq" id="bob-the-robber-2"
+          onclick="window.location.href = '../../activitiesIframe/#bob-the-robber-2'">
+          <div class="text-overlay">Bob The Robber 2</div>
+        </li>
+
+        <li class="sport multiplayer" id="bow-masters"
+          onclick="window.location.href = '../../activitiesIframe/#bow-masters'">
+          <div class="text-overlay">Bow Masters</div>
+        </li>
+
+        <li class="singleplayer iq" id="dadish" onclick="window.location.href = '../../activitiesIframe/#dadish'">
+          <div class="text-overlay">Dadish</div>
+        </li>
+
+        <li class="singleplayer iq" id="dadish-2" onclick="window.location.href = '../../activitiesIframe/#dadish-2'">
+          <div class="text-overlay">Dadish 2</div>
+        </li>
+
+        <li class="singleplayer iq" id="dadish-3" onclick="window.location.href = '../../activitiesIframe/#dadish-3'">
+          <div class="text-overlay">Dadish 3</div>
+        </li>
+
+        <li class="singleplayer iq" id="dadish-3d" onclick="window.location.href = '../../activitiesIframe/#dadish-3d'">
+          <div class="text-overlay">Dadish 3D</div>
+        </li>
+
+        <li class="singleplayer iq" id="deepest-sword"
+          onclick="window.location.href = '../../activitiesIframe/#deepest-sword'">
+          <div class="text-overlay">Deepest Sword</div>
+        </li>
+
+        <li class="singleplayer multiplayer" id="eaglercraft-1-11-2"
+          onclick="window.location.href = '../../activitiesIframe/#eaglercraft-1-11-2'">
+          <div class="text-overlay">Eaglercraft 1.11.2</div>
+        </li>
+
+        <li class="hot shooting singleplayer" id="fnaf" onclick="window.location.href = '../../activitiesIframe/#fnaf'">
+          <div class="text-overlay">FNAF</div>
+        </li>
+
+        <li class="hot shooting singleplayer" id="fnaf2"
+          onclick="window.location.href = '../../activitiesIframe/#fnaf2'">
+          <div class="text-overlay">FNAF 2</div>
+        </li>
+
+        <li class="hot shooting singleplayer" id="fnaf3"
+          onclick="window.location.href = '../../activitiesIframe/#fnaf3'">
+          <div class="text-overlay">FNAF 3</div>
+        </li>
+
+        <li class="hot shooting singleplayer" id="fnaf4"
+          onclick="window.location.href = '../../activitiesIframe/#fnaf4'">
+          <div class="text-overlay">FNAF 4</div>
+        </li>
+
+        <li class="singleplayer iq" id="geometry-dash-lite"
+          onclick="window.location.href = '../../activitiesIframe/#geometry-dash-lite'">
+          <div class="text-overlay">Geometry Dash Lite</div>
+        </li>
+
+        <li class="singleplayer iq" id="magic-tiles-3"
+          onclick="window.location.href = '../../activitiesIframe/#magic-tiles-3'">
+          <div class="text-overlay">Magic Tiles 3</div>
+        </li>
+
+        <li class="car singleplayer" id="motox3m-poolparty"
+          onclick="window.location.href = '../../activitiesIframe/#motox3m-poolparty'">
+          <div class="text-overlay">Moto X3M Pool Party</div>
+        </li>
+
+        <li class="car singleplayer" id="motox3m-spookyland"
+          onclick="window.location.href = '../../activitiesIframe/#motox3m-spookyland'">
+          <div class="text-overlay">Moto X3M Spookyland</div>
+        </li>
+
+        <li class="car singleplayer" id="motox3m-winter"
+          onclick="window.location.href = '../../activitiesIframe/#motox3m-winter'">
+          <div class="text-overlay">Moto X3M Winter</div>
+        </li>
+
+        <li class="sport multiplayer" id="pikachu-volleyball"
+          onclick="window.location.href = '../../activitiesIframe/#pikachu-volleyball'">
+          <div class="text-overlay">Pikachu Volleyball</div>
+        </li>
+
+        <li class="car multiplayer" id="race-survival-arena-king"
+          onclick="window.location.href = '../../activitiesIframe/#race-survival-arena-king'">
+          <div class="text-overlay">Race Survival Arena King</div>
+        </li>
+
+        <li class="shooting multiplayer" id="rooftop-snipers"
+          onclick="window.location.href = '../../activitiesIframe/#rooftop-snipers'">
+          <div class="text-overlay">Rooftop Snipers</div>
+        </li>
+
+        <li class="iq singleplayer" id="run-3" onclick="window.location.href = '../../activitiesIframe/#run-3'">
+          <div class="text-overlay">Run 3</div>
+        </li>
+
+        <li class="iq singleplayer" id="worlds-hardest-game-2"
+          onclick="window.location.href = '../../activitiesIframe/#worlds-hardest-game-2'">
+          <div class="text-overlay">Worlds Hardest Game 2</div>
+        </li>
+        <li class="iq" id="viking-clash" onclick="window.location.href='../../activitiesIframe/#viking-clash'">
           <div class="text-overlay">Viking Clash</div>
         </li>
         <li class="hot parkour" id="super-mario-64"
@@ -121,6 +244,7 @@
           onclick="window.location.href = '../../activitiesIframe/#escaperoadcity2'">
           <div class="text-overlay">Escape Road City 2</div>
         </li>
+
         <li class="hot parkour shooting" id="ice-dodo"
           onclick="window.location.href = '../../activitiesIframe/#ice-dodo'">
           <div class="text-overlay">Ice Dodo</div>
@@ -129,44 +253,37 @@
           onclick="window.location.href = '../../activitiesIframe/#ultimate-car-driving'">
           <div class="text-overlay">Ultimate Car Driving Simulator</div>
         </li>
-        <li class="car" id="deadly-decent"
-          onclick="window.location.href = '../../activitiesIframe/#deadly-decent'">
+        <li class="car" id="deadly-decent" onclick="window.location.href = '../../activitiesIframe/#deadly-decent'">
           <div class="text-overlay">Deadly Decent</div>
         </li>
         <li class="singleplayer" id="stickman-gta-city"
           onclick="window.location.href = '../../activitiesIframe/#stickman-gta-city'">
           <div class="text-overlay">Stickman GTA City</div>
         </li>
-        <li class="" id="spacebar-clicker"
-          onclick="window.location.href = '../../activitiesIframe/#spacebar-clicker'">
+        <li class="" id="spacebar-clicker" onclick="window.location.href = '../../activitiesIframe/#spacebar-clicker'">
           <div class="text-overlay">Spacebar Clicker</div>
         </li>
-        <li class="" id="csgo"
-          onclick="window.location.href = '../../activitiesIframe/#csgo'">
+        <li class="" id="csgo" onclick="window.location.href = '../../activitiesIframe/#csgo'">
           <div class="text-overlay">Case Clicker 2</div>
         </li>
         <li class="shooting" id="armed-forces-io"
           onclick="window.location.href = '../../activitiesIframe/#armed-forces-io'">
           <div class="text-overlay">Armed Forces.io</div>
         </li>
-        <li class="shooting" id="war-strike"
-          onclick="window.location.href = '../../activitiesIframe/#war-strike'">
+        <li class="shooting" id="war-strike" onclick="window.location.href = '../../activitiesIframe/#war-strike'">
           <div class="text-overlay">War Strike</div>
         </li>
-        <li class="iq" id="among-us"
-          onclick="window.location.href = '../../activitiesIframe/#among-us'">
+
+        <li class="iq" id="among-us" onclick="window.location.href = '../../activitiesIframe/#among-us'">
           <div class="text-overlay">Among Us</div>
         </li>
-        <li class="" id="snow-ball-io"
-          onclick="window.location.href = '../../activitiesIframe/#snow-ball-io'">
+        <li class="" id="snow-ball-io" onclick="window.location.href = '../../activitiesIframe/#snow-ball-io'">
           <div class="text-overlay">Snow Ball.io</div>
         </li>
-        <li class="car" id="slow-roads-io"
-          onclick="window.location.href = '../../activitiesIframe/#slow-roads-io'">
+        <li class="car" id="slow-roads-io" onclick="window.location.href = '../../activitiesIframe/#slow-roads-io'">
           <div class="text-overlay">Slow Roads.io</div>
         </li>
-        <li class="" id="elastic-man"
-          onclick="window.location.href = '../../activitiesIframe/#elastic-man'">
+        <li class="" id="elastic-man" onclick="window.location.href = '../../activitiesIframe/#elastic-man'">
           <div class="text-overlay">Elastic Man</div>
         </li>
         <li class="hot sport multiplayer singleplayer" id="soccer-random"
@@ -218,12 +335,10 @@
           onclick="window.location.href='../../activitiesIframe/#Tanuki-Sunset-main'">
           <div class="text-overlay">Tanuki Sunset</div>
         </li>
-        <li class="car" id="draw-the-hill"
-          onclick="window.location.href='../../activitiesIframe/#draw-the-hill'">
+        <li class="car" id="draw-the-hill" onclick="window.location.href='../../activitiesIframe/#draw-the-hill'">
           <div class="text-overlay">Draw the hill</div>
         </li>
-        <li class="car" id="eggy-car"
-          onclick="window.location.href='../../activitiesIframe/#eggy-car'">
+        <li class="car" id="eggy-car" onclick="window.location.href='../../activitiesIframe/#eggy-car'">
           <div class="text-overlay">Eggy Car</div>
         </li>
         <li class="shooting" id="gladihoppers" onclick="window.location.href='../../activitiesIframe/#gladis'">
@@ -631,6 +746,46 @@
       localStorage.setItem('toggleGoForMath', isGrid ? 'Grid View' : 'List View');
       setGridBackgrounds(isGrid ? 'Grid View' : 'List View');
     });
+
+    const orderNormalBtn = document.getElementById('order-normal');
+    const orderAzBtn = document.getElementById('order-az');
+    const orderZaBtn = document.getElementById('order-za');
+    const randomGameBtn = document.getElementById('random-game');
+
+    orderNormalBtn.addEventListener('click', () => restoreOriginalOrder());
+    orderAzBtn.addEventListener('click', () => sortList('asc'));
+    orderZaBtn.addEventListener('click', () => sortList('desc'));
+    randomGameBtn.addEventListener('click', () => pickRandomGame());
+
+    const originalItems = Array.from(itemList.children);
+
+    function restoreOriginalOrder() {
+      itemList.innerHTML = '';
+      originalItems.forEach(item => itemList.appendChild(item));
+    }
+
+    function sortList(direction) {
+      const items = Array.from(itemList.children);
+      items.sort((a, b) => {
+        const textA = a.textContent.trim().toLowerCase();
+        const textB = b.textContent.trim().toLowerCase();
+        return direction === 'asc'
+          ? textA.localeCompare(textB)
+          : textB.localeCompare(textA);
+      });
+      itemList.innerHTML = '';
+      items.forEach(item => itemList.appendChild(item));
+    }
+
+    function pickRandomGame() {
+      const items = Array.from(itemList.children);
+      if (!items.length) return;
+      const randomIndex = Math.floor(Math.random() * items.length);
+      items[randomIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      items[randomIndex].classList.add('random-selected');
+      window.location.href = `${(items[randomIndex].id === "cookie-clicker")? "../cookieclicker-updated" : `../../activitiesIframe/#${items[randomIndex].id}`}`;
+      setTimeout(() => items[randomIndex].classList.remove('random-selected'), 1200);
+    }
 
     function setGridBackgrounds(mode) {
       const items = itemList.querySelectorAll('li');
