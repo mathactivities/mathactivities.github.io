@@ -98,6 +98,33 @@ const external = {
     ublock: "https://bob-one-tau.vercel.app/",
     soundboard: "../activities/flash/soundboard.html"
 }
+const otherother = [
+  "a-dark-room",
+  "a-small-world-cup",
+  "bob-the-robber",
+  "bob-the-robber-2",
+  "bow-masters",
+  "dadish",
+  "dadish-2",
+  "dadish-3",
+  "dadish-3d",
+  "deepest-sword",
+  "eaglercraft-1-11-2",
+  "fnaf",
+  "fnaf2",
+  "fnaf3",
+  "fnaf4",
+  "geometry-dash-lite",
+  "magic-tiles-3",
+  "motox3m-poolparty",
+  "motox3m-spookyland",
+  "motox3m-winter",
+  "pikachu-volleyball",
+  "race-survival-arena-king",
+  "rooftop-snipers",
+  "run-3",
+  "worlds-hardest-game-2"
+];
 const externalEntries = Object.entries(external)
 var iframe = document.createElement('iframe');
 
@@ -118,6 +145,12 @@ for (var i = 0; i < other.length; i++) {
 for (var i = 0; i < externalEntries.length; i++) {
     if (fragmentIdentifier == externalEntries[i][0]) {
         iframe.src = externalEntries[i][1]
+    }
+}
+
+for (var i = 0; i < otherother.length; i++) {
+    if (fragmentIdentifier == otherother[i][0]) {
+        iframe.src = otherother[i][1]
     }
 }
 
